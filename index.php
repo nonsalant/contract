@@ -1,11 +1,10 @@
 <?
-
-// Contract generator 
+ 
+// Single File PHP Contract
 
 $phpName  = basename($_SERVER['PHP_SELF']);
 $fileName = substr($phpName , 0, -4);
 $htmlName = $fileName.'.html';
-$pdfName  = $fileName.'.pdf';
 $contractData = stripslashes ( $_POST['contractdata'] ); 
 $ip = get_client_ip_env();
 
@@ -89,7 +88,7 @@ body {
 }
 #hk,
 #hk-contractor {
-  max-width:405px;
+  max-width:333px;
   display:block;
 }
 #hk {
@@ -219,7 +218,7 @@ var datapair = $sigdiv.jSignature('getData', 'svgbase64');
 $('#submit').click(function(e) {
   $('#signature-form').hide();
   $('.results-page-only').show();
-  $("#signature_capture").val($('html').html().toString());
+  $("#signature_capture").val('<!DOCTYPE html><html>' + $('html').html().toString() + '</html>');
 }); 
 
 $('canvas.jSignature').mouseup(function() {
