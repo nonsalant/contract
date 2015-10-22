@@ -9,7 +9,7 @@ $pdfName  = $fileName.'.pdf';
 $contractData = stripslashes ( $_POST['contractdata'] ); 
 $ip = get_client_ip_env();
 
-//redirectIfExists();
+redirectIfExists();
 
 if ($contractData) {
 	file_put_contents($htmlName,$contractData);
@@ -19,6 +19,7 @@ if ($contractData) {
 function redirectIfExists() {
 	global $htmlName;
 	if ( file_exists($htmlName ) ) {
+		unlink(__FILE__);
 		header('Location: '.$htmlName.'#hk'); 
 		die();
 	}
