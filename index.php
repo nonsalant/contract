@@ -1,6 +1,6 @@
 <?
  
-// Single File PHP Contract
+// Single File PHP Contract...
 
 $phpName  = basename($_SERVER['PHP_SELF']);
 $fileName = substr($phpName , 0, -4);
