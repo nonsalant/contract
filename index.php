@@ -252,6 +252,7 @@ $('#submit').click(function(e) {
   $('#content').append('<p id="loading2" style="text-align:center; display:none;">This should only take a few seconds</p>');
   $('#loading').delay(900).show(300, function() {
   	$('#loading2').delay(1800).slideDown(300);
+  	$("html, body").animate({ scrollTop: $(document).height() }, '300');
   });
   
 }); 
