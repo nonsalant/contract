@@ -166,7 +166,7 @@ button:hover {
 
 <div id="content">
   
-  <h1>Contract for website development</h1>
+  <h1>Contract of work for design and redesign</h1>
   <p>Contract contents in HTML format.</p>
   
   <h2>1. Agreement of parties</h2>
