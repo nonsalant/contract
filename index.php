@@ -7,18 +7,21 @@ $fileName = substr($phpName , 0, -4);
 $htmlName = $fileName.'.html';
 $contractData = stripslashes ( $_POST['contractdata'] ); 
 $ip = get_client_ip_env();
+$email = "nonsalant@gmail.com";
 
 redirectIfExists();
 
 if ($contractData) {
 	file_put_contents($htmlName,$contractData);
+	$msg = getUrl();
+	if ($email) mail($email,'Contract signed!',$msg);
 	redirectIfExists();
 } 
 
 function redirectIfExists() {
 	global $htmlName;
 	if ( file_exists($htmlName ) ) {
-		unlink(__FILE__);
+		//unlink(__FILE__); // the php file deteles itself from the server
 		header('Location: '.$htmlName.'#hk'); 
 		die();
 	}
@@ -42,6 +45,13 @@ function get_client_ip_env() {
 		$ipaddress = 'UNKNOWN';
 
 	return $ipaddress;
+}
+// Function that returns the current file URL
+function getUrl() {
+  $url  = @( $_SERVER["HTTPS"] != 'on' ) ? 'http://'.$_SERVER["SERVER_NAME"] :  'https://'.$_SERVER["SERVER_NAME"];
+  $url .= ( $_SERVER["SERVER_PORT"] !== 80 ) ? ":".$_SERVER["SERVER_PORT"] : "";
+  $url .= $_SERVER["REQUEST_URI"];
+  return $url;
 }
 
 ?><!DOCTYPE html>
