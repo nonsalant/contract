@@ -245,9 +245,10 @@ $('#submit').click(function(e) {
   $('#signature-form').hide();
   $('.results-page-only').show();
   $("#signature_capture").val('<!DOCTYPE html><html>' + $('html').html().toString() + '</html>');
-  $('#content *:not(h1)').slideUp('100').html('');
-  $('#content').append('<h2 style="text-align:center; display:none;">Saving Contract...</h2><p></p>');
-  $('h2').slideDown('300');
+  $('#content *:not(h1)').slideUp('100');
+  // To avoid showing the Print/PDF buttons before the page is processed
+  $('#content').append('<h2 id="loading" style="text-align:center; display:none;">Saving Contract...</h2><p></p>');
+  $('#loading').slideDown('300');
 }); 
  
 });
