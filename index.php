@@ -254,7 +254,7 @@ function printContract() {
   window.print();
 }
 function generatePdf() {
-  window.location.href = '//pdfcrowd.com/url_to_pdf/?use_print_media=1&footer_text=page%20%p%20%of%20%n&hmargin=1cm&pdf_name=<?php echo $pdfName; ?>';
+  window.location.href = '//pdfcrowd.com/url_to_pdf/?use_print_media=1&footer_text=page%20%p%20of%20%n&hmargin=1cm&pdf_name=<?php echo $pdfName; ?>';
 }
 </script>
 
