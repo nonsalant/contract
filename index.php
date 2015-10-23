@@ -249,8 +249,10 @@ $('#submit').click(function(e) {
   // To avoid showing the Print/PDF buttons before the page is processed
   $('#content').append('<h2 id="loading" style="text-align:center; display:none;">Saving Contract...</h2>');
   $('#content').append('<p id="loading2" style="text-align:center; display:none;">This should only take a few seconds</p>');
-  $('#loading').slideDown('300');
-  $('#loading2').slideDown('600');
+  $('#loading').slideDown(300, function() {
+  	$('#loading2').delay(900).slideDown(300);
+  });
+  
 }); 
  
 });
