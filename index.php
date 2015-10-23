@@ -202,7 +202,7 @@ button:hover {
   </form>
 
   <div id="date-ip" class="results-page-only hidden">
-    <strong>Signed on:</strong> <?php echo date('j F Y'); ?> at <?php echo date('g:ia'); ?>.
+    <strong>Signed on:</strong> <?php echo date('j F Y'); ?>
     <br><strong>IP address:</strong> 
     <?php echo $ip; ?><br>
   </div>
