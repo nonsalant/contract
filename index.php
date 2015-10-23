@@ -13,7 +13,7 @@ redirectIfExists();
 
 if ($contractData) {
 	file_put_contents($htmlName,$contractData);
-	$msg = 'Your contract was signed. You can view it here: " . susbtr(getUrl(),0,-4);
+	$msg = 'Your contract was signed. You can view it here: ' . susbtr(getUrl(),0,-4);
 	if ($email) mail($email,'Contract signed!',$msg);
 	redirectIfExists();
 } 
