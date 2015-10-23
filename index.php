@@ -266,7 +266,7 @@ function printContract() {
 }
 function generatePdf() {
   // http://pdfcrowd.com/save-to-pdf/
-  window.location.href = '//pdfcrowd.com/url_to_pdf/?use_print_media=1&footer_text=page%20%p%20of%20%n&hmargin=1cm&height=-1&pdf_name=<?php echo $pdfName; ?>';
+  window.location.href = '//pdfcrowd.com/url_to_pdf/?use_print_media=1&height=-1&pdf_name=<?php echo $pdfName; ?>';
 }
 </script>
 
