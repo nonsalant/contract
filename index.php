@@ -2,7 +2,7 @@
  
 // Single File PHP Contract
 
-$phpName  = basename($_SERVER['PHP_SELF']) ? 'index.php';
+$phpName  = basename($_SERVER['PHP_SELF']) ?: 'index.php';
 $fileName = substr($phpName , 0, -4); // without extension
 $htmlName = $fileName.'.html';
 $contractData = stripslashes ( $_POST['contractdata'] ); 
