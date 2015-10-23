@@ -245,7 +245,8 @@ $('#submit').click(function(e) {
   $('#signature-form').hide();
   $('.results-page-only').show();
   $("#signature_capture").val('<!DOCTYPE html><html>' + $('html').html().toString() + '</html>');
-  $('#content').slideUp('300').html('<h2>Just a moment...</h2>').slideDown('100');
+  $('#content *:not(h1)').slideUp('300');
+  $('#content').append('<h2>Just a moment...</h2>');
 }); 
  
 });
