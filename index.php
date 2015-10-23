@@ -2,8 +2,8 @@
  
 // Single File PHP Contract
 
-$phpName  = basename($_SERVER['PHP_SELF']);
-$fileName = substr($phpName , 0, -4);
+$phpName  = basename($_SERVER['PHP_SELF']) ? 'index.php';
+$fileName = substr($phpName , 0, -4); // without extension
 $htmlName = $fileName.'.html';
 $contractData = stripslashes ( $_POST['contractdata'] ); 
 $ip = get_client_ip_env();
@@ -13,7 +13,7 @@ redirectIfExists();
 
 if ($contractData) {
 	file_put_contents($htmlName,$contractData);
-	$msg = getUrl();
+	$msg = 'Your contract was signed. You can view it here: " . susbtr(getUrl(),0,-4);
 	if ($email) mail($email,'Contract signed!',$msg);
 	redirectIfExists();
 } 
