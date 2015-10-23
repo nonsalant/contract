@@ -252,7 +252,7 @@ $('#submit').click(function(e) {
   $('#content *:not(h1)').hide(100); /**/
   $('#print-pdf, #date-ip').html('<h2 id="loading" style="text-align:center; display:none;">Saving Contract...</h2>');
   $('#print-pdf, #date-ip').append('<p id="loading2" style="text-align:center; display:none;">This should only take a few seconds</p>');
-  $('#loading').show(600, function() {
+  $('#loading').slideDown(600, function() {
   	$('#loading2').delay(1800).show();
   });
   /**/
