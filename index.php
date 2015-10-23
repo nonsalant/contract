@@ -82,6 +82,7 @@ body {
 #content {
     max-width: 600px;
     margin: 0 auto;
+    margin-bottom: 3em;
     padding: 0 2em;
     background: #fff;
 }
