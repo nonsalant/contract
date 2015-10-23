@@ -250,7 +250,7 @@ $('#submit').click(function(e) {
   $('#content').append('<h2 id="loading" style="text-align:center; display:none;">Saving Contract...</h2>');
   $('#content').append('<p id="loading2" style="text-align:center; display:none;">This should only take a few seconds</p>');
   $('#loading').delay(900).show(300, function() {
-  	$('#loading2').delay(1800).show(300);
+  	$('#loading2').delay(1800).slideDown(300);
   });
   
 }); 
