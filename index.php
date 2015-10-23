@@ -9,15 +9,18 @@ $contractData = stripslashes ( $_POST['contractdata'] );
 $ip = get_client_ip_env();
 $email = "nonsalant@gmail.com";
 
+// If the HTML file exists, redirect to it
 //redirectIfExists();
 
+// If the contractdata was received in the form, put it in an html file
 if ($contractData) {
 	file_put_contents($htmlName,$contractData);
-	$msg = 'Your contract was signed. You can view it here: ' . susbtr(getUrl(),0,-4);
+	$msg = 'Your contract was signed. You can view it here: ' . substr(getUrl(),0,-4);
 	if ($email) mail($email,'Contract signed!',$msg);
 	redirectIfExists();
 } 
 
+// If html file exists, delete php file, redirect to html, and die.
 function redirectIfExists() {
 	global $htmlName;
 	if ( file_exists($htmlName ) ) {
@@ -43,15 +46,14 @@ function get_client_ip_env() {
 		$ipaddress = getenv('REMOTE_ADDR');
 	else
 		$ipaddress = 'UNKNOWN';
-
 	return $ipaddress;
 }
 // Function that returns the current file URL
 function getUrl() {
-  $url  = @( $_SERVER["HTTPS"] != 'on' ) ? 'http://'.$_SERVER["SERVER_NAME"] :  'https://'.$_SERVER["SERVER_NAME"];
-  $url .= ( $_SERVER["SERVER_PORT"] !== 80 ) ? ":".$_SERVER["SERVER_PORT"] : "";
-  $url .= $_SERVER["REQUEST_URI"];
-  return $url;
+	$url  = @( $_SERVER["HTTPS"] != 'on' ) ? 'http://'.$_SERVER["SERVER_NAME"] :  'https://'.$_SERVER["SERVER_NAME"];
+	$url .= ( $_SERVER["SERVER_PORT"] !== 80 ) ? ":".$_SERVER["SERVER_PORT"] : "";
+	$url .= $_SERVER["REQUEST_URI"];
+	return $url;
 }
 
 ?><!DOCTYPE html>
