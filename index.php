@@ -16,7 +16,7 @@ $email = "nonsalant@gmail.com";
 // If the contractdata was received in the form, put it in an html file
 if ($contractData) {
 	file_put_contents($htmlName,$contractData);
-	$msg = 'Your contract was signed. You can view it here: ' . substr(getUrl(),0,-4);
+	$msg = 'Your contract was signed. You can view it here: ' . substr(getUrl(),0,-4) . '.html';
 	if ($email) mail($email,'Contract signed!',$msg);
 	redirectIfExists();
 } 
@@ -251,7 +251,7 @@ $('#submit').click(function(e) {
   $('#content *:not(h1)').hide(100); /**/
   $('#content').append('<h2 id="loading" style="text-align:center; display:none;">Saving Contract...</h2>');
   $('#content').append('<p id="loading2" style="text-align:center; display:none;">This should only take a few seconds</p>');
-  $('#loading').delay(600).show(600, function() {
+  $('#loading').show(600, function() {
   	$('#loading2').delay(1800).show();
   });
   /**/
