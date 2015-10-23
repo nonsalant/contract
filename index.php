@@ -247,8 +247,10 @@ $('#submit').click(function(e) {
   $("#signature_capture").val('<!DOCTYPE html><html>' + $('html').html().toString() + '</html>');
   $('#content *:not(h1)').slideUp('100');
   // To avoid showing the Print/PDF buttons before the page is processed
-  $('#content').append('<h2 id="loading" style="text-align:center; display:none;">Saving Contract...</h2><p></p>');
+  $('#content').append('<h2 id="loading" style="text-align:center; display:none;">Saving Contract...</h2>');
+  $('#content').append('<p id="loading2" style="text-align:center; display:none;">This should only take a few seconds</p>');
   $('#loading').slideDown('300');
+  $('#loading2').slideDown('600');
 }); 
  
 });
