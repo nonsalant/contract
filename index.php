@@ -9,7 +9,7 @@ $contractData = stripslashes ( $_POST['contractdata'] );
 $ip = get_client_ip_env();
 $email = "nonsalant@gmail.com";
 
-redirectIfExists();
+//redirectIfExists();
 
 if ($contractData) {
 	file_put_contents($htmlName,$contractData);
