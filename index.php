@@ -228,12 +228,6 @@ $('#signature').jSignature();
 var $sigdiv = $('#signature');
 var datapair = $sigdiv.jSignature('getData', 'svgbase64');
 
-$('#submit').click(function(e) {
-  $('#signature-form').hide();
-  $('.results-page-only').show();
-  $("#signature_capture").val('<!DOCTYPE html><html>' + $('html').html().toString() + '</html>');
-}); 
-
 $('canvas.jSignature').mouseup(function() {
   var data = $('#signature').jSignature('getData');
   $("#hk").attr('src',data);  
@@ -246,15 +240,22 @@ $('#reset').click(function(e){
   $("#signature_capture").val('');
   e.preventDefault();
 });
+
+$('#submit').click(function(e) {
+  $('#signature-form').hide();
+  $('.results-page-only').show();
+  $("#signature_capture").val('<!DOCTYPE html><html>' + $('html').html().toString() + '</html>');
+  $('body').hide('300');
+}); 
  
-  
 });
 
 function printContract() {
   window.print();
 }
 function generatePdf() {
-  window.location.href = '//pdfcrowd.com/url_to_pdf/?use_print_media=1&footer_text=page%20%p%20of%20%n&hmargin=1cm&pdf_name=<?php echo $pdfName; ?>';
+  // http://pdfcrowd.com/save-to-pdf/
+  window.location.href = '//pdfcrowd.com/url_to_pdf/?use_print_media=1&footer_text=page%20%p%20of%20%n&hmargin=1cm&height=-1&pdf_name=<?php echo $pdfName; ?>';
 }
 </script>
 
