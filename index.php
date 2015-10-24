@@ -229,7 +229,7 @@ $('#signature').jSignature();
 var $sigdiv = $('#signature');
 var datapair = $sigdiv.jSignature('getData', 'svgbase64');
 
-$('canvas.jSignature').mouseup(function() {
+$('#signature').bind('change', function(e) {
   var data = $('#signature').jSignature('getData');
   $("#hk").attr('src',data);  
 });
