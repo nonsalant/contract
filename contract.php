@@ -276,3 +276,4 @@ function generatePdf() {
 </script>
 
 </body>
+</html>
