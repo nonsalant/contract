@@ -13,7 +13,7 @@ $contractData = stripslashes ( $_POST['contractdata'] );
 $ip = get_client_ip_env();
 
 // If the HTML file exists, redirect to it
-//redirectIfExists();
+//redirectIfExists(); 
 
 // If the contractdata was received in the form, put it in an html file
 if ($contractData) {
