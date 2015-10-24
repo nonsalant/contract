@@ -3,7 +3,7 @@
 
 Single File PHP Contract
 
-Upload this file to your server and send a link to your client. 
+Upload this single file to your server and send a link to your client. 
 (You can rename this php, for example if there are other contracts in the same folder.)
 
 Once they have signed, this php file will delete itself and leave behind an HTML version 
@@ -31,7 +31,7 @@ if ($contractData) {
 	redirectIfExists();
 } 
 
-// If html file exists, delete php file, redirect to html, and die.
+// If html file exists, delete php file, redirect to html, and die
 function redirectIfExists() {
 	global $htmlName;
 	if ( file_exists($htmlName ) ) {
@@ -64,7 +64,7 @@ function getUrl() {
 	$url  = @( $_SERVER["HTTPS"] != 'on' ) ? 'http://'.$_SERVER["SERVER_NAME"] :  'https://'.$_SERVER["SERVER_NAME"];
 	$url .= ( $_SERVER["SERVER_PORT"] !== 80 ) ? ":".$_SERVER["SERVER_PORT"] : "";
 	$url .= $_SERVER["REQUEST_URI"];
-       $url = substr($url,0,-4) . '.html'; 
+	$url = substr($url,0,-4) . '.html'; 
 	return $url;
 }
 
@@ -91,6 +91,12 @@ body {
 @media (max-width:600px) {
     body { font-size:12px; }
 }
+@media print {
+   .noprint { display:none !important; }
+}
+.hidden { 
+    display:none; 
+}
 #content {
     max-width: 600px;
     margin: 0 auto;
@@ -98,29 +104,6 @@ body {
     padding: 0 2em;
     background: #fff;
 }
-@media print {
-   .noprint { display:none !important; }
-}
-.hidden { display:none; }
-#signature {
-  width:auto;
-  border:dashed 2px #53777A;
-  margin:0;
-  text-align:center;
-}
-.buttons { 
-  text-align:center; 
-  margin:1.5em auto;
-}
-#hk,
-#hk-contractor {
-  max-width:333px;
-  display:block;
-}
-#hk {
-  display:none;
-}
-
 h1 {
     font-size: 2em;
     line-height: 1.2em;
@@ -135,7 +118,6 @@ h1 {
     border-width: 1px 0;
     padding: .5em 0;
 }
-
 h2 {
     font-size:1.2em;
     line-height:1.2em;
@@ -143,7 +125,20 @@ h2 {
     font-family:'Open Sans Condensed',sans-serif;
     font-weight:700;
 }
-
+#signature {
+    width:auto;
+    border:dashed 2px #53777A;
+    margin:0;
+    text-align:center;
+}
+#hk,
+#hk-contractor {
+    max-width:333px;
+    display:block;
+}
+#hk {
+    display:none;
+}
 #date-ip {
     font-size:1.2em;
     line-height:1.2em;
@@ -156,6 +151,10 @@ h2 {
     padding:1.5em 0; 
     margin-top:2em; 
     border-top:solid 1px #ccc;
+}
+.buttons { 
+    text-align:center; 
+    margin:1.5em auto;
 }
 button {
     margin: 0 .5em;
@@ -170,7 +169,6 @@ button {
 button:hover {
     color: #136fd2;
 }
-
 </style>  
 </head>
 
@@ -236,35 +234,35 @@ button:hover {
 
 <script>
 $(document).ready(function() { 
-	$('#signature').jSignature();
-	var $sigdiv = $('#signature');
-	var datapair = $sigdiv.jSignature('getData', 'svgbase64');
-	
-	$('#signature').bind('change', function(e) {
-	  var data = $('#signature').jSignature('getData');
-	  $("#hk").attr('src',data);  
-	});
-	  
-	$('#reset').click(function(e){
-	  $('#signature').jSignature('clear');
-	  var data = $('#signature').jSignature('getData');
-	  $("#hk").attr('src',data);
-	  $("#signature_capture").val('');
-	  e.preventDefault();
-	});
-	
-	$('#submit').click(function(e) {
-	  $('#signature-form').hide();
-	  $('.results-page-only').show();
-	  pageHtml = '<!DOCTYPE html><html>' + $('html').html().toString() + '</html>';
-	  $("#signature_capture").val(pageHtml);
-	  // To avoid showing the Print/PDF buttons before the page is processed
-	  $('#print-pdf, #date-ip').html('<h2 id="loading" style="text-align:center; display:none;">Saving Contract...</h2>');
-	  $('#print-pdf, #date-ip').append('<p id="loading2" style="text-align:center; display:none;">This should only take a few seconds</p>');
-	  $('#loading').slideDown(300, function() {
-	  	$('#loading2').delay(2000).slideDown(300);
-	  });
-	}); 
+  $('#signature').jSignature();
+  var $sigdiv = $('#signature');
+  var datapair = $sigdiv.jSignature('getData', 'svgbase64');
+
+  $('#signature').bind('change', function(e) {
+    var data = $('#signature').jSignature('getData');
+    $("#hk").attr('src',data);  
+  });
+  
+  $('#reset').click(function(e){
+    $('#signature').jSignature('clear');
+    var data = $('#signature').jSignature('getData');
+    $("#hk").attr('src',data);
+    $("#signature_capture").val('');
+    e.preventDefault();
+  });
+
+  $('#submit').click(function(e) {
+    $('#signature-form').hide();
+    $('.results-page-only').show();
+    pageHtml = '<!DOCTYPE html><html>' + $('html').html().toString() + '</html>';
+    $("#signature_capture").val(pageHtml);
+    // To avoid showing the Print/PDF buttons before the page is processed
+    $('#print-pdf, #date-ip').html('<h2 id="loading" style="text-align:center; display:none;">Saving Contract...</h2>');
+    $('#print-pdf, #date-ip').append('<p id="loading2" style="text-align:center; display:none;">This should only take a few seconds</p>');
+    $('#loading').slideDown(300, function() {
+  	$('#loading2').delay(2000).slideDown(300);
+  });
+}); 
  
 });
 
