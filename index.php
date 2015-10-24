@@ -1,4 +1,4 @@
-<?
+<?php
  
 // Don't use this file. Use contract.php instead.
 // This file is only used for testing, it does not delete itself and does not redirect to the HTML version once the contract is signed.
