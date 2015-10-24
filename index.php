@@ -63,6 +63,7 @@ function getUrl() {
 <head>
 <meta charset="UTF-8">
 <title>Contract</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <style>
 @import url(http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic);
 @import url(http://fonts.googleapis.com/css?family=Arapey);
