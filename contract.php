@@ -270,7 +270,7 @@ function printContract() {
   window.print();
 }
 function generatePdf() {
-  // http://pdfcrowd.com/save-to-pdf/
+  // http://pdfcrowd.com/save-to-pdf/ 
   window.location.href = '//pdfcrowd.com/url_to_pdf/?use_print_media=1&height=-1&pdf_name=<?php echo $pdfName; ?>';
 }
 </script>
