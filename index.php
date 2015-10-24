@@ -16,7 +16,7 @@ $email = "nonsalant@gmail.com";
 // If the contractdata was received in the form, put it in an html file
 if ($contractData) {
 	file_put_contents($htmlName,$contractData);
-	$msg = 'Your contract was signed. You can view it here: ' . substr(getUrl(),0,-4) . '.html';
+	$msg = 'Your contract was signed. You can view it here: ' . getUrl();
 	if ($email) mail($email,'Contract signed!',$msg);
 	redirectIfExists();
 } 
@@ -49,11 +49,12 @@ function get_client_ip_env() {
 		$ipaddress = 'UNKNOWN';
 	return $ipaddress;
 }
-// Function that returns the current file URL
+// Function that returns the current file URL and replaces the .php extension with .html
 function getUrl() {
 	$url  = @( $_SERVER["HTTPS"] != 'on' ) ? 'http://'.$_SERVER["SERVER_NAME"] :  'https://'.$_SERVER["SERVER_NAME"];
 	$url .= ( $_SERVER["SERVER_PORT"] !== 80 ) ? ":".$_SERVER["SERVER_PORT"] : "";
 	$url .= $_SERVER["REQUEST_URI"];
+       $url = substr($url,0,-4) . '.html'; 
 	return $url;
 }
 
