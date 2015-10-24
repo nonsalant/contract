@@ -83,6 +83,12 @@ body {
 @media (max-width:600px) {
     body { font-size:12px; }
 }
+@media print {
+   .noprint { display:none !important; }
+}
+.hidden { 
+    display:none; 
+}
 #content {
     max-width: 600px;
     margin: 0 auto;
@@ -90,29 +96,6 @@ body {
     padding: 0 2em;
     background: #fff;
 }
-@media print {
-   .noprint { display:none !important; }
-}
-.hidden { display:none; }
-#signature {
-  width:auto;
-  border:dashed 2px #53777A;
-  margin:0;
-  text-align:center;
-}
-.buttons { 
-  text-align:center; 
-  margin:1.5em auto;
-}
-#hk,
-#hk-contractor {
-  max-width:333px;
-  display:block;
-}
-#hk {
-  display:none;
-}
-
 h1 {
     font-size: 2em;
     line-height: 1.2em;
@@ -127,7 +110,6 @@ h1 {
     border-width: 1px 0;
     padding: .5em 0;
 }
-
 h2 {
     font-size:1.2em;
     line-height:1.2em;
@@ -135,7 +117,20 @@ h2 {
     font-family:'Open Sans Condensed',sans-serif;
     font-weight:700;
 }
-
+#signature {
+    width:auto;
+    border:dashed 2px #53777A;
+    margin:0;
+    text-align:center;
+}
+#hk,
+#hk-contractor {
+    max-width:333px;
+    display:block;
+}
+#hk {
+    display:none;
+}
 #date-ip {
     font-size:1.2em;
     line-height:1.2em;
@@ -148,6 +143,10 @@ h2 {
     padding:1.5em 0; 
     margin-top:2em; 
     border-top:solid 1px #ccc;
+}
+.buttons { 
+    text-align:center; 
+    margin:1.5em auto;
 }
 button {
     margin: 0 .5em;
@@ -162,7 +161,6 @@ button {
 button:hover {
     color: #136fd2;
 }
-
 </style>  
 </head>
 
@@ -228,35 +226,35 @@ button:hover {
 
 <script>
 $(document).ready(function() { 
-	$('#signature').jSignature();
-	var $sigdiv = $('#signature');
-	var datapair = $sigdiv.jSignature('getData', 'svgbase64');
-	
-	$('#signature').bind('change', function(e) {
-	  var data = $('#signature').jSignature('getData');
-	  $("#hk").attr('src',data);  
-	});
-	  
-	$('#reset').click(function(e){
-	  $('#signature').jSignature('clear');
-	  var data = $('#signature').jSignature('getData');
-	  $("#hk").attr('src',data);
-	  $("#signature_capture").val('');
-	  e.preventDefault();
-	});
-	
-	$('#submit').click(function(e) {
-	  $('#signature-form').hide();
-	  $('.results-page-only').show();
-	  pageHtml = '<!DOCTYPE html><html>' + $('html').html().toString() + '</html>';
-	  $("#signature_capture").val(pageHtml);
-	  // To avoid showing the Print/PDF buttons before the page is processed
-	  $('#print-pdf, #date-ip').html('<h2 id="loading" style="text-align:center; display:none;">Saving Contract...</h2>');
-	  $('#print-pdf, #date-ip').append('<p id="loading2" style="text-align:center; display:none;">This should only take a few seconds</p>');
-	  $('#loading').slideDown(300, function() {
-	  	$('#loading2').delay(2000).slideDown(300);
-	  });
-	}); 
+  $('#signature').jSignature();
+  var $sigdiv = $('#signature');
+  var datapair = $sigdiv.jSignature('getData', 'svgbase64');
+
+  $('#signature').bind('change', function(e) {
+    var data = $('#signature').jSignature('getData');
+    $("#hk").attr('src',data);  
+  });
+  
+  $('#reset').click(function(e){
+    $('#signature').jSignature('clear');
+    var data = $('#signature').jSignature('getData');
+    $("#hk").attr('src',data);
+    $("#signature_capture").val('');
+    e.preventDefault();
+  });
+
+  $('#submit').click(function(e) {
+    $('#signature-form').hide();
+    $('.results-page-only').show();
+    pageHtml = '<!DOCTYPE html><html>' + $('html').html().toString() + '</html>';
+    $("#signature_capture").val(pageHtml);
+    // To avoid showing the Print/PDF buttons before the page is processed
+    $('#print-pdf, #date-ip').html('<h2 id="loading" style="text-align:center; display:none;">Saving Contract...</h2>');
+    $('#print-pdf, #date-ip').append('<p id="loading2" style="text-align:center; display:none;">This should only take a few seconds</p>');
+    $('#loading').slideDown(300, function() {
+  	$('#loading2').delay(2000).slideDown(300);
+  });
+}); 
  
 });
 
@@ -264,9 +262,10 @@ function printContract() {
   window.print();
 }
 function generatePdf() {
-  // http://pdfcrowd.com/save-to-pdf/
+  // http://pdfcrowd.com/save-to-pdf/ 
   window.location.href = '//pdfcrowd.com/url_to_pdf/?use_print_media=1&height=-1&pdf_name=<?php echo $pdfName; ?>';
 }
 </script>
 
 </body>
+</html>
