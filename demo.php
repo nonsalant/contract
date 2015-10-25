@@ -283,7 +283,7 @@ function generatePdf() {
   window.location.href = '//pdfcrowd.com/url_to_pdf/?use_print_media=1&height=-1&pdf_name=<?php echo $pdfName; ?>';
 }
 </script>
-<?php if(!$contractData) : ?>
+<?php if ( !$contractData ) : ?>
 <script id="google-analytics">
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
