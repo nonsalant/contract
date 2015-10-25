@@ -180,6 +180,10 @@ You can generate a new signature at www.cdpn.io/JYpjvE
   <p class="footer">Created by <a href="http://twitter.com/nonsalant/">Stefan Matei</a> for <a href="http://vileworks.com">VileWorks.com</a></p>
 </div> <!--#content-->
 
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="http://tinymce.cachefly.net/4.0/tinymce.min.js"></script>
+<script src="https://cdn.rawgit.com/willowsystems/jSignature/master/libs/jSignature.min.js"></script>
+
 <script src="http://www.vileworks.com/combined.js"></script>
 <script>
 tinymce.init({
