@@ -18,7 +18,7 @@ if( $part4 ) {
   echo $part1.$part2.$part3.$part4.$part5;
 }
 else {
-  echo '<h2>No signature received</h2>';
+  echo '<h2 style="text-align:center;">No signature received</h2>';
   die();
 }
 
