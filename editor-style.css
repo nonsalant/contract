@@ -3,14 +3,15 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800);
 body { 
-  font-size:14px;
+  font-family: 'Libre Baskerville', serif; 
+  font-size:16px;
   max-width: 600px;
   margin: 0em auto;
   background: #fff;
   padding: 2em;
 }
 @media (max-width:400px) {
-  body { font-size:12px; }
+  body { font-size:14px; }
 }
 a {
   color:#0a3666;
