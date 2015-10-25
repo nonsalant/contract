@@ -10,7 +10,7 @@ if( $part4 ) {
 }
 else echo 'no signature received';
 // We'll be outputting a PDF
-header('Content-Type: application/force-download');
+header('Content-Type: text/force-download');
 
 // It will be called downloaded.pdf
 header('Content-Disposition: attachment; filename="contract123.php"');
