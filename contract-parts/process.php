@@ -1,10 +1,10 @@
 <?php
 $part4 = stripslashes ( $_POST['signature_capture'] ); 
 if( $part4 ) {
-  $part1 = file_get_contents('contract-parts/header.txt');
+  $part1 = file_get_contents('header.txt');
   $part2 = stripslashes ( $_POST['html_capture'] ); 
-  $part3 = file_get_contents('contract-parts/middle.txt');
-  $part5 = file_get_contents('contract-parts/footer.txt');
+  $part3 = file_get_contents('middle.txt');
+  $part5 = file_get_contents('footer.txt');
   
   $filename = stripslashes ( $_POST['file_name'] );
   if (!$filename) { $filename = 'contract.php'; }
