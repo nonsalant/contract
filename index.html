@@ -198,9 +198,12 @@ $('#signature').jSignature();
 var $sigdiv = $('#signature');
 var datapair = $sigdiv.jSignature('getData', 'svgbase64');
 
+$('#submit').attr('disabled','disabled');
+
 $('#signature').bind('change', function(e) {
   var data = $('#signature').jSignature('getData');
   $("#signature_capture").val(data);
+  .removeAttr('disabled');
 });
   
 $('#reset').click(function(e){
@@ -215,11 +218,11 @@ $('#input-html').bind('blur', function(e) {
   $('#html_capture').val($(this).val());
 });
 
-//$( document ).ready(function() {
-  randomFileName = 'contract-'+makeId() +'.php'; 
-  $('#signature-form small em').html(randomFileName); 
-  $('#file_name').val(randomFileName); 
-//});
+
+randomFileName = 'contract-'+makeId() +'.php'; 
+$('#signature-form small em').html(randomFileName); 
+$('#file_name').val(randomFileName); 
+
 
 function makeId() {
     var text = "";
