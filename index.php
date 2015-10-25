@@ -5,14 +5,11 @@
 <title>Contract</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <style>
+@import url(css/style.css);
 @import url(http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic);
 @import url(http://fonts.googleapis.com/css?family=Arapey);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800);
-/*
-Icons from https://github.com/iconic/open-iconic opensource.org/licenses/MIT
-*/
-@import url(css/style.css);
 </style>
 </head>
 <body>
