@@ -9,6 +9,10 @@ if( $part4 ) {
   echo $part1.$part2.$part3.$part4.$part5;
 }
 else echo 'no signature received';
+// We'll be outputting a PDF
+header('Content-Type: application/force-download');
 
+// It will be called downloaded.pdf
+header('Content-Disposition: attachment; filename="contract123.php"');
 
 ?>
