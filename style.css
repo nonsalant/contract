@@ -1,0 +1,48 @@
+@import url(http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic);
+@import url(http://fonts.googleapis.com/css?family=Arapey);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800);
+body { 
+  font-family: 'Libre Baskerville', serif; 
+  font-size:16px;
+  line-height:1.5em;
+  color:#000;
+  margin:0;
+  background:#fff;
+}
+@media (max-width:400px) {
+  body { font-size:14px; }
+}
+a {
+  color:#0a3666;
+  text-decoration:none;
+}
+a:hover {
+  color:#136fd2;
+}
+h1 {
+  text-align:center;
+  font-size:2em; 
+  line-height:1.5em;
+  line-height: 1.2em;
+  letter-spacing:0.15em;
+  font-family:'Arapey', serif;
+  text-transform:uppercase;
+  font-weight:normal;
+  margin-top:0;
+  position:relative;
+  border: solid 1px;
+  border-width: 1px 0;
+  padding: .5em 0;
+}
+h2 {
+  font-size:1.2em;
+  line-height:1.2em;
+  letter-spacing:.05em;
+  font-family:'Open Sans Condensed',sans-serif;
+  font-weight:700;
+}
+hr {
+    margin: 2em 0;
+}
+
