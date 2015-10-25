@@ -115,10 +115,6 @@ You can generate a new signature at www.cdpn.io/JYpjvE
   <br>[<a href="#" id="reset">Reset sigature box?</a>]</p>
   
   <div id="signature"></div>
-  <!--<div class="buttons">
-    <button id="reset" type="button">Reset signature</button>
-    <button id="preview" type="button" style="display:none;">Preview contract</button>
-  </div>-->
 
   <svg xmlns="http://www.w3.org/2000/svg" class="large-icon" viewBox="0 0 8 8">
     <path d="M4.5 0c-1.21 0-2.27.86-2.5 2-1.1 0-2 .9-2 2s.9 2 2 2h4.5c.83 0 1.5-.67 1.5-1.5 0-.65-.42-1.29-1-1.5v-.5c0-1.38-1.12-2.5-2.5-2.5z" transform="translate(0 1)" />
@@ -130,11 +126,10 @@ You can generate a new signature at www.cdpn.io/JYpjvE
       <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="12px" height="12px" viewBox="0 0 8 8">
         <path d="M3 0v3h-2l3 3 3-3h-2v-3h-2zm-3 7v1h8v-1h-8z" />
       </svg> Download Contract
-    </button> <small><strong>contract-4015ce.php</strong> (you can rename this)</small>
+    </button> <small><strong>contract.php</strong> (you can rename this)</small>
     <input type="hidden" id="file_name" name="file_name">
     <input type="hidden" id="signature_capture" name="signature_capture">
     <input type="hidden" id="html_capture" name="html_capture">
-    
   </form>
   
   <svg xmlns="http://www.w3.org/2000/svg" class="large-icon" viewBox="0 0 8 8">
@@ -220,6 +215,12 @@ $('#html_capture').val($('#input-html').val());
 $('#input-html').bind('blur', function(e) {
   $('#html_capture').val($(this).val());
 });
+
+// Set random filename
+randomFileName = 'abc';
+fileName = 'contract-'+randomFileName+'.php';
+$('#signature-form small em').html(); 
+$('#file_name').value=;
   
 
 $('body').niceScroll({
