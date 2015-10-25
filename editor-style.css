@@ -5,6 +5,7 @@
 body { 
   font-family: 'Libre Baskerville', serif; 
   font-size:16px;
+  line-height:1.5em;
   max-width: 600px;
   margin: 0em auto;
   background: #fff;
