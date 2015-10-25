@@ -159,7 +159,7 @@ button {
     font-weight: 400;
     /*color: #0a3666;*/
 }
-button:hover, button:focus {
+button:not([disabled]):hover, button:not([disabled]):focus {
     color: #333; 
     background-color: #e3e3e3;
     background-image: -moz-linear-gradient(top, #f2f2f2, #ccc);
