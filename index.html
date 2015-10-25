@@ -203,7 +203,7 @@ $('#submit').attr('disabled','disabled');
 $('#signature').bind('change', function(e) {
   var data = $('#signature').jSignature('getData');
   $("#signature_capture").val(data);
-  .removeAttr('disabled');
+  $('#submit').removeAttr('disabled');
 });
   
 $('#reset').click(function(e){
@@ -218,11 +218,9 @@ $('#input-html').bind('blur', function(e) {
   $('#html_capture').val($(this).val());
 });
 
-
 randomFileName = 'contract-'+makeId() +'.php'; 
 $('#signature-form small em').html(randomFileName); 
 $('#file_name').val(randomFileName); 
-
 
 function makeId() {
     var text = "";
