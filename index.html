@@ -215,11 +215,13 @@ $('#input-html').bind('blur', function(e) {
   $('#html_capture').val($(this).val());
 });
 
-// Set random filename
-randomFileName = 'abc';
-randomFileName = 'contract-'+randomFileName+'.php';
-$('#signature-form small em').html(randomFileName); 
-$('#file_name').val(randomFileName);
+$( document ).ready(function() {
+  // Set random filename
+  randomFileName = 'abc';
+  randomFileName = 'contract-'+randomFileName+'.php'; alert(randomFileName);
+  $('#signature-form small em').html(randomFileName); 
+  $('#file_name').val(randomFileName); alert(randomFileName);
+});
   
 
 $('body').niceScroll({
