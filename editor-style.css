@@ -3,6 +3,7 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800);
 body { 
+  font-size:16px;
   max-width: 600px;
   margin: 0em auto;
   background: #fff;
