@@ -201,7 +201,6 @@ var datapair = $sigdiv.jSignature('getData', 'svgbase64');
 $('#signature').bind('change', function(e) {
   var data = $('#signature').jSignature('getData');
   $("#signature_capture").val(data);
-  //$("#signature_capture").show();
 });
   
 $('#reset').click(function(e){
@@ -218,9 +217,9 @@ $('#input-html').bind('blur', function(e) {
 
 // Set random filename
 randomFileName = 'abc';
-fileName = 'contract-'+randomFileName+'.php';
-$('#signature-form small em').html(fileName); 
-$('#file_name').val(fileName);
+randomFileName = 'contract-'+randomFileName+'.php';
+$('#signature-form small em').html(randomFileName); 
+$('#file_name').val(randomFileName);
   
 
 $('body').niceScroll({
