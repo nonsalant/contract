@@ -9,13 +9,11 @@ if( $part4 ) {
   $filename = stripslashes ( $_POST['file_name'] );
   if (!$filename) { $filename = 'contract.php'; }
   
-  header("Content-Disposition: attachment; filename=".$filename);    
-  header("Content-Type: text/force-download");
+  header('Content-Disposition: attachment; filename='.$filename);    
+  header('Content-Type: text/force-download');
   header('Content-Type: text/plain');
-  header("Content-Type: application/download");
-  header("Content-Description: File Transfer");   
-  //header('Content-Type: text/plain');
-  //header("Content-Type: text/download");
+  header('Content-Type: application/download');
+  header('Content-Description: File Transfer');
   
   echo $part1.$part2.$part3.$part4.$part5;
 }
