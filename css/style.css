@@ -171,7 +171,7 @@ button:hover, button:focus {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff2f2f2', endColorstr='#ffcccccc', GradientType=0);
     zoom: 1;
 }
-button:hover .icon {
+button:not([disalbed]):hover .icon {
   fill:#C02942;
 }
 button {
