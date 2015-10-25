@@ -3,12 +3,10 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800);
 body { 
-  font-family: 'Libre Baskerville', serif; 
-  font-size:16px;
-  line-height:1.5em;
-  color:#000;
-  margin:0;
-  background:#fff;
+  max-width: 600px;
+  margin: 0em auto;
+  background: #fff;
+  padding: 2em;
 }
 @media (max-width:400px) {
   body { font-size:14px; }
