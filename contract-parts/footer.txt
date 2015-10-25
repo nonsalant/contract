@@ -1,0 +1,83 @@
+<p>
+    <img id="hk" class="results-page-only" src="data:image/png;base64,">
+  </p>
+
+  <form method="post" class="noprint" id="signature-form">
+    <div id="signature"></div>
+      <div class="buttons">
+        <button id="reset" type="button">
+        Reset
+        </button>
+        <button id="submit" type="submit">
+        Done &rarr;
+        </button>
+      </div>
+    <input type="hidden" id="signature_capture" name="contractdata" />
+  </form>
+
+  <div id="date-ip" class="results-page-only hidden">
+    <strong>Signed on:</strong> <?php echo date('j F Y'); ?>
+    <br><strong>IP address:</strong> 
+    <?php echo $ip; ?><br>
+  </div>
+  
+  <div class="results-page-only hidden noprint" id="print-pdf">
+    <button id="print" type="button" class="button-secondary" onclick="printContract()">
+    Print contract
+    </button> 
+    <button id="pdf" type="button" class="button-secondary" onclick="generatePdf()">
+    Download as PDF
+    </button>
+  </div>
+
+</div> <!--#content-->
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<!-- https://github.com/brinley/jSignature/blob/master/README.md -->
+<script src="https://cdn.rawgit.com/willowsystems/jSignature/master/libs/jSignature.min.js"></script>
+
+<script>
+$(document).ready(function() { 
+  $('#signature').jSignature();
+  var $sigdiv = $('#signature');
+  var datapair = $sigdiv.jSignature('getData', 'svgbase64');
+
+  $('#signature').bind('change', function(e) {
+    var data = $('#signature').jSignature('getData');
+    $("#hk").attr('src',data);  
+  });
+  
+  $('#reset').click(function(e){
+    $('#signature').jSignature('clear');
+    var data = $('#signature').jSignature('getData');
+    $("#hk").attr('src',data);
+    $("#signature_capture").val('');
+    e.preventDefault();
+  });
+
+  $('#submit').click(function(e) {
+    $('#signature-form').hide();
+    $('.results-page-only').show();
+    pageHtml = '<!DOCTYPE html><html>' + $('html').html().toString() + '</html>';
+    $("#signature_capture").val(pageHtml);
+    // To avoid showing the Print/PDF buttons before the page is processed
+    $('#print-pdf, #date-ip').html('<h2 id="loading" style="text-align:center; display:none;">Saving Contract...</h2>');
+    $('#print-pdf, #date-ip').append('<p id="loading2" style="text-align:center; display:none;">This should only take a few seconds</p>');
+    $('#loading').slideDown(300, function() {
+  	$('#loading2').delay(2000).slideDown(300);
+  });
+}); 
+ 
+});
+
+function printContract() {
+  window.print();
+}
+function generatePdf() {
+  // http://pdfcrowd.com/save-to-pdf/ 
+  window.location.href = '//pdfcrowd.com/url_to_pdf/?use_print_media=1&height=-1&pdf_name=<?php echo $pdfName; ?>';
+}
+</script>
+
+</body>
+</html>
