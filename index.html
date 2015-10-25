@@ -215,14 +215,19 @@ $('#input-html').bind('blur', function(e) {
   $('#html_capture').val($(this).val());
 });
 
-$( document ).ready(function() {
-  // Set random filename
-  randomFileName = 'abc';
-  randomFileName = 'contract-'+randomFileName+'.php'; alert(randomFileName);
+//$( document ).ready(function() {
+  randomFileName = 'contract-'+makeId() +'.php'; 
   $('#signature-form small em').html(randomFileName); 
-  $('#file_name').val(randomFileName); alert(randomFileName);
-});
-  
+  $('#file_name').val(randomFileName); 
+//});
+
+function makeId() {
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    for( var i=0; i < 5; i++ )
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+    return text;
+}
 
 $('body').niceScroll({
     cursoropacitymin: 0.5,
@@ -236,7 +241,7 @@ $('body').niceScroll({
 });
 
 $(document).scrollsnap({
-  snaps: '#mceu_13, #input-html_ifr',
+  snaps: '#mceu_13',
   proximity: 85
 });
 
