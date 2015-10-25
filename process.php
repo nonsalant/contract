@@ -8,11 +8,13 @@ if( $part4 ) {
   
   echo $part1.$part2.$part3.$part4.$part5;
 }
-else echo 'no signature received';
-// We'll be outputting a PDF
-header('Content-Type: text/force-download');
+else {
+  echo 'no signature received';
+  die();
+}
 
-// It will be called downloaded.pdf
+header('Content-Type: text/plain');
+header("Content-Type: text/download");
 header('Content-Disposition: attachment; filename="contract123.txt"');
 
 ?>
