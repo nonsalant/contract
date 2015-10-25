@@ -3,7 +3,7 @@
 // Don't use this file. Use contract.php instead.
 // This file is only used for testing, it does not delete itself and does not redirect to the HTML version once the contract is signed.
 
-$email = "nonsalant@gmail.com"; // Notify when contract is signed
+$email = ""; // Notify when contract is signed
 
 $phpName  = basename($_SERVER['PHP_SELF']) ? basename($_SERVER['PHP_SELF']) : 'index.php';
 $fileName = substr($phpName , 0, -4); // without extension
