@@ -4,7 +4,7 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800);
 body { 
   font-family: 'Libre Baskerville', serif; 
-  font-size:16px;
+  font-size:14px;
   line-height:1.5em;
   max-width: 600px;
   margin: 0em auto;
@@ -12,7 +12,7 @@ body {
   padding: 2em;
 }
 @media (max-width:400px) {
-  body { font-size:14px; }
+  body { font-size:12px; }
 }
 a {
   color:#0a3666;
