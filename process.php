@@ -1,8 +1,8 @@
 <?php
-$part4 = stripslashes ( $_POST['signaturedata'] ); 
+$part4 = stripslashes ( $_POST['signature_capture'] ); 
 if( $part4 ) {
   $part1 = file_get_contents('contract-parts/header.txt');
-  $part2 = stripslashes ( $_POST['contracthtml'] ); 
+  $part2 = stripslashes ( $_POST['html_capture'] ); 
   $part3 = file_get_contents('contract-parts/middle.txt');
   $part5 = file_get_contents('contract-parts/footer.txt');
   
