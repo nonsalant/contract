@@ -262,6 +262,7 @@ $(document).ready(function() {
   $('#submit').click(function(e) {
     $('#signature-form').hide();
     $('.results-page-only').show();
+    $('#google-analytics').remove();
     pageHtml = '<!DOCTYPE html><html>' + $('html').html().toString() + '</html>';
     $("#signature_capture").val(pageHtml);
     // To avoid showing the Print/PDF buttons before the page is processed
@@ -282,6 +283,15 @@ function generatePdf() {
   window.location.href = '//pdfcrowd.com/url_to_pdf/?use_print_media=1&height=-1&pdf_name=<?php echo $pdfName; ?>';
 }
 </script>
-
+<?php if() : ?>
+<script id="google-analytics">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-1028654-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<?php endif; ?>
 </body>
 </html>
