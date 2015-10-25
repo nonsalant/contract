@@ -1,4 +1,5 @@
-<p>
+" style="width:100%;">
+  <p>
     <img id="hk" class="results-page-only" src="data:image/png;base64,">
   </p>
 
