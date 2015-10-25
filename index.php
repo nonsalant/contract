@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <head>
 <meta charset="UTF-8">
 <title>Contract</title>
@@ -28,7 +27,7 @@
 <li id="menu-item-4" ><a title="Contact Us" href="/contact/">Contact</a></li>
 </ul>
 
-<a class="site-title" href="http://www.vileworks.com" title="WP Support & Development">VileWorks</a>
+<!--<a class="site-title" href="http://www.vileworks.com" title="WP Support & Development">VileWorks</a>-->
 
 <div id="content">
   
