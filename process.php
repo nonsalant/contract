@@ -13,8 +13,13 @@ else {
   die();
 }
 
+header("Content-Disposition: attachment; filename=contract123.txt");    
+header("Content-Type: text/force-download");
 header('Content-Type: text/plain');
-header("Content-Type: text/download");
+header("Content-Type: application/download");
+header("Content-Description: File Transfer");   
+//header('Content-Type: text/plain');
+//header("Content-Type: text/download");
 header('Content-Disposition: attachment; filename="contract123.txt"');
 
 ?>
