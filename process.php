@@ -13,6 +13,6 @@ else echo 'no signature received';
 header('Content-Type: text/force-download');
 
 // It will be called downloaded.pdf
-header('Content-Disposition: attachment; filename="contract123.php"');
+header('Content-Disposition: attachment; filename="contract123.txt"');
 
 ?>
