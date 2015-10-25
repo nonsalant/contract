@@ -1,0 +1,177 @@
+<?php
+/* 
+
+Single File PHP Contract
+
+Upload this single file to your server and send a link to your client. 
+(You can rename this php, for example if there are other contracts in the same folder.)
+
+Once they have signed, this php file will delete itself and leave behind an HTML version 
+of the signed contract that can be printed or downloaded as a PDF.
+
+*/ 
+
+$email = ""; // Notify when contract is signed
+
+$phpName  = basename($_SERVER['PHP_SELF']) ? basename($_SERVER['PHP_SELF']) : 'index.php';
+$fileName = substr($phpName , 0, -4); // without extension
+$htmlName = $fileName.'.html';
+$pdfName = $fileName.'.pdf';
+$contractData = stripslashes ( $_POST['contractdata'] ); 
+$ip = get_client_ip_env();
+
+// If the HTML file exists, redirect to it
+redirectIfExists(); 
+
+// If the contractdata was received in the form, put it in an html file
+if ($contractData) {
+	file_put_contents($htmlName,$contractData);
+	$msg = 'Your contract was signed. You can view it here: ' . getUrl();
+	if ($email) mail($email,'Contract signed!',$msg);
+	redirectIfExists();
+} 
+
+// If html file exists, delete php file, redirect to html, and die.
+function redirectIfExists() {
+	global $htmlName;
+	if ( file_exists($htmlName ) ) {
+		unlink(__FILE__); // the php file deteles itself from the server
+		header('Location: '.$htmlName.'#hk'); 
+		die();
+	}
+}
+// Function to get the client ip address
+function get_client_ip_env() {
+	$ipaddress = '';
+	if (getenv('HTTP_CLIENT_IP'))
+		$ipaddress = getenv('HTTP_CLIENT_IP');
+	else if(getenv('HTTP_X_FORWARDED_FOR'))
+		$ipaddress = getenv('HTTP_X_FORWARDED_FOR');
+	else if(getenv('HTTP_X_FORWARDED'))
+		$ipaddress = getenv('HTTP_X_FORWARDED');
+	else if(getenv('HTTP_FORWARDED_FOR'))
+		$ipaddress = getenv('HTTP_FORWARDED_FOR');
+	else if(getenv('HTTP_FORWARDED'))
+		$ipaddress = getenv('HTTP_FORWARDED');
+	else if(getenv('REMOTE_ADDR'))
+		$ipaddress = getenv('REMOTE_ADDR');
+	else
+		$ipaddress = 'UNKNOWN';
+	return $ipaddress;
+}
+// Function that returns the current file URL and replaces the .php extension with .html
+function getUrl() {
+	$url  = @( $_SERVER["HTTPS"] != 'on' ) ? 'http://'.$_SERVER["SERVER_NAME"] :  'https://'.$_SERVER["SERVER_NAME"];
+	$url .= ( $_SERVER["SERVER_PORT"] !== 80 ) ? ":".$_SERVER["SERVER_PORT"] : "";
+	$url .= $_SERVER["REQUEST_URI"];
+       $url = substr($url,0,-4) . '.html'; 
+	return $url;
+}
+
+?><!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>Contract</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<style>
+@import url(http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic);
+@import url(http://fonts.googleapis.com/css?family=Arapey);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800);
+body { 
+    font-family: 'Libre Baskerville', serif; 
+    font-size:14px;
+    line-height:1.5em;
+    color:#000;
+    margin:0;
+    background:#fff;
+}
+@media (max-width:600px) {
+    body { font-size:12px; }
+}
+@media print {
+   .noprint { display:none !important; }
+}
+.hidden { 
+    display:none; 
+}
+#content {
+    max-width: 600px;
+    margin: 0 auto;
+    margin-bottom: 3em;
+    padding: 0 2em;
+    background: #fff;
+}
+h1 {
+    font-size: 2em;
+    line-height: 1.2em;
+    letter-spacing: 0.15em;
+    font-family: 'Arapey', serif;
+    font-weight: normal;
+    margin: 1em 0;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    border: solid 1px;
+    border-width: 1px 0;
+    padding: .5em 0;
+}
+h2 {
+    font-size:1.2em;
+    line-height:1.2em;
+    letter-spacing:.05em;
+    font-family:'Open Sans Condensed',sans-serif;
+    font-weight:700;
+}
+#signature {
+    width:auto;
+    border:dashed 2px #53777A;
+    margin:0;
+    text-align:center;
+}
+#hk,
+#hk-contractor {
+    max-width:333px;
+    display:block;
+}
+#hk {
+    display:none;
+}
+#date-ip {
+    font-size:1.2em;
+    line-height:1.2em;
+    letter-spacing:.05em;
+    font-family:'Open Sans Condensed',sans-serif;
+    font-weight:400;
+}
+#print-pdf {
+    text-align:center; 
+    padding:1.5em 0; 
+    margin-top:2em; 
+    border-top:solid 1px #ccc;
+}
+.buttons { 
+    text-align:center; 
+    margin:1.5em auto;
+}
+button {
+    margin: 0 .5em;
+    font-size:1.2em;
+    line-height:1.5em;
+    /* letter-spacing:.05em; */
+    font-family: 'Open Sans Condensed',sans-serif;
+    font-weight: 700;
+    text-transform:uppercase;
+    color: #0a3666;
+}
+button:hover {
+    color: #136fd2;
+}
+</style>  
+</head>
+
+<body>
+
+<div id="content">
