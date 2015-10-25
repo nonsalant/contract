@@ -6,8 +6,8 @@ if( $part4 ) {
   $part3 = file_get_contents('contract-parts/middle.txt');
   $part5 = file_get_contents('contract-parts/footer.txt');
   
-  $filename = stripslashes ( $_POST['file_name'] ); 
-  if (!$filename) $filename = 'contract.php';
+  $filename = stripslashes ( $_POST['file_name'] ); die($filename);
+  if (!$filename) { $filename = 'contract.php'; }
   
   header("Content-Disposition: attachment; filename="+$filename);    
   header("Content-Type: text/force-download");
@@ -16,6 +16,7 @@ if( $part4 ) {
   header("Content-Description: File Transfer");   
   //header('Content-Type: text/plain');
   //header("Content-Type: text/download");
+  
   echo $part1.$part2.$part3.$part4.$part5;
 }
 else {
