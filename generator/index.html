@@ -33,15 +33,17 @@
   
   <h1 style="text-transform:none; letter-spacing: 0.075em; font-size:2.5em;">Signable contract.php</h1>
   <hr>
-  <h2 style="text-align:center;">You FTP it to your server and send your client  <a title="demo.php" href="demo.php" target="_blank">a link to it&#8230;</a></h2>
+  <h2 style="text-align:center;">You FTP it to your server and send your client  a link to it&#8230;</h2>
   <h2 style="text-align:center; font-family:'Open Sans Condensed', sans; font-weight:300; line-height:1.5em; letter-spacing:.05em">
     Once <strong>signed</strong><svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 8 8">
       <path d="M6 0l-1 1 2 2 1-1-2-2zm-2 2l-4 4v2h2l4-4-2-2z" />
     </svg> by your client, this php file will delete itself from your server and leave behind an <a title="demo.html" href="demo.html" target="_blank">HTML version</a> of the contract 
      that can be 
+    <a id="print-preview" title="Print demo" href="demo.php" target="_blank">
     <strong>printed</strong><svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 8 8">
       <path d="M2 0v2h4v-2h-4zm-1.91 3c-.06 0-.09.04-.09.09v2.81c0 .05.04.09.09.09h.91v-2h6v2h.91c.05 0 .09-.04.09-.09v-2.81c0-.06-.04-.09-.09-.09h-7.81zm1.91 2v3h4v-3h-4z" />
     </svg> 
+    </a>
     or downloaded as a <strong>PDF</strong><svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 8 8">
       <path d="M0 0v8h7v-4h-4v-4h-3zm4 0v3h3l-3-3zm-3 2h1v1h-1v-1zm0 2h1v1h-1v-1zm0 2h4v1h-4v-1z" />
     </svg>
@@ -231,11 +233,12 @@ function makeId() {
 }
 
 
-$('#print-preview').click(function(){
+$('#print-preview').click(function(e){
   $("<iframe>")
     .hide()
     .attr("src", "../demo.html")
     .appendTo("body");
+  e.preventDefault();
 });
 
 $('body').niceScroll({
