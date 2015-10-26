@@ -286,7 +286,7 @@ function generatePdf() {
 // If it's in an iframe print page. Used for demo on generator page.
 var isInIframe = (window.location != window.parent.location) ? true : false;
 $(document).ready(function () {
-    if isInIframe window.print();
+    if (isInIframe) window.print();
 });
 
 </script>
