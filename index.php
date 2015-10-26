@@ -1,4 +1,4 @@
 <?php
-  header( 'Location: /generator/' );
+  header( 'Location: http://www.vileworks.com/contract/generator/' );
   exit();
 ?>
