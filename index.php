@@ -1,4 +1,4 @@
 <?php
-  header( 'Location: /generator/' );
+  header( 'Location: generator/' );
   exit();
 ?>
