@@ -183,15 +183,15 @@ You can generate a new signature at www.cdpn.io/JYpjvE
 <script src="http://www.vileworks.com/combined.js"></script>
 <script>
 tinymce.init({
-    selector: "#input-html",
-    content_css : "http://vileworks.com/contract/generator/css/editor-style.css", 
-    min_height: 300,
-    plugins: [
-        "advlist autolink lists link image charmap print preview anchor",
-        "searchreplace visualblocks code fullscreen",
-        "insertdatetime media table contextmenu paste"
-    ],
-    toolbar: "code undo redo | styleselect | bold italic | alignleft aligncenter alignright | bullist numlist outdent indent"
+  selector: "#input-html",
+  content_css : "http://vileworks.com/contract/generator/css/editor-style.css", 
+  min_height: 300,
+  plugins: [
+    "advlist autolink lists link image charmap print preview anchor",
+    "searchreplace visualblocks code fullscreen",
+    "insertdatetime media table contextmenu paste"
+  ],
+  toolbar: "code undo redo | styleselect | bold italic | alignleft aligncenter alignright | bullist numlist outdent indent"
 });
 
 $('#signature').jSignature();
@@ -223,22 +223,30 @@ $('#signature-form small em').html(randomFileName);
 $('#file_name').val(randomFileName); 
 
 function makeId() {
-    var text = "";
-    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-    for( var i=0; i < 5; i++ )
-        text += possible.charAt(Math.floor(Math.random() * possible.length));
-    return text;
+  var text = "";
+  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  for( var i=0; i < 5; i++ )
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+  return text;
 }
 
+
+$('#print-preview').click(function(){
+  $("<iframe>")
+    .hide()
+    .attr("src", "../demo.html")
+    .appendTo("body");
+});
+
 $('body').niceScroll({
-    cursoropacitymin: 0.5,
-    cursoropacitymax: 1,
-    cursorwidth: "15px",
-    cursorborder: "1px solid rgba(255,255,255,0.5)", // css definition for cursor border
-    cursorborderradius: "3px", // border radius in pixel for cursor
-    scrollspeed: 60, // scrolling speed
-    mousescrollstep: 60, // scrolling speed with mouse wheel (pixel)
-    bouncescroll: true
+  cursoropacitymin: 0.5,
+  cursoropacitymax: 1,
+  cursorwidth: "15px",
+  cursorborder: "1px solid rgba(255,255,255,0.5)", // css definition for cursor border
+  cursorborderradius: "3px", // border radius in pixel for cursor
+  scrollspeed: 60, // scrolling speed
+  mousescrollstep: 60, // scrolling speed with mouse wheel (pixel)
+  bouncescroll: true
 });
 
 $(document).scrollsnap({
