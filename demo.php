@@ -282,6 +282,13 @@ function generatePdf() {
   // http://pdfcrowd.com/save-to-pdf/ 
   window.location.href = '//pdfcrowd.com/url_to_pdf/?use_print_media=1&height=-1&pdf_name=<?php echo $pdfName; ?>';
 }
+
+// If it's in an iframe print page. Used for demo on generator page.
+var isInIframe = (window.location != window.parent.location) ? true : false;
+$(document).ready(function () {
+    if isInIframe window.print();
+});
+
 </script>
 <?php if ( !$contractData ) : ?>
 <script id="google-analytics">
