@@ -4,7 +4,7 @@
 - Can only be singed once
 - Comes with "Print" and "Download as PDF" buttons
 
-**Signable demo:** http://vileworks.com/contract/demo.php
+**Signable demo:** http://vileworks.com/contract/demo.php <br>
 **Generate a new contract online:** http://www.vileworks.com/contract/generator/
 
 Upload the **contract.php** file to your server and send a link to your client. 
