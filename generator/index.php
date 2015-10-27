@@ -87,7 +87,7 @@
   <form method="post" id="signature-form" action="template/index.php">
     <p>Get the contract and upload it to your server using FTP.</p>
     <button id="submit">
-      <svg class="large-icon">
+      <svg class="icon">
         <use xlink:href="css/sprite.svg#download"></use>
       </svg> Download Contract
     </button> <small><em>contract.php</em> (you can rename this)</small>
