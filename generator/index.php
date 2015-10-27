@@ -96,8 +96,8 @@
     <input type="hidden" id="html_capture" name="html_capture">
   </form>
   
-  <svg xmlns="http://www.w3.org/2000/svg" class="large-icon" viewBox="0 0 8 8">
-    <path d="M0 0v1l4 2 4-2v-1h-8zm0 2v4h8v-4l-4 2-4-2z" transform="translate(0 1)" />
+  <svg class="large-icon" viewBox="0 0 8 8">
+    <use xlink:href="css/sprite.svg#download"></use>
   </svg>
   <h2>IV. Ask your client to review and sign.</h2>
   <p>Send your client a link to the contract (hosted under your domain).
