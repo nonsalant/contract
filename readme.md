@@ -1,4 +1,8 @@
-# Single File PHP Contract
+# Signable contract in a single file
+
+- Host it on your own domain
+- Can only be singed once
+- Comes with "Print" and "Download as PDF" buttons
 
 **Signable demo:** http://vileworks.com/contract/demo.php
 
