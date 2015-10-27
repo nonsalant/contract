@@ -13,4 +13,4 @@ Once they have signed, this php file will delete itself
 and leave behind an HTML version of the signed contract 
 that can be printed or downloaded as a PDF.
 
-(MIT License)[http://www.opensource.org/licenses/mit-license.php]
+[MIT License](http://www.opensource.org/licenses/mit-license.php)
