@@ -43,20 +43,20 @@
     </a>
     by your client, this php file will delete itself from your server and leave behind an HTML version of the contract that can be 
     <a id="print-preview" title="Print demo" href="../demo.html" target="_blank">
-      <strong>printed</strong><svg class="icon">
+      <strong>printed</strong><svg class="icon" viewBox="0 0 8 8">
         <use xlink:href="css/sprite.svg#print"></use>
       </svg> 
     </a>
     or downloaded as a 
     <a title="PDF demo" href="../demo.pdf" target="_blank">
-      <strong>PDF</strong><svg class="icon">
+      <strong>PDF</strong><svg class="icon" viewBox="0 0 8 8">
         <use xlink:href="css/sprite.svg#document"></use>
       </svg>
     </a>
   </h2>
   <hr>
   
-  <svg class="large-icon">
+  <svg class="large-icon" viewBox="0 0 8 8">
     <use xlink:href="css/sprite.svg#code"></use>
   </svg>
   <h2>I. Contract HTML</h2>
@@ -71,7 +71,7 @@
     <!-- You can generate a new signature at www.cdpn.io/JYpjvE -->
   </textarea>
   
-  <svg class="large-icon">
+  <svg class="large-icon" viewBox="0 0 8 8">
     <use xlink:href="css/sprite.svg#pencil"></use>
   </svg>
   <h2>II. Your signature</h2>
@@ -80,14 +80,14 @@
   
   <div id="signature"></div>
 
-  <svg class="large-icon">
+  <svg class="large-icon" viewBox="0 0 8 8">
     <use xlink:href="css/sprite.svg#cloud"></use>
   </svg>
   <h2>III. Download & deploy</h2>
   <form method="post" id="signature-form" action="template/index.php">
     <p>Get the contract and upload it to your server using FTP.</p>
     <button id="submit">
-      <svg class="icon">
+      <svg class="icon" viewBox="0 0 8 8">
         <use xlink:href="css/sprite.svg#download"></use>
       </svg> Download Contract
     </button> <small><em>contract.php</em> (you can rename this)</small>
@@ -108,32 +108,32 @@
   <h3 style="text-align:center;">Resources</h3>
   <ul class="resources two-columns">
     <li><a target="_blank" href="http://vileworks.com/contract/demo.php">
-      view a signable <strong>demo <svg class="icon">
+      view a signable <strong>demo <svg class="icon" viewBox="0 0 8 8">
         <use xlink:href="css/sprite.svg#eye"></use>
       </svg></strong></a>
     </li>
     <li><a target="_blank" href="https://github.com/nonsalant/contract/blob/master/contract.php">
-        get contract.php from <strong>github <svg class="icon">
+        get contract.php from <strong>github <svg class="icon" viewBox="0 0 8 8">
         <use xlink:href="css/sprite.svg#command-line"></use>
         </svg></strong></a>
     </li>
     <li><a target="_blank" href="https://github.com/nonsalant/contract/issues">
-      report an <strong>issue <svg class="icon">
+      report an <strong>issue <svg class="icon" viewBox="0 0 8 8">
         <use xlink:href="css/sprite.svg#bug"></use>
       </svg></strong></a>
     </li>
     <li><a target="_blank" href="http://www.wpbeginner.com/showcase/6-best-ftp-clients-for-wordpress-users/">
-      recommended <strong>ftp clients <svg class="icon">
+      recommended <strong>ftp clients <svg class="icon" viewBox="0 0 8 8">
         <use xlink:href="css/sprite.svg#globe"></use>
       </svg></strong></a>
     </li>
     <li><a target="_blank" href="http://www.smashingmagazine.com/2012/08/free-download-useful-legal-documents-for-designers-pdf/">
-      useful <strong>legal documents <svg class="icon">
+      useful <strong>legal documents <svg class="icon" viewBox="0 0 8 8">
         <use xlink:href="css/sprite.svg#globe"></use>
       </svg></strong></a>
     </li>
     <li><a target="_blank" href="http://www.wikihow.com/Write-a-Freelance-Contract">
-      wikihow: <strong>freelance contract <svg class="icon">
+      wikihow: <strong>freelance contract <svg class="icon" viewBox="0 0 8 8">
         <use xlink:href="css/sprite.svg#globe"></use>
       </svg></strong></a>
     </li>
