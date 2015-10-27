@@ -43,8 +43,8 @@
     </a>
     by your client, this php file will delete itself from your server and leave behind an HTML version of the contract that can be 
     <a id="print-preview" title="Print demo" href="../demo.html" target="_blank">
-      <strong>printed</strong><svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 8 8">
-      <path d="M2 0v2h4v-2h-4zm-1.91 3c-.06 0-.09.04-.09.09v2.81c0 .05.04.09.09.09h.91v-2h6v2h.91c.05 0 .09-.04.09-.09v-2.81c0-.06-.04-.09-.09-.09h-7.81zm1.91 2v3h4v-3h-4z" />
+      <strong>printed</strong><svg class="icon">
+        <use xlink:href="css/sprite.svg#print"></use>
       </svg> 
     </a>
     or downloaded as a 
