@@ -12,7 +12,7 @@ body {
 @media (max-width:700px) {
   body { font-size:14px; }
 }
-a .icon { 
+a, a .icon { 
   color:#136fd2; 
   color:#0a3666;
   fill:#0a3666;
