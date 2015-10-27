@@ -12,10 +12,15 @@ body {
 @media (max-width:700px) {
   body { font-size:14px; }
 }
-a { 
+aa:hover .icon { 
   color:#136fd2; 
   color:#0a3666;
+  fill:#0a3666;
   text-decoration:none;
+}
+a:hover,a:hover .icon {
+  color:#C02942;
+  fill:#C02942;
 }
 a:hover {
   color:#136fd2;
@@ -245,11 +250,11 @@ button {
   text-align:right;
 }
 .resources a {
-  color:#000;
+  /*color:#000;*/
 }
 .resources a:hover, .resources a:hover .icon {
-  color:#C02942;
-  fill:#C02942;
+  /*color:#C02942;*/
+  /*fill:#C02942;*/
 }
 @media (min-width:800px) {
   .two-columns {
