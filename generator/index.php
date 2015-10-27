@@ -67,6 +67,7 @@
   </p>
   <textarea id="input-html">
     <?php include('template/default-contract.html); ?>
+    
     <!-- You can generate a new signature at www.cdpn.io/JYpjvE -->
   </textarea>
   
