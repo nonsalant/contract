@@ -12,7 +12,7 @@ body {
 @media (max-width:700px) {
   body { font-size:14px; }
 }
-aa:hover .icon { 
+a .icon { 
   color:#136fd2; 
   color:#0a3666;
   fill:#0a3666;
@@ -20,7 +20,8 @@ aa:hover .icon {
 }
 a:hover,a:hover .icon {
   color:#C02942;
-  fill:#C02942;
+  color:#136fd2;
+  fill:#136fd2;
 }
 a:hover {
   color:#136fd2;
