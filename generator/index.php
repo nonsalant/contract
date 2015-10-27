@@ -37,8 +37,8 @@
   <h2 style="text-align:center; font-family:'Open Sans Condensed', sans; font-weight:300; line-height:1.5em; letter-spacing:.05em">
     Once 
     <a title="Signable demo" href="../demo.php" target="_blank">
-      <strong>signed</strong><svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 8 8">
-      <path d="M6 0l-1 1 2 2 1-1-2-2zm-2 2l-4 4v2h2l4-4-2-2z" />
+      <strong>signed</strong><svg class="icon" viewBox="0 0 8 8">
+        <use xlink:href="css/sprite.svg#pencil"></use>
       </svg> 
     </a>
     by your client, this php file will delete itself from your server and leave behind an HTML version of the contract that can be 
