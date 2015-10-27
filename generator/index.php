@@ -66,54 +66,9 @@
   [Drag corner to resize editor box.]
   </p>
   <textarea id="input-html">
-  <h1>Contract of work for website design and development</h1>
-  <p>Between <b>Alice</b>, referred to below as "Designer",
-  and <b>Bob</b>, referred to below as "Customer".</p>
-  
-  <h2>1. Agreement of parties</h2>
-  <p>Customer hires Designer to redesign the current website, <b>bobswebsite.com</b>, 
-    for the estimated total price of <b>$PRICE</b>.</p>
-  <p>The agreed payment plan is at the end of the document.</p>
-  <p>Designer agrees to provide quality service and to answer to the 
-    Customer’s requests in a timely manner. The services provided will be:</p>      
-  <ol style="list-style-type: lower-alpha">
-    <li>service1;</li>
-    <li>service2;</li>
-    <li>service3;</li>
-    <li>service4.</li>
-  </ol>
-
-<h2>2. Legal matters and copyrights</h2>
-<p>The Customer will guarantee to the Designer that any elements of text, graphics, photos, trademarks or other artwork that the Customer provides for inclusion in the website are either owned by him or that he has the permission to use them. When the Designer receives the final payment, copyright is automatically assigned as follows:
-Customer will own the graphics, virtual elements, text content photographs and other data provided, unless someone else owns them.
-The Designer owns the XHTML markup, CSS and other code and he licenses it to the Customer for use on only this project.
-Designer can reserve the right to display, with Customer’s consent, the work as part of the portfolio.</p>  
-
-<h2>3. Term and termination</h2>
-<ol style="list-style-type: lower-alpha">
-  <li>This contract shall commence upon the first payment, as outlined in the payment plan and shall remain effective until the services are completed and delivered.</li>
-  <li>This contract may be terminated at any time by either party effective immediately upon notice, or the mutual agreement of the parties.</li>
-  <li>In the event of termination, Designer shall be compensated for the service performed through the date of termination in the amount (a) any advanced payment, (b) 
-    a prorated portion of the fees due, or (c) hourly fees for work performed by the Designer at the time of the termination, whichever is greater, together with any 
-    additional costs incurred trough and up to the date of cancellation.</li>
-  <li>This Contract may be modified by parties; any modification must be in writing.</li>
-  <li>All notices to be given hereunder shall be transmitted in writing by electronic mail and will only be effective upon return confirmation.</li>
-</ol>
-
-<h2>4. Force majeure</h2>
-<p>Designer shall not be deemed in breach of this contract if Designer is unable to complete the services or any portion by reason of fire, earthquake, labor dispute, illness, internet breaches or any technical issues that may appear beyond Designer’s control. Upon occurrence of any Force Majeure Event, Designer shall give notice to the Customer of his inability to perform or of delay in completing the services and shall propose revisions to the schedule for completion of the services.</p>  
-
-<h2>5. Payment plan</h2>
-<p>Payment shall be done as follows:</p>
-<ul>
-  <li>50% of total estimated fee will be required to commence work, after this contract has been approved and signed by both parties.</li>
-  <li>50% upon project closure.</li>
-</ul>
-<p>Any extra time required outside the project timeline/services mentioned at point 1 of this contract, will be billed at a rate
-of <b>$FEE</b> per hour.</p>
-<!--
-You can generate a new signature at www.cdpn.io/JYpjvE
---></textarea>
+    <?php include('template/default-contract.html); ?>
+    <!-- You can generate a new signature at www.cdpn.io/JYpjvE -->
+  </textarea>
   
   <svg xmlns="http://www.w3.org/2000/svg" class="large-icon right" viewBox="0 0 8 8">
     <path d="M6 0l-1 1 2 2 1-1-2-2zm-2 2l-4 4v2h2l4-4-2-2z" />
