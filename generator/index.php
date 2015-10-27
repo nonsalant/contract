@@ -137,15 +137,17 @@
         <use xlink:href="css/sprite.svg#globe"></use>
       </svg></strong></a>
     </li>
-    
   </ul>  
   
   <hr>
-  
-  <p><strong>Disclaimer:</strong> 
-    You generate, sign, and host this file yourself and you are responsible for its contents and how you use it. This is an open source project, the code for it, including the code for the generator, is freely available at <a href="https://github.com/nonsalant/contract/">Github</a>. We don't store anything you do on this page, to get a new contract you will have to generate and download it again.
+  <p><strong>Disclaimer:</strong>You generate, sign, and host this file yourself and you are responsible 
+  for its contents and how you use it. This is an open source project, the code for it, including the code 
+  for the generator, is freely available at <a href="https://github.com/nonsalant/contract/">Github</a>. 
+  We don't store anything you do on this page, to get a new contract you will have to generate and download it again.
   </p>
+  <hr>
   <p class="footer">Created by <a href="http://twitter.com/nonsalant/">Stefan Matei</a> for <a href="http://vileworks.com">VileWorks.com</a></p>
+  
 </div> <!--#content-->
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
