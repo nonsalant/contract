@@ -1,4 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8" style="fill:#222;
+  width:12px; height:12px;
+  margin:.075em .1em;
+  margin-right:.2em;">
   <symbol id="pencil">
     <path d="M6 0l-1 1 2 2 1-1-2-2zm-2 2l-4 4v2h2l4-4-2-2z" />
   </symbol>
