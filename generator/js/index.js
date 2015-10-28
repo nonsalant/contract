@@ -1,5 +1,5 @@
 tinymce.init({
-  //selector: "#input-html",
+  selector: "#input-html",
   content_css : "http://vileworks.com/contract/generator/css/editor-style.css", 
   min_height: 300,
   plugins: [
@@ -9,26 +9,33 @@ tinymce.init({
   ],
   toolbar: "code undo redo | styleselect | bold italic | alignleft aligncenter alignright | bullist numlist outdent indent"
 });
+
+$('#html_capture').val($('#input-html').val());
+$('#input-html').bind('change', function(e) {
+  $('#html_capture').val($(this).val());
+});
+
 $('#signature').jSignature();
 var $sigdiv = $('#signature');
 var datapair = $sigdiv.jSignature('getData', 'svgbase64');
+
+// Submit
 $('#submit').attr('disabled','disabled');
 $('#signature').bind('change', function(e) {
   var data = $('#signature').jSignature('getData');
   $("#signature_capture").val(data);
   $('#submit').removeAttr('disabled');
 });
-  
+
 $('#reset').click(function(e){
   $('#signature').jSignature('clear');
   var data = $('#signature').jSignature('getData');
   $('#signature_capture').val('');
   e.preventDefault();
 });
-$('#html_capture').val($('#input-html').val());
-$('#input-html').bind('blur', function(e) {
-  $('#html_capture').val($(this).val());
-});
+
+
+
 randomFileName = 'contract-'+makeId() +'.php'; 
 $('#signature-form small em').html(randomFileName); 
 $('#file_name').val(randomFileName); 
@@ -39,6 +46,7 @@ function makeId() {
     text += possible.charAt(Math.floor(Math.random() * possible.length));
   return text;
 }
+
 $('#print-preview').click(function(e){
   printPage('../demo.php');
   e.preventDefault();
@@ -63,6 +71,7 @@ function printPage (sURL) {
   oHiddFrame.src = sURL;
   document.body.appendChild(oHiddFrame);
 }
+
 $('body').niceScroll({
   cursoropacitymin: 0.5,
   cursoropacitymax: 1,
@@ -73,9 +82,11 @@ $('body').niceScroll({
   mousescrollstep: 60, // scrolling speed with mouse wheel (pixel)
   bouncescroll: true
 });
+
 $(document).scrollsnap({
   snaps: '#mceu_13',
   proximity: 85
 });
+
 // Lazy Load
 //$('img, svg').lazyload();
