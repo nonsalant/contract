@@ -95,7 +95,7 @@
   </form>
   
   <svg class="large-icon" viewBox="0 0 8 8">
-    <use xlink:href="css/sprite.svg#external-link"></use>
+    <use xlink:href="css/sprite.svg#link"></use>
   </svg>
   <h2>IV. Ask your client to review and sign.</h2>
   <p>Send your client a link to the contract (hosted under your domain).
