@@ -111,7 +111,7 @@
       </svg></strong></a>
     </li>
     <li><a target="_blank" href="https://github.com/nonsalant/contract/blob/master/contract.php">
-        get contract.php from <strong>github <svg class="icon" viewBox="0 0 8 8">
+        get contract.php from <strong>github <svg class="icon" viewBox="0 0 1024 1024">
         <use xlink:href="css/sprite.svg#github"></use>
         </svg></strong></a>
     </li>
