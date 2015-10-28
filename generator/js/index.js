@@ -9,26 +9,28 @@ tinymce.init({
   ],
   toolbar: "code undo redo | styleselect | bold italic | alignleft aligncenter alignright | bullist numlist outdent indent"
 });
-
-$('#html_capture').val($('#input-html').val());
-$('#input-html').bind('input propertychange', function(e) { 
-  alert('textarea changed');
-  $('#html_capture').val($(this).val()).attr('type','text');
-});
 $('#signature-form').submit(function(){
-  tinyMCE.triggerSave();
-   $('#html_capture').val($('#input-html').val()).attr('type','text');
+  tinyMCE.triggerSave(); // Put tinyMCE contents back in textarea!
+  $('#html_capture').val( $('#input-html').val() );
+  $("#signature_capture").val( $('#signature').jSignature('getData') );
 });
+
+// 
+// $('#html_capture').val($('#input-html').val());
+// $('#input-html').bind('input propertychange', function(e) { 
+//   $('#html_capture').val($(this).val()).attr('type','text');
+// });
+
 
 $('#signature').jSignature();
 var $sigdiv = $('#signature');
 var datapair = $sigdiv.jSignature('getData', 'svgbase64');
 
-// Submit
+// Disable submit if signature is left empty
 $('#submit').attr('disabled','disabled');
 $('#signature').bind('change', function(e) {
-  var data = $('#signature').jSignature('getData');
-  $("#signature_capture").val(data);
+  // var data = $('#signature').jSignature('getData');
+  // $("#signature_capture").val(data);
   $('#submit').removeAttr('disabled');
 });
 
