@@ -57,7 +57,7 @@
   <hr>
   
   <svg class="large-icon" viewBox="0 0 8 8">
-    <use xlink:href="css/sprite.svg#github"></use>
+    <use xlink:href="css/sprite.svg#code"></use>
   </svg>
   <h2>I. Contract HTML</h2>
   <p>The contract copy should be in HTML format. 
@@ -112,7 +112,7 @@
     </li>
     <li><a target="_blank" href="https://github.com/nonsalant/contract/blob/master/contract.php">
         get contract.php from <strong>github <svg class="icon" viewBox="0 0 8 8">
-        <use xlink:href="css/sprite.svg#command-line"></use>
+        <use xlink:href="css/sprite.svg#github"></use>
         </svg></strong></a>
     </li>
     <li><a target="_blank" href="https://github.com/nonsalant/contract/issues">
