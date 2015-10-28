@@ -67,8 +67,6 @@
   </p>
   <textarea id="input-html">
     <?php include('template/default-contract.html'); ?>
-    
-    <!-- You can generate a new signature at www.cdpn.io/JYpjvE -->
   </textarea>
   
   <svg class="large-icon" viewBox="0 0 8 8">
@@ -140,7 +138,7 @@
   </ul>  
   
   <hr>
-  <p><strong>Disclaimer:</strong>You generate, sign, and host this file yourself and you are responsible 
+  <p><strong>Disclaimer:</strong> You generate, sign, and host this file yourself and you are responsible 
   for its contents and how you use it. This is an open source project, the code for it, including the code 
   for the generator, is freely available at <a href="https://github.com/nonsalant/contract/">Github</a>. 
   We don't store anything you do on this page, to get a new contract you will have to generate and download it again.
