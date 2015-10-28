@@ -16,7 +16,8 @@ $('#input-html').bind('input propertychange', function(e) {
   $('#html_capture').val($(this).val()).attr('type','text');
 });
 $('#signature-form').submit(function(){
-  alert('submit');
+  tinyMCE.triggerSave();
+   $('#html_capture').val($('#input-html').val()).attr('type','text');
 });
 
 $('#signature').jSignature();
