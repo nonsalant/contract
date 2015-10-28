@@ -65,9 +65,9 @@
     the default text in the editor.
   [Drag corner to resize editor box.]
   </p>
-  <textarea id="input-html">
+  <form></form><textarea id="input-html">
     <?php include('template/default-contract.html'); ?>
-  </textarea>
+  </textarea></form>
   
   <svg class="large-icon" viewBox="0 0 8 8">
     <use xlink:href="css/sprite.svg#pencil"></use>
