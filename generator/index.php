@@ -57,7 +57,7 @@
   <hr>
   
   <svg class="large-icon" viewBox="0 0 8 8">
-    <use xlink:href="css/sprite.svg#code"></use>
+    <use xlink:href="css/sprite.svg#github"></use>
   </svg>
   <h2>I. Contract HTML</h2>
   <p>The contract copy should be in HTML format. 
