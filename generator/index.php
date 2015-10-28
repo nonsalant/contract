@@ -79,14 +79,14 @@
   <div id="signature"></div>
 
   <svg class="large-icon" viewBox="0 0 8 8">
-    <use xlink:href="css/sprite.svg#cloud"></use>
+    <use xlink:href="css/sprite.svg#download"></use>
   </svg>
   <h2>III. Download & deploy</h2>
   <form method="post" id="signature-form" action="template/index.php">
     <p>Get the contract and upload it to your server using FTP.</p>
     <button id="submit">
       <svg class="icon" viewBox="0 0 8 8">
-        <use xlink:href="css/sprite.svg#download"></use>
+        <use xlink:href="css/sprite.svg#external-link"></use>
       </svg> Download Contract
     </button> <small><em>contract.php</em> (you can rename this)</small>
     <input type="hidden" id="file_name" name="file_name">
@@ -95,7 +95,7 @@
   </form>
   
   <svg class="large-icon" viewBox="0 0 8 8">
-    <use xlink:href="css/sprite.svg#download"></use>
+    <use xlink:href="css/sprite.svg#pencil></use>
   </svg>
   <h2>IV. Ask your client to review and sign.</h2>
   <p>Send your client a link to the contract (hosted under your domain).
