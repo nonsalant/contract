@@ -1,5 +1,5 @@
 tinymce.init({
-  //selector: "#input-html",
+  selector: "#input-html",
   content_css : "http://vileworks.com/contract/generator/css/editor-style.css", 
   min_height: 300,
   plugins: [
