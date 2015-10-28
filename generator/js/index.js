@@ -1,5 +1,6 @@
+// WYSIWYG editor for contract copy
 tinymce.init({
-  //selector: "#input-html",
+  selector: "#input-html",
   content_css : "http://vileworks.com/contract/generator/css/editor-style.css", 
   min_height: 300,
   plugins: [
@@ -9,26 +10,41 @@ tinymce.init({
   ],
   toolbar: "code undo redo | styleselect | bold italic | alignleft aligncenter alignright | bullist numlist outdent indent"
 });
+
+// Put signature and contract html in the same form as download button
+$('#signature-form').submit(function(){
+  tinyMCE.triggerSave(); // Put tinyMCE contents back in textarea!
+  $('#html_capture').val( $('#input-html').val() );
+  $("#signature_capture").val( $('#signature').jSignature('getData') );
+});
+
+// jSignature
 $('#signature').jSignature();
 var $sigdiv = $('#signature');
 var datapair = $sigdiv.jSignature('getData', 'svgbase64');
+
+// Disable submit if signature is left empty
 $('#submit').attr('disabled','disabled');
 $('#signature').bind('change', function(e) {
-  var data = $('#signature').jSignature('getData');
-  $("#signature_capture").val(data);
   $('#submit').removeAttr('disabled');
+  // Redundant if tinyMCE is used
+  // $("#signature_capture").val($('#signature').jSignature('getData'));
 });
-  
+// Redundant if tinyMCE is used
+// $('#html_capture').val($('#input-html').val());
+// $('#input-html').bind('input propertychange', function(e) { 
+//   $('#html_capture').val($(this).val()).attr('type','text');
+// });
+
+// Reset sigature button
 $('#reset').click(function(e){
   $('#signature').jSignature('clear');
   var data = $('#signature').jSignature('getData');
   $('#signature_capture').val('');
   e.preventDefault();
 });
-$('#html_capture').val($('#input-html').val());
-$('#input-html').bind('blur', function(e) {
-  $('#html_capture').val($(this).val());
-});
+
+// Set a random name for the file to be downloaded
 randomFileName = 'contract-'+makeId() +'.php'; 
 $('#signature-form small em').html(randomFileName); 
 $('#file_name').val(randomFileName); 
@@ -39,20 +55,13 @@ function makeId() {
     text += possible.charAt(Math.floor(Math.random() * possible.length));
   return text;
 }
+
+// Print preview of external demo page
 $('#print-preview').click(function(e){
   printPage('../demo.php');
   e.preventDefault();
 });
-function closePrint () {
-  document.body.removeChild(this.__container__);
-}
-function setPrint () {
-  this.contentWindow.__container__ = this;
-  this.contentWindow.onbeforeunload = closePrint;
-  this.contentWindow.onafterprint = closePrint;
-  this.contentWindow.focus(); // Required for IE
-  this.contentWindow.print();
-}
+//From https://developer.mozilla.org/en-US/docs/Printing#Print_an_external_page_without_opening_it
 function printPage (sURL) {
   var oHiddFrame = document.createElement("iframe");
   oHiddFrame.onload = setPrint;
@@ -63,6 +72,18 @@ function printPage (sURL) {
   oHiddFrame.src = sURL;
   document.body.appendChild(oHiddFrame);
 }
+function setPrint () {
+  this.contentWindow.__container__ = this;
+  this.contentWindow.onbeforeunload = closePrint;
+  this.contentWindow.onafterprint = closePrint;
+  this.contentWindow.focus(); // Required for IE
+  this.contentWindow.print();
+}
+function closePrint () {
+  document.body.removeChild(this.__container__);
+}
+
+// Nice Scroll
 $('body').niceScroll({
   cursoropacitymin: 0.5,
   cursoropacitymax: 1,
@@ -73,9 +94,12 @@ $('body').niceScroll({
   mousescrollstep: 60, // scrolling speed with mouse wheel (pixel)
   bouncescroll: true
 });
+
+// Scroll Snap to editor
 $(document).scrollsnap({
   snaps: '#mceu_13',
   proximity: 85
 });
+
 // Lazy Load
-//$('img, svg').lazyload();
+$('img, svg').lazyload();
