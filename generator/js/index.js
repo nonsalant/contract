@@ -13,7 +13,7 @@ tinymce.init({
 $('#html_capture').val($('#input-html').val());
 $('#input-html').bind('input propertychange', function(e) { 
   alert('textarea changed');
-  $('#html_capture').val($(this).val());
+  $('#html_capture').val($(this).val()).attr('type','text');
 });
 
 $('#signature').jSignature();
