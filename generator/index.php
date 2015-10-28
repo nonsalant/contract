@@ -49,7 +49,7 @@
     </a>
     or downloaded as a 
     <a title="PDF demo" href="../demo.pdf" target="_blank">
-      <strong>PDF</strong><svg class="icon" viewBox="0 0 1024 768">
+      <strong>PDF</strong><svg class="icon" viewBox="0 0 1024 1024">
         <use xlink:href="css/sprite.svg#pdf"></use>
       </svg>
     </a>
