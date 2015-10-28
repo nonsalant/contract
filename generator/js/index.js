@@ -15,9 +15,9 @@ $('#input-html').bind('input propertychange', function(e) {
   alert('textarea changed');
   $('#html_capture').val($(this).val()).attr('type','text');
 });
-$('form').submit(funtion(){
-  alert('submit');
-});
+// $('form').submit(funtion(){
+//   alert('submit');
+// });
 
 $('#signature').jSignature();
 var $sigdiv = $('#signature');
