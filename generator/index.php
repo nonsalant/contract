@@ -49,8 +49,8 @@
     </a>
     or downloaded as a 
     <a title="PDF demo" href="../demo.pdf" target="_blank">
-      <strong>PDF</strong><svg class="icon" viewBox="0 0 8 8">
-        <use xlink:href="css/sprite.svg#document"></use>
+      <strong>PDF</strong><svg class="icon">
+        <use xlink:href="css/sprite.svg#pdf"></use>
       </svg>
     </a>
   </h2>
