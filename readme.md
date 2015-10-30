@@ -8,7 +8,7 @@
 
 <hr>
 
-**[Generate a new contract online](http://vileworks.com/contract/generator/)** or get the concatenated code from contract.php in this repository.
+**[Generate a new contract online](http://vileworks.com/contract/generator/)** or get the concatenated code from [contract.php](https://github.com/nonsalant/contract/blob/master/contract.php) in this repository.
 
 Upload the **contract.php** file to your server and send a link to your client. 
 (You can rename this file, for example if there are other contracts in the same folder.)
