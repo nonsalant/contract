@@ -5,7 +5,7 @@
 - Comes with "Print" and "Download as PDF" buttons
 
 **[Signable demo](http://vileworks.com/contract/demo.php)** <br>
-**[Generate a new contract online](http://vileworks.com/contract/generator/)**
+**[Generate a new contract online](http://vileworks.com/contract/generator/)** or get the concatenated code from contract.php in this repository 
 
 Upload the **contract.php** file to your server and send a link to your client. 
 (You can rename this file, for example if there are other contracts in the same folder.)
