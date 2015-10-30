@@ -1,4 +1,5 @@
-# Signable contract in a single file
+# contract
+A signable contract that lives in a single file
 
 - Host it on your own domain
 - Can only be singed once
