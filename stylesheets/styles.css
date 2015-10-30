@@ -67,18 +67,6 @@ a:active {
   padding-right:0;
 }
 
-.site-title {
-  display:block;
-  width:347px;
-  height:57px;
-  margin:3rem auto;
-  background:url(http://stefanmatei.com/vileworks/wp-content/uploads/2014/07/vileworks-logo.png) top center no-repeat;
-  width:400px;
-  text-indent:200%;
-  overflow:hidden;
-  white-space:nowrap;
-}
-
 #content {
   /*text-align: center;*/
   max-width: 600px;
