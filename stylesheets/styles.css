@@ -92,7 +92,7 @@ h1 {
   line-height: 1.2em;
   letter-spacing:0.15em;
   font-family:'Arapey', serif;
-  text-transform:uppercase;
+  /*text-transform:uppercase;*/
   font-weight:normal;
   margin-top:0;
   position:relative;/*
