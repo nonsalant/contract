@@ -5,7 +5,7 @@
 body { 
   font-family: 'Libre Baskerville', serif; 
   color:#000;
-  font-size:14px;
+  font-size:16px;
   line-height:1.5em;
   max-width: 600px;
   margin: 0em auto;
@@ -13,7 +13,7 @@ body {
   padding: 2em;
 }
 @media (max-width:400px) {
-  body { font-size:12px; }
+  body { font-size:14px; }
 }
 a {
   color:#0a3666;
