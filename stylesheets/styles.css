@@ -120,7 +120,7 @@ hr {
 
 @media (max-width:800px) { }
 
-button {
+.button {
     cursor:pointer;
     margin: 0 .5em;
     /*font-size: 1.2em;
@@ -130,7 +130,7 @@ button {
     font-weight: 400;
     /*color: #0a3666;*/
 }
-button:not([disabled]):hover, button:not([disabled]):focus {
+.button:not([disabled]):hover, .button:not([disabled]):focus {
     color: #333; 
     background-color: #e3e3e3;
     background-image: -moz-linear-gradient(top, #f2f2f2, #ccc);
@@ -142,10 +142,10 @@ button:not([disabled]):hover, button:not([disabled]):focus {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff2f2f2', endColorstr='#ffcccccc', GradientType=0);
     zoom: 1;
 }
-button:not([disabled]):hover .icon {
+.button:not([disabled]):hover .icon {
   fill:#C02942;
 }
-button {
+.button {
     border: 1px solid #b1b1b1;
     border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25) rgba(0,0,0,0.25);
     position: relative;
