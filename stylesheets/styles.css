@@ -183,3 +183,10 @@ button {
       column-gap: 1.5em;
   }
 }
+
+a:hover img  {
+    -webkit-filter: contrast(1.075);
+    -moz-filter: contrast(1.075);
+    filter: contrast(1.075);
+    opacity:.915;
+}
