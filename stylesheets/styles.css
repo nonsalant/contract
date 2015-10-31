@@ -170,6 +170,9 @@ button {
 #iframe-stmblpn-widget-1 { 
   float:right;
 } 
+.header {
+  text=align:center;
+}
 .footer {
   text-align:center;
   /*font-family:'Arapey',sans-serif;*/
