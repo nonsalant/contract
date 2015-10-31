@@ -83,7 +83,7 @@
   </svg>
   <h2>III. Download & deploy</h2>
   <form method="post" id="signature-form" action="template/index.php">
-    <p>Get the contract and upload it to your server using FTP.</p>
+    <p>Download the contract and FTP it to your server.</p>
     <button id="submit">
       <svg class="icon" viewBox="0 0 8 8">
         <use xlink:href="css/sprite.svg#download"></use>
