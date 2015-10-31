@@ -90,12 +90,11 @@ a:active {
 
 h1 {
   text-align:center;
-  font-size:2em; 
-  line-height:1.5em;
+  font-size:2em;
   line-height: 1.2em;
-  letter-spacing:0.15em;
+  font-size: 2.5em;
+  letter-spacing: 0.075em;
   font-family:'Arapey', serif;
-  /*text-transform:uppercase;*/
   font-weight:normal;
   margin-top:0;
   position:relative;/*
