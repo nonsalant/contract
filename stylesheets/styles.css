@@ -170,13 +170,8 @@ hr {
 #iframe-stmblpn-widget-1 { 
   float:right;
 } 
-.header {
-  text=align:center;
-}
-.footer {
+header {
   text-align:center;
-  /*font-family:'Arapey',sans-serif;*/
-  font-size:1em;
 }
 @media (min-width:800px) {
   .two-columns {
