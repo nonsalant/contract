@@ -180,19 +180,25 @@ hr {
 }
 @media (min-width:800px) {
   .two-columns {
-      margin-left: 1.2em;
-      -moz-column-count: 2;
-      -webkit-column-count: 2;
-      column-count: 2;
-      -moz-column-gap: 1.5em;
-      -webkit-column-gap: 1.5em;
-      column-gap: 1.5em;
+    margin-left: 1.2em;
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+    -moz-column-gap: 1.5em;
+    -webkit-column-gap: 1.5em;
+    column-gap: 1.5em;
   }
 }
 
 a:hover img  {
-    -webkit-filter: contrast(1.075);
-    -moz-filter: contrast(1.075);
-    filter: contrast(1.075);
-    opacity:.915;
+  -webkit-filter: contrast(1.075);
+  -moz-filter: contrast(1.075);
+  filter: contrast(1.075);
+  opacity:.915;
+}
+
+#stumble {
+  padding-top: 6px;
+  display: block;
+  float: right;
 }
