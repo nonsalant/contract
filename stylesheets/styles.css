@@ -110,38 +110,8 @@ hr {
   width: 100%;
 }
 
-#input-html {
-  width:100%;
-  min-height:20em;
-}
-#mceu_13 {
-  width:calc(100% + 8em); 
-  margin:3em -4em;
-  margin-bottom:3em;
-  box-shadow:0 0px 2px 5px rgba(200,200,200,.4);
-  display:block;
-}
-@media (max-width:800px) {
-  #mceu_13 { 
-    width:100%; 
-    margin:1em 0;
-  }
-}
-i.mce-i-resize {
-    color: #333;
-    fill:red;
-}
 
-#signature {
-  width:auto;
-  border:dashed 1px #53777A;
-  margin:0;
-  margin-bottom:2em;
-  text-align:center;
-  border-radius:3px;
-  background:#fdfdfd;
-  box-shadow:0 0 5px 1px #ddd inset;
-}
+@media (max-width:800px) { }
 
 button {
     cursor:pointer;
