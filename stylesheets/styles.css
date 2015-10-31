@@ -123,12 +123,12 @@ hr {
 .button {
     cursor:pointer;
     margin: 0 .5em;
-    /*font-size: 1.2em;
     line-height: 1.5em;
-     letter-spacing: .05em; 
-    font-family: 'Open Sans Condensed',sans-serif;*/
-    font-weight: 400;
+    letter-spacing: .025em; 
+    font-family: 'Open Sans Condensed',sans-serif;
     /*color: #0a3666;*/
+    font-weight: 700;
+    padding: .25em .5em;
 }
 .button:not([disabled]):hover, .button:not([disabled]):focus {
     color: #333; 
