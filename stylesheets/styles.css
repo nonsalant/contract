@@ -1,3 +1,8 @@
+@import url(css/style.css);
+@import url(http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic);
+@import url(http://fonts.googleapis.com/css?family=Arapey);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800);
 body { 
   font-family: 'Libre Baskerville', serif; 
   font-family:'Open Sans', sans;
@@ -160,45 +165,13 @@ button {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffd9d9d9', GradientType=0);
     zoom: 1;
 }
-.icon {
-  fill:#222;
-  width:12px; height:12px;
-  margin:.075em .1em;
-  margin-right:.2em;
-}
-.large-icon {
-  fill:#ddd; 
-  margin:0;
-  margin-left:2em;
-  margin-bottom:1em;
+#iframe-stmblpn-widget-1 { 
   float:right;
-  width:10%;
-  height:10%;
-}
-.large-icon.right {
-}
-
-.resources {
-  list-style:none;
-  padding:0;
-  text-align:right;
-  text-align: center;
+} 
+.footer {
+  text-align:center;
+  /*font-family:'Arapey',sans-serif;*/
   font-size:1em;
-  line-height:1.5em;
-  font-family:'Open Sans',sans-serif;  
-  font-weight: 300;
-  line-height: 1.5em;
-  letter-spacing: .05em;
-}
-.resources li {
-  text-align:right;
-}
-.resources a {
-  /*color:#000;*/
-}
-.resources a:hover, .resources a:hover .icon {
-  /*color:#C02942;*/
-  /*fill:#C02942;*/
 }
 @media (min-width:800px) {
   .two-columns {
@@ -210,9 +183,4 @@ button {
       -webkit-column-gap: 1.5em;
       column-gap: 1.5em;
   }
-}
-.footer {
-  text-align:center;
-  /*font-family:'Arapey',sans-serif;*/
-  font-size:1em;
 }
