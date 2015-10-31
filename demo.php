@@ -1,7 +1,15 @@
 <?php
-// Don't use this file. Use contract.php instead.
-// This file is only used for testing, it does not delete itself and 
-// does not redirect to the HTML version once the contract is signed.
+/* 
+
+Demo for contract.php
+
+Don't use this file. Use contract.php instead.
+ 
+This file is only used for testing, it does not delete itself,
+which means the (html) contract can be signed over and over again.
+
+
+*/
 
 $email = ""; // Notify when contract is signed
 
