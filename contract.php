@@ -17,7 +17,7 @@ $phpName  = basename($_SERVER['PHP_SELF']) ? basename($_SERVER['PHP_SELF']) : 'i
 $fileName = substr($phpName , 0, -4); // without extension
 $htmlName = $fileName.'.html';
 $pdfName = $fileName.'.pdf';
-$contractData = strip_tags( trim( $_POST[ 'contractdata' ] ) );
+$contractData = stripslashes ( $_POST['contractdata'] );
 $ip = get_client_ip_env();
 
 // If the HTML file exists, redirect to it
