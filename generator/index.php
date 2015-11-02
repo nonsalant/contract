@@ -100,7 +100,8 @@
   <h2>IV. Ask your client to review and sign.</h2>
   <p>Send your client a link to the contract (hosted under your domain).
   </p>
-  <!--<p>The link could be short and random or long and descriptive, but not very obvious to guess: you probably don't want some clients to be able to find other clients' contracts.</p>-->
+  <p>The link could be short and random or long and descriptive, but not very obvious to guess: you probably don't want some clients to be able to find other clients' contracts.</p>
+  <p><b>!</b> There is a <strong>security <a href="https://github.com/nonsalant/contract/issues/8" target="_blank">issue</a></strong> where someone who knows the location of an unsigned contract on your server can upload malicious code to the (final) contract.html file. At least for the time being you should only use this if you trust the client not to inject scripts when you send them the link and ask them to sign.</b>
   
   <hr>
   <h3 style="text-align:center;">Resources</h3>
