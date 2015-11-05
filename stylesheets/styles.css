@@ -187,10 +187,15 @@ header {
   }
 }
 
-a:hover img  {
+a img  {
   -webkit-filter: brightness(1.075);
   -moz-filter: brightness(1.075);
   filter: brightness(1.075);
+}
+a:hover img  {
+  -webkit-filter: brightness(1);
+  -moz-filter: brightness(1);
+  filter: brightness(1);
 }
 
 #stumble {
