@@ -63,9 +63,8 @@
   <img style="max-width: calc(100% + 4em); margin: 0 -2em; " src="https://dl.dropboxusercontent.com/u/19848482/vileworks/contract-icon-big.png" title="">
 </a></p>
 
-<hr style="
-    margin-top: 0;
-"><p style="text-align:center;">
+<hr style="margin-top: 0;">
+<p style="text-align:center;">
   <span style="
         font-size: 1.15em;
         line-height: 1rem;
@@ -76,10 +75,15 @@
       View demo
     </a>
   </span>
-  <a class="button" href="http://vileworks.com/contract/generator/" target="" title="Generate a new contract">Generate a new contract</a>
-</p> <hr>
-  <p>
-  <img style="max-width:614px;" src="https://dl.dropboxusercontent.com/u/19848482/vileworks/contract-demo.gif"></p>
+  <a class="button" href="http://vileworks.com/contract/generator/" target="" title="Generate a new contract">
+    Generate a new contract
+  </a>
+</p>
+
+<hr>
+<p>
+  <img style="max-width:614px;" src="https://dl.dropboxusercontent.com/u/19848482/vileworks/contract-demo.gif">
+</p>
 </section>
 
 <footer>
@@ -88,6 +92,31 @@
 </footer>
 
 </article>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="http://tinymce.cachefly.net/4.0/tinymce.min.js"></script>
+<script>
+  // Nice Scroll
+  $('body').niceScroll({
+    cursoropacitymin: 0.5,
+    cursoropacitymax: 1,
+    cursorwidth: "15px",
+    cursorborder: "1px solid rgba(255,255,255,0.5)", // css definition for cursor border
+    cursorborderradius: "3px", // border radius in pixel for cursor
+    scrollspeed: 60, // scrolling speed
+    mousescrollstep: 60, // scrolling speed with mouse wheel (pixel)
+    bouncescroll: true
+  });
+  
+  // Scroll Snap to editor
+  $(document).scrollsnap({
+    snaps: 'hr',
+    proximity: 85
+  });
+  
+  // Lazy Load
+  $('img, svg').lazyload();
+</script>
 
 <script src="javascripts/scale.fix.js"></script>
 <script type="text/javascript">
