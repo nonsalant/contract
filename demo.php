@@ -1,87 +1,57 @@
-<?php
-/* 
+<?php /*
+client@example.com
+dev@example.com
+contract.php
+data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAlYAAACWCAYAAAAc0saCAAAeYElEQVR4Xu2dC6x1R1XHvw9QW96FpghUepFHeCVgq6Ax9Lu8WhrBQsEmRCtfjQpGk1IiD1MNX2OtgjUFghaNgZIgCUiBKsUKhZ5iolBCMSpoW0pvUSul0GILAgrq+ts9drp7ztkze6/Ze885v0km59x7Zq9Z81t7n1lnHmv27yNBAAIQgAAEIAABCLgQ2O8iBSEQgAAEIAABCEAAAvtwrLgJIAABCEAAAhCAgBMBHCsnkIiBAAQgAAEIQAACOFbcAxCAAAQgAAEIQMCJAI6VE0jEQAACEIAABCAAARwr7gEIQAACEIAABCDgRADHygkkYiAAAQhAAAIQgACOFfcABCAAAQhAAAIQcCKAY+UEEjEQgAAEIAABCEAAx4p7AAIQgAAEIAABCDgRwLFyAokYCEAAAhCAAAQggGPFPQABCEAAAhCAAAScCOBYOYFEDAQgAAEIQAACEMCx4h6AAAQgAAEIQAACTgRwrJxAIgYCEIAABCAAAQjgWHEPQAACEIAABCAAAScCOFZOIBEDAQhAAAIQgAAEcKy4ByAAAQhAAAIQgIATARwrJ5CIgQAEIAABCEAAAjhW3AMQgAAEIAABCEDAiQCOlRNIxEAAAhCAAAQgAAEcK+4BCEAAAhCAAAQg4EQAx8oJJGIgAAEIQAACEIAAjhX3AAQgAAEIQAACEHAigGPlBBIxEIAABCAAAQhAAMeKewACEIAABCAAAQg4EcCxcgKJGAhAAAIQgAAEIIBjlXcP7Frxx1i+Zs1l97XPbrP8V3miKQ0BCEAAAhCAQO0EcKzyLPg/ecX37Vl55YXlWyxfbvkfMmVQHAIQgAAEIACBSgjgWKUbKsep+q6JvecK0Vfb/z9u+fOWr7X8xVa5+zXXfjRdNUr2JPCi5rqLel7PZRCAAAQgAIG7EMCxSr8hchyrVVL/2z64R2KVN1g5jXB9wPLFiddQLJ3Ava3oN5ri97HX/0i/lJIQgAAEIACB5QRwrMrcGbsm9oGWn2JZ75+e4VBJo2UOmBysKy1fYvnvyqi9VVJjR5nnYKtMT2MhAAEIlCNAh1KObVvyE+wfxzf5JRnVftPKHt4qf5P9fVWTv9w4WosMmRTdtw/HirtABM61/G3LZ4MDAhCAgAcBHCsPir4ydkzcruUXNK8PaIlfNZ0oB+vTOFvJxsCxSka1sQUPs5bph4vSQyzrGSJBAAIQGEQAx2oQvlEuloP1Yss/vaY2nK18U+BY5TPbtCvie+Cd1rjTNq2BtAcCEBifAI7V+Mz71Bh3AGeYgKMsH2v5RMurFsOnOFs32/V/a/mKPkpVfk3MlMXrlRuzh/pa//iZ5jrdC/oufJXl83rI4hIIQAAC/08Ax6qOmyF2AvSrWr+uQ9ppnCw5Wn2dLYV9WFi+zvIntsTRYsSqjnu/lJavMMHnt4Trnnil5TeWqhS5EIDA5hPAsarDxh8yNU9qVFVnoC//dSnH2Qq/1mN5wdFSvK1PWtbfm5ZwrDbNonnt0S7bk6NL4udAYU5+2/JH8kRSGgIQgMAdw9+k+RM4x1Q8q1HzU/b61B4qpzpby6YQdUxPiPnUo+pZXoJjNUuzjKbUd6ymEMQ33nmreGaKcaakUa03jaYRFUEAAhtBAMeqDjOeYmqG6OByCLQmKOxmGtKCOATEqVFHE2R+y97oV/tPDqlkptfiWM3UMCOp1ba/Rqhe29Qdj15dZv/TD5ttXIc4kimoBgKbRQDHqg577pia10eqPs3eK1iod4odLQU11f1xtHclM5GHYzUTQ0ykxjL775oumnYPcePi0atSz9xEzadaCECgFAEcq1Jk/eXq/MGwA5DdS8P5sitwOMOaJaxzrJeNXn3NGvsMy9pFS4IABCCwkgCOVT03x7tM1RCx/VJ7Hxaz19OCeWnKiNW87DG2Nl32j0evbjHlHmT5NsunW37f2MpSHwQgUA8BHKt6bPVyU/WCRl0tMNeCco91VvUQ8NW0q2P1rQ1pcyOQYn+d97mw/GTLt1o+wrJGjh9mmSjtc7Mo+kBgJgRwrGZiiAQ1tP7ps1E5bJcAbU2RlI51WA1cPWcCqVPBsXMVdswSpX3OlkU3CExMgM55YgNkVo8zkAkMx8oP2IZJynmW5FzdaFmL2jVipTAN2kH4+g1jQnMgAAEHAjhWDhBHFJHTGYyoVpVVwbJKs7kpnWv/XatZgUND0ujVoyzvuWmEIAhAYCMI4FjVZcbczqCu1o2rLSzH5T232vrYP+wWDHGumBKcm1XRBwIzIIBjNQMjZKjQpzPIEL9VRWG5Vea+W2P72l+xreIpwTPtb84W3O57idZD4C4EcKzquiH6dgZ1tXIcbVMXL4+jDbWMTaDvs7RrisZTgpLz45b/ZuwGUB8EIDBPAjhW87TLKq1wBvzs1bdj9dMASVMSGPIstacECR46pSWpGwIzI4BjNTODdKiDM+BnL1j6saxR0lD7hynBOHioAvjqSBwSBCCwxQRwrOoy/tDOoK7WltUWlmX5zl36UPvH8a2Cc6WdgsdZ5tibuVsf/SBQkACOVUG4BUQP7QwKqFStSFhWazoXxT3svyx4KNOCLuZBCATqJYBjVZftPDqDulpcTltYlmNbg2Qv+8fBQzlTsAbLoyMEChPAsSoM2Fm8V2fgrFaV4mBZpdnclPa0P2cKupkFQRConwCOVV029OwM6mq5v7aw9Gdak0Rv+3OmYE3WR1cIFCSAY1UQbgHR3p1BARWrETlku301jUTRlQRKPEucKcgNBwEI7MOxqusmKNEZ1EXAT1tY+rGsUVIpx3rXYMQBRLVT8EjLt9YICZ0hAIF8AjhW+cymvAJnwI/+3Fk+15p6P8tfiJr8CHv/n5Yv8cOwtZJK2r8dQPTXjPLvbC1pGg6BLSOAY1WXwUt2BnWRGK7tnFm+wpp3/pom7thnNwxHsNUSStv/m0b3sIbwzfZ6dOMUbzV0Gg+BbSCAY1WXlUt3BnXRGKbtHFmeZE06x/KxHU17p31+2rDmb/3Vpe1/uhF+m+VvWL6P5TdYfs3WUwcABLaAAI5VXUYu3RnURWOYtnNjqdENjXJ0pe9agXs2nbQ6a1I/AmPY/+9NtSc16slu97eso3BIEIDABhPAsarLuGN0BnUR6a/t3Fj+lzXlXk1z3myvZ7Satmt/x4uipf+zLX+sP4KtvrLU4vUYahi1Cv/7IXvDcTdbfdvR+G0ggGNVl5VDZ3B78+u3Lu3npe2cHKsnGJrPNng+aK/PX4GqvShaO82eZ/mv54W2Cm3Gsv93jIZGGJXOtPzGKuigJAQg0JsAjlVvdKNfuGM1Xt/UerG9vmB0DTarwrhjfYY1bTFh815udV/Q1P8z9vona3TRmp17W46PT/kl+/tdE+pfY9VjOVYfMDgnN4A0uvisGmGhMwQgkE4Axyqd1dQl5Ui9v1HibHs9NLVCldevKZknN214ob2qA5wqXWQVn9JU/jh7vXqNIkfZZxrV+hHLGrE6wrKchB3LX5yqARXWO5ZjFe/wVJ1aS6eQGSQIQGBDCeBY1WPYQ6bq6xp1px5hqYfaak0X9tGB5uOpHdXcTj52rnStnmN2CubdlbnM86TfWfop9vYzjfMrOxHTqi9JroNAJQRwrCoxlKkZOwIPt79vrEf1WWqqtS5hgfg77P3BCbXs08nLudLUsKYFw07B19r710/YjpqqHmPxeuBBTKua7gx0hcBAAjhWAwGOeLmOxpC9WLjuAz2eornCRO76iO0lpY9jpYqkc7xTUPfIoyzv9dJiuy7qy7wPpXZMKzn1WshOggAENpAAjlUdRo13jf2RqfyyOtTupeUJdpVGYD7a6+r0i2KnRGuTjlly6Yn2P8UeKn2szJBOvr1TkCnBtHtgCPO0Gu5aKo5pJQf4wZa/1kcQ10AAAvMmgGM1b/sE7XJ2jdXRoju0fI7lx1vWtJaijR/XvNdn11jWSNLnLGuh+cK5YWHtSxAbPws/YP98teVfWVOnoml7BXsc2slLj8MtMyWYfpMMZZ5e0x0lw6hVWBPHWqtcgpSHQCUEcKzqMNR7Tc0XNap27RqbU4uWHSQs/eRMadv5wRXK6hf9PVqf3df+VqgBz9TuXH/MhP+85Z9LqORpVubKhHIpRYIet1nhB6Rc0Cqza3+3g4fqAGdvXj1Um+0lYztWAsFaq9neDigGAT8COFZ+LEtKmqITGNqeroOEc+XrF/+FuRd1lI+5PtTK/luG/FdZ2fMyyq8qGo+cvckKiVufFKYEw7VPtDca7SMtJzDm4vWgAecHcjdCYAsI4FjVYeSaHCuNUp1rWcd3dCVNXX3Y8lVR1i6345t8qr2GqNULe68wE54p5qoI2eFImevs/W9ZfnurMgXhfEnzP40QPdNBmXh34iNN3t4AmfGxODqkWeutSMsJTPVMcX4gdyQENpwAjlUdBp6qE8ilo7VJqUEql52H167vkP1DsbsUUPF7LQ91PNryY67hMx1s/JoVDY/XuqnIkZa/mgupVf4r9rcWMsuZe/RAWR+y609qZJxvr68cKG+TL5/qmeL8wE2+q2gbBIwAjlUdt8FUnUAunfhctGWOk0amlNThLxKE71gZxWoK6a32Rse3eKW2Y6WI51rDtirFuzNVZujzE0fT95jqPMd0OqtR/lP2+lQvUBsoZ8pnqrbzAzWtrDAvqT+aNvB2oUkQSCcwtGNIr4mSQwhM2Qmk6q1z0MJUXdd5d6kyVS4+a02L2sPUYI6MVWXbjpVGey7tEOxpiwutrpc29XmMxulYHB2PoyQ9tXNRC6ZJdyfgacdcvvE9rVHGn8gVMGJ57TbV2kNtqtAPj49b/h7L/2L5N0bUY0hV+l7S6HLpsClDdOTaDSKAY1WHMeNOoMTuuKEUdMhsOGvv9+39ujAFuXXFozq6Vmu3FH7BI8VctYNObLuSZ4f8batMU5xKHs/ijsmJR/g8dy52cantc0875rY93tjh/WMhV5eu8nKg5JRo/WH7R41Ckvxul4AJPlcYF4VvUbDcXcuPWaODnpkbJtCRKjeYgMeX+QbjmU3TQifwddNI2+jnlkp3UvHUiceUWeAX650aeNWzrUGWvtj1Be+RtCEghKrw2rnoodfcZHjaMbdt7RhqHqOVuTqkllcQ03UhQP7CPtcxSoo5N3XSGk+tj/zlDEUIqJsBi6JpBHCs0jhNWaqGqOulO6mFGeBAY4QhIQnadoz1Tp2+jK85wgT2jZ79QLv21kYhyZAsjxTvXFT0+md7CN1AGbEdPYO9pqKKfyxoqkr3+JxSyu5eBabVLl6x1Ou3JmqAYuLp+T2YWT8BdTOBUTyNAI5VGqcpS9UQdb20Y3XIDKDdgUqei7JjvVOnGONrzjZ9pFufFDtWut7rWYzvF+n6MMtf6qPghl9T+p7twrewAuHHwpD7qKuePp+3d/fKAXmPZa2vUlYoDx34HafU56ePPuuu0Wha+8eNnNY/jfRtx3Pbtc8uj4Ryxqa3VbZcnteX+ZZjLNr8d5t0xXNSOsbyHHfmlO6k2uusvEYY+ugdX6MvdE3j9B216lN/183W3rk4t067S/+xPi/BPkf3OH7ZO+zCgzkXFy7btbtX1cs5ucxyWHelQ6XVprFTHLttVfy5ZTpxxubYltqi+nCsyhl7pxG9N7CK8MWhYXbt0JljKj2tIpbxomyv+7ZP56oO8O2WZY/DLP+B5Zw1HbH9+tSfYv+4Yxzq/KXUV2OZUuxTWRyygmEU9pP2/kdTLyxcLmd3b7y7UddpSm7M9AtWmdZGKsmpk3OXk9pnbLImMYceZVcS8OqgQHx3AurQ9OU9ZERjx64PDsXF9l4jN3NMY3RSJeroK3PPjKDRQyXJ+H7LX+5hmFIO6UHTJXb+vHdq9mjq7C7pa3uvhuyaoHg6ag7fxYov93tNA1PumXh345DnoC/TEFz3H02ARmpzU9sGuv4hPZ/l3Lopv8EE5vAwbyJehQPQVl9t39evuhf2bGQ8BTbnKZ0xOqkSdfSVGRwXXa9nqO/Oor71p9xOe1YoOH8q7zV9mlJ3DWVKsk9p/44Vikdhp1qjFHRVLK0/b+7n1MPAw+7Goc9BCq92mV+1f4RQD/p+DeFecmXFZ2ymtju3DspvGQEcqzIGD52a4hR9n2XFddIvwNx0yC4I0wVz3DkU2jNGJ1WijiEy29MIWsyrbec5aUj9XfUctAIatQqJZ/2uxEqy77JN+HwuEdh/0RTSlLbWS0knBQBNTe3nYKy1VoHdv5ui2gjSN9Ww67pv27huIgJ82ZYBv2ti42F+1dJnxGBh1x1oVByytb9MK++UOkYnFdehrd0eEcWH6N22sWQpxpgCjaamIfWn1FFafooOcy1Taho2p73xGqWpQmP8uin8m43SCv+hI51yprXbz4F2EGqnXs5zkMNMZRU7S+EglBT88/O5AqLyNey6HtA8Lp2CAI5VOerxrh/V0od1CPaoX4VyzOaaSnfgmqb4YNP4f7XXo51ADNU7nkaQSrmRzofW34WhtPyu+uf8+RzYxGuUxKrPj6++jHV8k86WVIRyJR10rjALOU5VqLv9HJSc1pRDJcdKySOm3acjBo+39//UFyjXQSAQ6NPZQy+NwNA4RTtWTViDMeeF66IRd1K5zkUXTf2ifItlTVPI0dTRGl7JY9RCHVKYOsndVVS6cy8t38sOU8iZA5t2BPaxvo/vb8A1hRaSliw8wnIfpyrIGGtaU7txtbxCu6XDcVB97p/j7SL9+JUTqHSTZW1CIUFgMIGxHuTBilYqYMiXdy0L12WauJ25zsU602pR6vuaArfYq35RDvnyb9c1xD5BVhzpfGH/1Fq41ORR/7q6PBzH1LbUVq40+1QeU+gRx356syl6Rqqya8rF05qlDpbesfrDj00FCpbu2hEYJ01BPtGyQtPEn8lx1LThoy1recVjo4u8f7A54EREzQRwrMpab8iX5iFT7XWNenNeuC4VhzgXqywQ71IaMk2xzsJD7BPktiOdazondf2XR/2l21f2CZlOemn2qS0bW4849lOfDRer2tUOvRDOq0zlkFKuHSg45ZquMl6OZVc9fL5FBHCsyhp7yJfmovllJQ0fbvnGsqoOkt52LnZM2pAI8XKq9AtY036aYlD7PUeqQmOH2CfIaEc6z5kK9agfx6rfrTuX0bzS90Cbzs32jyMt9439tIp2PK15uxXSdKN3OmQCw4/NZbLDLuyUejVqd4LlRUphykAghwCOVQ6t/LJD1h7p/CrZp9SXVH5rVl/Rdi76xnVSDfGaqhLTf3ErvDq1eH1JzlSoV/2rLFNavuc9NLasubAZU4+XGeS3NqD140VTdl4pdqxKHdGjcwqfvkbha+0zTfctS13nB3pxQA4Eeu1UA1s6gb5rj2qMrRIWcYcT43McjEC09JqqtuW8OrW+U6Fe9eNYpT+ToWRp9qkaBT00fawwIiVTWPitZ1ULwD1TPBV4ugm+0FN4I2suNivQNERuEgFGrMpas2+HW2NslV1DeXmEU1+COiIj9WDWMdZUrXOshmx177vOqnRHEcvXKQAlYwuVfZL8pZdmn6LxjhUKi7FL7/wtPaL0Z9aW5zeNLhW2YA42S7ErZbacAI5V2Rugb4ernXDhGJxj7P2Q9UplW3hX6e0T4/WpnK1zLV+2RpGx1lStc6yGPAt911mV7iiC/K9bwxW8lHQngdLsU1iPufO39IhSWLqgtZA6b69EmoPNSrQLmRtGYEhnsmEoijSnT4er+FdftaxdNTrIWRHXa0rhiAvprPdhekOxqN5g+Z9bjTlof/+xZcWpKr2mqs3R84u6zzorz/rbbatxOnnM+3wOi9cPWYPDYuzSO3/jEaUftnoVGNMrxTsNvdduxTqWfF68WCAHAqyxGuEeyO1wdbTFMxu9HmmveyPo6F1FHIlZX4axA3+h/a1DqhVrRu3UYdVKYztVqtPzizqe9tUoXbDhOrZx/eLxOUdD1Did7Nj8TlGetu+sbEWBa+z/YbF16Z2/8ffQkM0ly5ryFfvngy177zRs1zUHm/W1NddtEQFGrMobO+5wu84De56poxPmlc6zrAXgtaZdU1xHTxzWNECRnnWG2LJUKk5VFzvPL+rYkVG92tKukcd1KQ7UeJoVVIfnld5tgk5thJVa8+Kl6xRyPG2fq/9z7AKN3mrdk5Km+jXlXzK1D0vus7lkmX5qR/ie0vIFhUkplWKblTw2p5T+yN0SAjhW5Q3dXmf1aqtSTlM7xVOAt9mHq5yQ8hr71qAdQlrE/qQVYqdyqqSO53RQe9o35dnSdned2aZ0fsPJi34t50x6tTdXzlSOlaKcxxs6SuzQW8Zi1/45ZHPJMpnxhhMd4PygXCNklo9tdmaLY6YoikOgHIGUL/9ytW+H5NDhxlNiV1rTdQBqHPRTHatitKjcD1re2zA8crD+sGnTe+1VMWmUPae/cpF5d6658nQPnNUofZW9HpfbgBXlWV/VDTLXVt0S15fQ2XQ6NDiMUqn02FG/V20u0f8/ktlArau6wHKJMzxXqRIfm/MxK/SsTJ0pDoFRCOBYjYL5/06ODwf1dkUH9jixfZxW1V+Ld+eaK+8UQ3hRhFEL/VOPw1lHn/VV3fem52jlc6067br8QlTturPp9H1wouVFt5ruJVZtLtGuQX33pCT9GNCPAqUx10a2j83RocklTmRIYUAZCKwkgGM13s1xyKoKO4BW1TrGcPp4LZ5/TbmOUFeLcuXtmMDrG6Geto/XVz3O5F/dpfgWfp5rq1WI4s4+BePYo1TLdFq1uURThfqe0kjysqRRN01jan2Tkn4kyoEcy7kJsbjC6L/3IvwU+1EGAp0EcKw6EbkWiIP0tQXrSyos9HatFGErCXh1rqGCPvLCNZ7PYlhfpUjbh2P/pQT62CoWdKBxMuKpvXWo53Y23a4pqzV+4f6IQ6Not+IVlvWq9FjLaq9eQ5pqbWSpRfg8JhBwI+D5Ze6mFIIgMBKBoZ1rW80gTzGDTh6pDe1qduwfYRRM04wvnkiPuVe7yvYa4VMU/jhpVOZoywp8eaxlrYU7qqOBtZxN1x69EhfF0FuXphx12zXF4kX40lMBld9m+ZK533Totx0EcKy2w860cjkBb0dI8nQQbPzLfmz28botrYVR1HvS3Qksc6y0xi332J8pnQwvu8pZ+bDlsA50ldy5jLotW4QvnTXCphAvCnGjDUIkCExCAMdqEuxUOhMCc3CEvFHEOw0VyuFS7wo2RN4yxyr+X1czNSKleFSLroIVfa7dpFpHpRxioL3H3s9hB28bYzhQOvz/dnsTH9sUpjOvs/9/wrKmNlelHftATvWUO5Qruk1QtYsAjlUXIT6HQF0E/tLUPaFRWVNXYy0srovSnTHM4mnbVY6V1qxpREchMULeq63BG6iv4mi91PJPtdqmcwvb05kaSV5YlsOlnbcPtaxpXWU9J3LM9OqxK3cDUdOkHAI4Vjm0KAuB+RP4UtNBEOdnva02cbRy/ndnGQ21/u1nLZ9t+V5LqljmaMXF9Pn7LbMesYx9tk4qjtXWmZwGbzgBOVZKivFDgsC2EWhPZyqAaVe6ieelCxGf5xDAscqhRVkIQAACEKiJQNvRUp+n6XKmdWuyYmW64lhVZjDUhQAEIAABCEBgvgRwrOZrGzSDAAQgAAEIQKAyAjhWlRkMdSEAAQhAAAIQmC8BHKv52gbNIAABCEAAAhCojACOVWUGQ10IQAACEIAABOZLAMdqvrZBMwhAAAIQgAAEKiNQnWN14MCBnGMnKjMH6kIAAhCAAAQgEAjs37//2sViMeX5q9nGwLHKRsYFEIAABCAAAQiMQQDHagzK1AEBCEAAAhCAAARmSqC6EauZckQtCEAAAhCAAAQgsA/HipsAAhCAAAQgAAEIOBHAsXICiRgIQAACEIAABCCAY8U9AAEIQAACEIAABJwI4Fg5gUQMBCAAAQhAAAIQwLHiHoAABCAAAQhAAAJOBHCsnEAiBgIQgAAEIAABCOBYcQ9AAAIQgAAEIAABJwI4Vk4gEQMBCEAAAhCAAARwrLgHIAABCEAAAhCAgBMBHCsnkIiBAAQgAAEIQAACOFbcAxCAAAQgAAEIQMCJAI6VE0jEQAACEIAABCAAARwr7gEIQAACEIAABCDgRADHygkkYiAAAQhAAAIQgACOFfcABCAAAQhAAAIQcCKAY+UEEjEQgAAEIAABCEAAx4p7AAIQgAAEIAABCDgRwLFyAokYCEAAAhCAAAQggGPFPQABCEAAAhCAAAScCOBYOYFEDAQgAAEIQAACEMCx4h6AAAQgAAEIQAACTgRwrJxAIgYCEIAABCAAAQjgWHEPQAACEIAABCAAAScCOFZOIBEDAQhAAAIQgAAEcKy4ByAAAQhAAAIQgIATARwrJ5CIgQAEIAABCEAAAjhW3AMQgAAEIAABCEDAicD/AiX/CeL+q23dAAAAAElFTkSuQmCC
 
-Demo for contract.php
+###################################
+1. If you got this file from GitHub and its name is still contract.php, you should RENAME the file to something harder to guess.
+The 4th line is a timestamp outputed by the online generator and an example of a more secure filename.
 
-Don't use this file. Use contract.php instead.
- 
-This file is only used for testing, it does not delete itself,
-which means the (html) contract can be signed over and over again.
+2. The 2nd and 3rd lines (the emails) are read by this PHP script (from itself).
+When a signature is submitted, this script will send both parties an email with a link to the signed contract.
 
+3. The 5th line ($lines[4] below) is the data for $DEV_SIGNATURE.
+If you got this file from GitHub, the default developer signature just says "John Doe".
+You can generate a new signature @ http://cdpn.io/JYpjvE and replace the data above.
 
+4. The $CLIENT_SIGNATURE is received by this script from itself when Client signs the contract.
 */
+$CLIENT_SIGNATURE = isset($_POST['client_signature']) ? stripslashes ( $_POST['client_signature'] ) : null;
+// TODO: Can base64 data (PNG image) be sanitized? Does it need to before being used in the final HTML?
+if ($CLIENT_SIGNATURE) $CLIENT_SIGNATURE = '<img id="hk" src="' . $CLIENT_SIGNATURE . '" >';
 
-$email = ""; // Notify when contract is signed
+$lines = file(__FILE__);
+$clientEmail = trim($lines[1]);
+$devEmail = trim($lines[2]);
+$DEV_SIGNATURE = trim($lines[4]);
+$DEV_SIGNATURE = '<img id="dev_signature" src="' . $DEV_SIGNATURE . '" >';
 
 $phpName  = basename($_SERVER['PHP_SELF']) ? basename($_SERVER['PHP_SELF']) : 'index.php';
-$fileName = substr($phpName , 0, -4); // without extension
+$fileName = substr($phpName , 0, -4);
 $htmlName = $fileName.'.html';
-$pdfName = $fileName.'.pdf';
-$contractData = stripslashes ( $_POST['contractdata'] ); 
-$ip = get_client_ip_env();
 
-// If the HTML file exists, redirect to it
-//redirectIfExists(); 
+// If the filename is (or starts with) "test" or "demo" the PHP file won't delete itself, nor will it redirect to the HTML contract (when one exists)
+if ( substr($fileName,0,4) == 'test' || substr($fileName,0,4) == 'demo' ) { $selfDelete = 0; }
+else { $selfDelete = 1; }
 
-// If the contractdata was received in the form, put it in an html file
-if ($contractData) {
-	file_put_contents($htmlName,$contractData);
-	$msg = 'Your contract was signed. You can view it here: ' . getUrl();
-	if ($email) mail($email,'Contract signed!',$msg);
-	redirectIfExists();
-} 
-
-// If html file exists, delete php file, redirect to html, and die.
-function redirectIfExists() {
-	global $htmlName;
-	if ( file_exists($htmlName ) ) {
-		//unlink(__FILE__); // the php file deteles itself from the server
-		header('Location: '.$htmlName.'#hk'); 
-		die();
-	}
-}
-// Function to get the client ip address
-function get_client_ip_env() {
-	$ipaddress = '';
-	if (getenv('HTTP_CLIENT_IP'))
-		$ipaddress = getenv('HTTP_CLIENT_IP');
-	else if(getenv('HTTP_X_FORWARDED_FOR'))
-		$ipaddress = getenv('HTTP_X_FORWARDED_FOR');
-	else if(getenv('HTTP_X_FORWARDED'))
-		$ipaddress = getenv('HTTP_X_FORWARDED');
-	else if(getenv('HTTP_FORWARDED_FOR'))
-		$ipaddress = getenv('HTTP_FORWARDED_FOR');
-	else if(getenv('HTTP_FORWARDED'))
-		$ipaddress = getenv('HTTP_FORWARDED');
-	else if(getenv('REMOTE_ADDR'))
-		$ipaddress = getenv('REMOTE_ADDR');
-	else
-		$ipaddress = 'UNKNOWN';
-	return $ipaddress;
-}
-// Function that returns the current file URL and replaces the .php extension with .html
-function getUrl() {
-	$url  = @( $_SERVER["HTTPS"] != 'on' ) ? 'http://'.$_SERVER["SERVER_NAME"] :  'https://'.$_SERVER["SERVER_NAME"];
-	$url .= ( $_SERVER["SERVER_PORT"] !== 80 ) ? ":".$_SERVER["SERVER_PORT"] : "";
-	$url .= $_SERVER["REQUEST_URI"];
-       $url = substr($url,0,-4) . '.html'; 
-	return $url;
-}
-
-?><!DOCTYPE html>
+/**
+The HTML code (and some PHP) is kept in PHP variables like $HEADER, $CONTRACT_HTML, $FOOTER_UNSIGNED, and $FOOTER_SIGNED_PHP.
+**/
+$HEADER ='<!DOCTYPE html>
 <html>
-
 <head>
 <meta charset="UTF-8">
-<title>Contract</title>
+<title>Signed Contract</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="robots" content="noindex">
 <style>
 @import url(http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic);
 @import url(http://fonts.googleapis.com/css?family=Arapey);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800);
-body { 
-    font-family: 'Libre Baskerville', serif; 
+body {
+    font-family: "Libre Baskerville", serif;
     font-size:16px;
     line-height:1.5em;
     color:#000;
@@ -94,8 +64,8 @@ body {
 @media print {
    .noprint { display:none !important; }
 }
-.hidden { 
-    display:none; 
+.hidden {
+    display:none;
 }
 #content {
     max-width: 600px;
@@ -108,7 +78,7 @@ h1 {
     font-size: 2em;
     line-height: 1.2em;
     letter-spacing: 0.15em;
-    font-family: 'Arapey', serif;
+    font-family: "Arapey", serif;
     font-weight: normal;
     margin: 1em 0;
     position: relative;
@@ -122,7 +92,7 @@ h2 {
     font-size:1.2em;
     line-height:1.2em;
     letter-spacing:.05em;
-    font-family:'Open Sans Condensed',sans-serif;
+    font-family:"Open Sans Condensed",sans-serif;
     font-weight:700;
 }
 #signature {
@@ -132,36 +102,32 @@ h2 {
     text-align:center;
 }
 #hk,
-#hk-contractor {
+#dev_signature {
     max-width:333px;
     display:block;
-}
-#hk {
-    display:none;
 }
 #date-ip {
     font-size:1.2em;
     line-height:1.2em;
     letter-spacing:.05em;
-    font-family:'Open Sans Condensed',sans-serif;
+    font-family:"Open Sans Condensed",sans-serif;
     font-weight:400;
 }
 #print-pdf {
-    text-align:center; 
-    padding:1.5em 0; 
-    margin-top:2em; 
+    text-align:center;
+    padding:1.5em 0;
+    margin-top:2em;
     border-top:solid 1px #ccc;
 }
-.buttons { 
-    text-align:center; 
+.buttons {
+    text-align:center;
     margin:1.5em auto;
 }
 button {
     margin: 0 .5em;
     font-size:1.2em;
     line-height:1.5em;
-    /* letter-spacing:.05em; */
-    font-family: 'Open Sans Condensed',sans-serif;
+    font-family: "Open Sans Condensed",sans-serif;
     font-weight: 700;
     text-transform:uppercase;
     color: #0a3666;
@@ -169,26 +135,21 @@ button {
 button:hover {
     color: #136fd2;
 }
-</style>  
+</style>
 </head>
 
 <body>
 
 <div id="content">
-<h1>Contract of work for website design and development</h1>
+
+';
+$CONTRACT_HTML='<h1>Contract of work for website design and development</h1>
 <p>Between <strong>Alice</strong>, referred to below as "Designer", and <strong>Bob</strong>, referred to below as "Customer".</p>
 <h2>1. Agreement of parties</h2>
-<p>Customer hires Designer to redesign the current website, <strong>bobswebsite.com</strong>, for the estimated total price of <strong>$PRICE</strong>.</p>
+<p>Customer hires Designer to redesign the current website, <strong>bobswebsite.com</strong>, for the estimated total price of <strong>$PRICE</strong>. Designer agrees to provide quality service and to answer to the Customers requests in a timely manner.</p>
 <p>The agreed payment plan is at the end of the document.</p>
-<p>Designer agrees to provide quality service and to answer to the Customer&rsquo;s requests in a timely manner. The services provided will be:</p>
-<ol style="list-style-type: lower-alpha;">
-<li>service1;</li>
-<li>service2;</li>
-<li>service3;</li>
-<li>service4.</li>
-</ol>
 <h2>2. Legal matters and copyrights</h2>
-<p>The Customer will guarantee to the Designer that any elements of text, graphics, photos, trademarks or other artwork that the Customer provides for inclusion in the website are either owned by him or that he has the permission to use them. When the Designer receives the final payment, copyright is automatically assigned as follows: Customer will own the graphics, virtual elements, text content photographs and other data provided, unless someone else owns them. The Designer owns the XHTML markup, CSS and other code and he licenses it to the Customer for use on only this project. Designer can reserve the right to display, with Customer&rsquo;s consent, the work as part of the portfolio.</p>
+<p>The Customer will guarantee to the Designer that any elements of text, graphics, photos, trademarks or other artwork that the Customer provides for inclusion in the website are either owned by him or that he has the permission to use them. When the Designer receives the final payment, copyright is automatically assigned as follows: Customer will own the graphics, virtual elements, text content photographs and other data provided, unless someone else owns them. The Designer owns the XHTML markup, CSS and other code and he licenses it to the Customer for use on only this project. Designer can reserve the right to display, with Customer\'s consent, the work as part of the portfolio.</p>
 <h2>3. Term and termination</h2>
 <ol style="list-style-type: lower-alpha;">
 <li>This contract shall commence upon the first payment, as outlined in the payment plan and shall remain effective until the services are completed and delivered.</li>
@@ -198,44 +159,110 @@ button:hover {
 <li>All notices to be given hereunder shall be transmitted in writing by electronic mail and will only be effective upon return confirmation.</li>
 </ol>
 <h2>4. Force majeure</h2>
-<p>Designer shall not be deemed in breach of this contract if Designer is unable to complete the services or any portion by reason of fire, earthquake, labor dispute, illness, internet breaches or any technical issues that may appear beyond Designer&rsquo;s control. Upon occurrence of any Force Majeure Event, Designer shall give notice to the Customer of his inability to perform or of delay in completing the services and shall propose revisions to the schedule for completion of the services.</p>
+<p>Designer shall not be deemed in breach of this contract if Designer is unable to complete the services or any portion by reason of fire, earthquake, labor dispute, illness, internet breaches or any technical issues that may appear beyond Designer\'s control. Upon occurrence of any Force Majeure Event, Designer shall give notice to the Customer of his inability to perform or of delay in completing the services and shall propose revisions to the schedule for completion of the services.</p>
 <h2>5. Payment plan</h2>
 <p>Payment shall be done as follows:</p>
 <ul>
 <li>50% of total estimated fee will be required to commence work, after this contract has been approved and signed by both parties.</li>
 <li>50% upon project closure.</li>
 </ul>
-<p>Any extra time required outside the project timeline/services mentioned at point 1 of this contract, will be billed at a rate of <strong>$FEE</strong> per hour.</p>  <h2>Both parties agree to the terms stipulated above:</h2>
-  <!-- You can generate a new signature at www.cdpn.io/JYpjvE -->
-  <img id="hk-contractor" src="
-data:image/png;base64,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" style="width:100%;">
-  <p>
-    <img id="hk" class="results-page-only" src="data:image/png;base64,">
-  </p>
+<p>Any extra time required outside the project timeline/services mentioned at point 1 of this contract, will be billed at a rate of <strong>$FEE</strong> per hour.</p>
+<h2>Both parties agree to the terms stipulated above:</h2>';
+$FOOTER_UNSIGNED = '
+  <form method="post" class="noprint" id="signature_form">
+    <div id="signature">
+      <!-- Client Signature Canvas -->
+    </div>
 
-  <form method="post" class="noprint" id="signature-form">
-    <div id="signature"></div>
-      <div class="buttons">
-        <button id="reset" type="button">
-        Reset
-        </button>
-        <button id="submit" type="submit">
-        Done &rarr;
-        </button>
-      </div>
-    <input type="hidden" id="signature_capture" name="contractdata" />
+    <div class="buttons">
+      <button id="reset" type="button">Reset</button>
+      <button id="submit" type="submit">Done &rarr;</button>
+    </div>
+
+    <input type="hidden" id="client_signature" name="client_signature" />
   </form>
 
-  <div id="date-ip" class="results-page-only hidden">
-    <strong>Signed on:</strong> <?php echo date('j F Y'); ?>
-    <br><strong>IP address:</strong> 
-    <?php echo $ip; ?><br>
+</div> <!-- #content -->
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<!-- https://github.com/brinley/jSignature/blob/master/README.md -->
+<script src="https://cdn.rawgit.com/willowsystems/jSignature/master/libs/jSignature.min.js"></script>
+<script>
+$(document).ready(function() {
+  $("#signature").jSignature();
+  var $sigdiv = $("#signature");
+  var datapair = $sigdiv.jSignature("getData", "svgbase64");
+
+  $("#signature").bind("change", function(e) {
+    var data = $("#signature").jSignature("getData");
+    $("#client_signature").val(data);
+  });
+
+  $("#reset").click(function(e){
+    $("#signature").jSignature("clear");
+    var data = $("#signature").jSignature("getData");
+    $("#client_signature").val("");
+    e.preventDefault();
+  });
+
+  $("#submit").click(function(e) {
+    $("#signature_form").slideUp(200);
+    //$(".buttons").slideUp(300);
+    $("#signature_form").after("<img id=\"hk\" class=\"hidden\" />");
+    var data = $("#signature").jSignature("getData");
+    $("#hk").attr("src", data );
+    $("#hk").slideDown(200);
+    // Loading text
+    $("#dev_signature").css("opacity",".625")
+    $("#content").css({"color":"#aaa","list-style-color":"#aaa !important"}).append("<div id=\"loading_area\"></div>");
+    $("#loading_area").append("<h2 id=\"loading\" style=\"text-align:center; color:green; display:none;\">Saving Contract…</h2>");
+    $("#loading_area").append("<p id=\"loading2\" style=\"text-align:center; color:#222; display:none;\">This shouldn\'t take more than a minute.</p>");
+    $("#loading").slideDown(300, function() {
+		 		$("#loading2").delay(2000).slideDown(300);
+  	});
+	});
+});
+</script>
+</body>
+</html>';
+
+if ($CLIENT_SIGNATURE) { $FOOTER_SIGNED_PHP ='
+  $phpName  = basename($_SERVER["PHP_SELF"]) ? basename($_SERVER["PHP_SELF"]) : "index.php";
+  $fileName = substr($phpName , 0, -4);
+  $htmlName = $fileName.".html";
+  $pdfName = $fileName.".pdf";
+  ?>
+
+  <div id="date-ip">
+    <strong>Signed on:</strong> <?php echo date("j F Y"); ?>
+    <br><strong>IP address:</strong>
+    <?php echo get_client_ip_env(); ?><br>
   </div>
-  
-  <div class="results-page-only hidden noprint" id="print-pdf">
+
+  <?php // Function to get the client ip address
+  function get_client_ip_env() {
+  	$ipaddress = "";
+  	if (getenv("HTTP_CLIENT_IP"))
+  		$ipaddress = getenv("HTTP_CLIENT_IP");
+  	else if(getenv("HTTP_X_FORWARDED_FOR"))
+  		$ipaddress = getenv("HTTP_X_FORWARDED_FOR");
+  	else if(getenv("HTTP_X_FORWARDED"))
+  		$ipaddress = getenv("HTTP_X_FORWARDED");
+  	else if(getenv("HTTP_FORWARDED_FOR"))
+  		$ipaddress = getenv("HTTP_FORWARDED_FOR");
+  	else if(getenv("HTTP_FORWARDED"))
+  		$ipaddress = getenv("HTTP_FORWARDED");
+  	else if(getenv("REMOTE_ADDR"))
+  		$ipaddress = getenv("REMOTE_ADDR");
+  	else
+  		$ipaddress = "UNKNOWN";
+  	return $ipaddress;
+  } ?>
+
+  <div class="noprint" id="print-pdf">
     <button id="print" type="button" class="button-secondary" onclick="printContract()">
     Print contract
-    </button> 
+    </button>
     <button id="pdf" type="button" class="button-secondary" onclick="generatePdf()">
     Download as PDF
     </button>
@@ -243,52 +270,72 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAlYAAACWCAYAAAAc0saCAAAgAElEQVR4Xu
 
 </div> <!--#content-->
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<!-- https://github.com/brinley/jSignature/blob/master/README.md -->
-<script src="https://cdn.rawgit.com/willowsystems/jSignature/master/libs/jSignature.min.js"></script>
-
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
 <script>
-$(document).ready(function() { 
-  $('#signature').jSignature();
-  var $sigdiv = $('#signature');
-  var datapair = $sigdiv.jSignature('getData', 'svgbase64');
-
-  $('#signature').bind('change', function(e) {
-    var data = $('#signature').jSignature('getData');
-    $("#hk").attr('src',data);  
-  });
-  
-  $('#reset').click(function(e){
-    $('#signature').jSignature('clear');
-    var data = $('#signature').jSignature('getData');
-    $("#hk").attr('src',data);
-    $("#signature_capture").val('');
-    e.preventDefault();
-  });
-
-  $('#submit').click(function(e) {
-    $('#signature-form').hide();
-    $('.results-page-only').show();
-    pageHtml = '<!DOCTYPE html><html>' + $('html').html().toString() + '</html>';
-    $("#signature_capture").val(pageHtml);
-    // To avoid showing the Print/PDF buttons before the page is processed
-    $('#print-pdf, #date-ip').html('<h2 id="loading" style="text-align:center; display:none;">Saving Contract...</h2>');
-    $('#print-pdf, #date-ip').append('<p id="loading2" style="text-align:center; display:none;">This should only take a few seconds</p>');
-    $('#loading').slideDown(300, function() {
-  	$('#loading2').delay(2000).slideDown(300);
-  });
-}); 
- 
-});
-
 function printContract() {
   window.print();
 }
 function generatePdf() {
-  // http://pdfcrowd.com/save-to-pdf/ 
-  window.location.href = '//pdfcrowd.com/url_to_pdf/?use_print_media=1&height=-1&pdf_name=<?php echo $pdfName; ?>';
+  // http://pdfcrowd.com/save-to-pdf/
+  window.location.href = "//pdfcrowd.com/url_to_pdf/?use_print_media=1&height=-1&pdf_name=<?php echo $pdfName; ?>";
 }
 </script>
 
 </body>
-</html>
+</html>';
+} else $FOOTER_SIGNED_PHP = null;
+
+
+if($CLIENT_SIGNATURE==null) {
+  if ( $selfDelete && file_exists($htmlName) ) {
+    header('Location: '.$htmlName.'#hk');
+    die();
+  }
+  /** Waiting for Client to sign: include signature elements and javascript **/
+  echo $HEADER;
+  echo $CONTRACT_HTML;
+  echo $DEV_SIGNATURE;
+  eval (' ?>'. $FOOTER_UNSIGNED .'<?php ');
+}
+else {
+  /** Contract was just signed: put $CLIENT_SIGNATURE and the other parts in the .html file **/
+  file_put_contents($htmlName, $HEADER);
+  file_put_contents($htmlName, $CONTRACT_HTML, FILE_APPEND | LOCK_EX);
+  file_put_contents($htmlName, $DEV_SIGNATURE, FILE_APPEND | LOCK_EX);
+  file_put_contents($htmlName, $CLIENT_SIGNATURE, FILE_APPEND | LOCK_EX);
+  ob_start();
+  eval($FOOTER_SIGNED_PHP); // https://cgd.io/2008/how-to-execute-php-code-in-a-php-string/
+  $FOOTER_SIGNED_COMPILED = ob_get_contents();
+  ob_end_clean();
+  file_put_contents($htmlName, $FOOTER_SIGNED_COMPILED, FILE_APPEND | LOCK_EX);
+
+  // Email client & dev, delete php, redirect to html
+  if ($clientEmail) {
+    $headers = "From: " . $devEmail . "\r\n";
+    $headers .= "MIME-Version: 1.0\r\n";
+    $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+    $msg = 'The contract was signed. You can <a href="' .getUrl(). '">view or download this contract from here</a>.';
+    mail($clientEmail,'Contract signed', $msg, $headers);
+  }
+  if ($devEmail) {
+    $headers = "From: " . $clientEmail . "\r\n";
+    $headers .= "MIME-Version: 1.0\r\n";
+    $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+    $msg = '<p>A new contract was signed. You can <a href="' .getUrl(). '">view or download this contract from here</a>.</p>';
+    $msg.= 'The contract was signed by: ' .$clientEmail;
+    mail($devEmail,'Contract signed!', $msg, $headers);
+  }
+  if ($selfDelete) unlink(__FILE__);
+  header('Location: '.$htmlName.'#hk');
+  die();
+}
+
+// Get the current file URL and replaces the .php extension with .html
+function getUrl() {
+  $url  = @( $_SERVER["HTTPS"] != 'on' ) ? 'http://'.$_SERVER["SERVER_NAME"] :  'https://'.$_SERVER["SERVER_NAME"];
+  $url .= ( $_SERVER["SERVER_PORT"] !== 80 ) ? ":".$_SERVER["SERVER_PORT"] : "";
+  $url .= $_SERVER["REQUEST_URI"];
+  $url = substr($url,0,-4) . '.html';
+  return $url;
+}
+?>
