@@ -1,6 +1,6 @@
 /* Icons from https://github.com/iconic/open-iconic opensource.org/licenses/MIT */
-body { 
-  font-family: 'Libre Baskerville', serif; 
+body {
+  font-family: 'Libre Baskerville', serif;
   font-family:'Open Sans', sans;
   font-size:16px;
   line-height:1.5em;
@@ -12,8 +12,8 @@ body {
 @media (max-width:700px) {
   body { font-size:14px; }
 }
-a, a .icon { 
-  color:#136fd2; 
+a, a .icon {
+  color:#136fd2;
   color:#0a3666;
   fill:#0a3666;
   text-decoration:none;
@@ -36,16 +36,16 @@ a:active {
   float: none;
   text-align: center;
   text-transform:uppercase;
-  font-size:1em; 
+  font-size:1em;
   line-height:1.2rem;
   letter-spacing:.25em;
   font-family:'Open Sans Condensed',sans-serif;
   font-weight:700;
   background:#222;
 }
-.top-menu li a { 
-  text-decoration:none; 
-  color:#eee; 
+.top-menu li a {
+  text-decoration:none;
+  color:#eee;
 }
 .top-menu a:hover {
   color:#7ba4d1;
@@ -96,7 +96,7 @@ a:active {
 
 h1 {
   text-align:center;
-  font-size:2em; 
+  font-size:2em;
   line-height:1.5em;
   line-height: 1.2em;
   letter-spacing:0.15em;
@@ -113,10 +113,16 @@ h1 {
 h2 {
   font-size:1.2em;
   line-height:1.2em;
-  font-family:'Open Sans',sans-serif;   
+  font-family:'Open Sans',sans-serif;
 }
 h1, h2, h3, h4, h5, h6 {
 
+}
+h2 span {
+  border: solid 2px #ccc;
+  border-left: none;
+  border-right: none;
+  border-radius: 3px;
 }
 hr {
   margin: 2em 0;
@@ -128,15 +134,15 @@ hr {
   min-height:20em;
 }
 #mceu_13 {
-  width:calc(100% + 8em); 
+  width:calc(100% + 8em);
   margin:3em -4em;
   margin-bottom:3em;
   box-shadow:0 0px 2px 5px rgba(200,200,200,.4);
   display:block;
 }
 @media (max-width:800px) {
-  #mceu_13 { 
-    width:100%; 
+  #mceu_13 {
+    width:100%;
     margin:1em 0;
   }
 }
@@ -161,13 +167,13 @@ button {
     margin: 0 .5em;
     /*font-size: 1.2em;
     line-height: 1.5em;
-     letter-spacing: .05em; 
+     letter-spacing: .05em;
     font-family: 'Open Sans Condensed',sans-serif;*/
     font-weight: 400;
     /*color: #0a3666;*/
 }
 button:not([disabled]):hover, button:not([disabled]):focus {
-    color: #333; 
+    color: #333;
     background-color: #e3e3e3;
     background-image: -moz-linear-gradient(top, #f2f2f2, #ccc);
     background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f2f2f2), to(#ccc));
@@ -203,7 +209,7 @@ button {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffd9d9d9', GradientType=0);
     zoom: 1;
 }
-#reset { 
+#reset {
   margin:1.5em auto;
 }
 #preview {
@@ -225,7 +231,7 @@ button {
   margin-right:.2em;
 }
 .large-icon {
-  fill:#ddd; 
+  fill:#ddd;
   margin:0;
   margin-left:2em;
   margin-bottom:1em;
@@ -243,7 +249,7 @@ button {
   text-align: center;
   font-size:1em;
   line-height:1.5em;
-  font-family:'Open Sans',sans-serif;  
+  font-family:'Open Sans',sans-serif;
   font-weight: 300;
   line-height: 1.5em;
   letter-spacing: .05em;
