@@ -14,7 +14,7 @@
 <body>
 <ul class="top-menu">
 <li class="currentt">
-  <a title="WP Support & Development" href="http://vileworks.com" 
+  <a title="WP Support & Development" href="http://vileworks.com"
      style="letter-spacing:.2em; font-size:1.1em;">
     <span style="color:#bf7883; text-shadow:none;">
       Vile</span><span style="font-weight:300;">Works
@@ -30,24 +30,22 @@
 <!--<a class="site-title" href="http://www.vileworks.com" title="WP Support & Development">VileWorks</a>-->
 
 <div id="content">
-  
-  <h1 style="text-transform:none; letter-spacing: 0.075em; font-size:2.5em;">Signable contract.php</h1>
+
+  <h1 style="text-transform:none; letter-spacing: 0.075em; font-size:2.5em;">FTP Contract</h1>
   <hr>
   <h2 style="text-align:center;">You FTP it to your server and send your client  a link to it&#8230;</h2>
   <h2 style="text-align:center; font-family:'Open Sans Condensed', sans; font-weight:300; line-height:1.5em; letter-spacing:.05em">
-    Once 
-    <a title="Signable demo" href="../demo.php" target="_blank">
-      <strong>signed</strong><svg class="icon" viewBox="0 0 8 8">
-        <use xlink:href="css/sprite.svg#pencil"></use>
-      </svg> 
-    </a>
-    by your client, this php file will delete itself from your server and leave behind an HTML version of the contract that can be 
+    Once
+    <strong>signed</strong><svg class="icon" viewBox="0 0 8 8">
+      <use xlink:href="css/sprite.svg#pencil"></use>
+    </svg>
+    by your client, this php file will delete itself from your server and leave behind an HTML version of the contract that can be
     <a id="print-preview" title="Print demo" href="../demo.html" target="_blank">
       <strong>printed</strong><svg class="icon" viewBox="0 0 8 8">
         <use xlink:href="css/sprite.svg#print"></use>
-      </svg> 
+      </svg>
     </a>
-    or downloaded as a 
+    or downloaded as a
     <a title="PDF demo" href="../demo.pdf" target="_blank">
       <strong>PDF</strong><svg class="icon" viewBox="0 0 1024 1024">
         <use xlink:href="css/sprite.svg#pdf"></use>
@@ -55,59 +53,74 @@
     </a>
   </h2>
   <hr>
-  
+
+  <svg class="large-icon" viewBox="0 0 8 8">
+    <use xlink:href="css/sprite.svg#envelope-open"></use>
+  </svg>
+  <h2>I. Email addresses</h2>
+  <p>Both you and your client will be notified when the contract is signed. [They're both optional.]</p>
+  <p><input type="email" name="client_email" id="client_email" placeholder="client@example.com"></p>
+  <p><input type="email" name="dev_email" id="dev_email" placeholder="dev@example.com"></p>
+
   <svg class="large-icon" viewBox="0 0 8 8">
     <use xlink:href="css/sprite.svg#code"></use>
   </svg>
-  <h2>I. Contract HTML</h2>
-  <p>The contract copy should be in HTML format. 
-    Write it below, or paste its <span style="font-family:'Open Sans Condensed'; letter-spacing:.25px;font-size:1.2em; ">&lt;&gt; source code</span> from somewhere else, and replace 
+  <h2>II. Contract HTML</h2>
+  <p>The contract copy should be in HTML format.
+    Write it below, or paste its <span style="font-family:'Open Sans Condensed'; letter-spacing:.25px;font-size:1.2em; ">&lt;&gt; source code</span> from somewhere else, and replace
     the default text in the editor.
   [Drag corner to resize editor box.]
   </p>
-  <form></form><textarea id="input-html">
-    <?php include('template/default-contract.html'); ?>
-  </textarea></form>
-  
+  <textarea id="contract_html">
+    <?php include('template/contract_html.txt'); ?>
+  </textarea>
+
   <svg class="large-icon" viewBox="0 0 8 8">
     <use xlink:href="css/sprite.svg#pencil"></use>
   </svg>
-  <h2>II. Your signature</h2>
+  <h2>III. Your signature</h2>
   <p>This goes on the bottom of the contract. Use your mouse cursor or the tip of your finger to sign in the dotted box below.
   <br>[<a href="#" id="reset">Reset sigature box?</a>]</p>
-  
+
   <div id="signature"></div>
 
   <svg class="large-icon" viewBox="0 0 8 8">
     <use xlink:href="css/sprite.svg#download"></use>
   </svg>
-  <h2>III. Download & deploy</h2>
+  <h2>IV. Download & deploy</h2>
   <form method="post" id="signature-form" action="template/index.php">
     <p>Download the contract and FTP it to your server.</p>
-    <button id="submit">
-      <svg class="icon" viewBox="0 0 8 8">
-        <use xlink:href="css/sprite.svg#download"></use>
-      </svg> Download Contract
-    </button> <small><em>contract.php</em> (you can rename this)</small>
-    <input type="hidden" id="file_name" name="file_name">
+
+    <p style="">
+      <label for="file_name" style="line-height: 2em; margin-right: 1em;">
+        <input type="text" id="file_name" name="file_name" value="" style="text-align:right;">.php
+      </label>
+      <button id="submit"> Download Contract
+        <svg class="icon" viewBox="0 0 8 8">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="css/sprite.svg#download"></use>
+        </svg>
+      </button>
+    </p>
+
+    <input type="hidden" id="client_email_capture" name="client_email_capture">
+    <input type="hidden" id="dev_email_capture" name="dev_email_capture">
+    <!-- <input type="hidden" id="file_name" name="file_name"> -->
+    <input type="hidden" id="contract_html_capture" name="contract_html_capture">
     <input type="hidden" id="signature_capture" name="signature_capture">
-    <input type="hidden" id="html_capture" name="html_capture">
   </form>
-  
+
   <svg class="large-icon" viewBox="0 0 8 8">
     <use xlink:href="css/sprite.svg#link"></use>
   </svg>
-  <h2>IV. Ask your client to review and sign.</h2>
+  <h2>V. Ask your client to review and sign.</h2>
   <p>Send your client a link to the contract (hosted under your domain).
   </p>
-  <p>The link could be short and random or long and descriptive, but not very obvious to guess: you probably don't want some clients to be able to find other clients' contracts.</p>
-  <p><b>!</b> There is a <strong>security <a href="https://github.com/nonsalant/contract/issues/8" target="_blank">issue</a></strong> where someone who knows the location of an unsigned contract on your server can upload malicious code to the (final) contract.html file. At least for the time being you should only use this if you trust the client not to inject scripts when you send them the link and ask them to sign.</b>
-  
+
   <hr>
   <h3 style="text-align:center;">Resources</h3>
   <ul class="resources two-columns">
-    <li><a target="_blank" href="http://vileworks.com/contract/demo.php">
-      view a signable <strong>demo <svg class="icon" viewBox="0 0 8 8">
+    <li><a target="_blank" href="http://vileworks.com/contract/demo.html">
+      view a <strong>demo <svg class="icon" viewBox="0 0 8 8">
         <use xlink:href="css/sprite.svg#eye"></use>
       </svg></strong></a>
     </li>
@@ -136,24 +149,24 @@
         <use xlink:href="css/sprite.svg#globe"></use>
       </svg></strong></a>
     </li>
-  </ul>  
-  
+  </ul>
+
   <hr>
-  <p><strong>Disclaimer:</strong> You generate, sign, and host this file yourself and you are responsible 
-  for its contents and how you use it. This is an open source project, the code for it, including the code 
-  for the generator, is freely available at <a href="https://github.com/nonsalant/contract/">Github</a>. 
+  <p><strong>Disclaimer:</strong> You generate, sign, and host this file yourself and you are responsible
+  for its contents and how you use it. This is an open source project, the code for it, including the code
+  for the generator, is freely available at <a href="https://github.com/nonsalant/contract/">Github</a>.
   We don't store anything you do on this page, to get a new contract you will have to generate and download it again.
   </p>
   <hr>
   <p class="footer">Created by <a href="http://twitter.com/nonsalant/">Stefan Matei</a> for <a href="http://vileworks.com">VileWorks.com</a></p>
-  
+
 </div> <!--#content-->
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="http://tinymce.cachefly.net/4.0/tinymce.min.js"></script>
 <script src="https://cdn.rawgit.com/willowsystems/jSignature/master/libs/jSignature.min.js"></script>
 
-<script src="http://www.vileworks.com/combined.js"></script>
+<script src="http://vileworks.com/combined.js"></script>
 <script src="js/index.js"></script>
 
 <script>
