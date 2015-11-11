@@ -1,3 +1,0 @@
-  <h2>Both parties agree to the terms stipulated above:</h2>
-  <!-- You can generate a new signature at www.cdpn.io/JYpjvE -->
-  <img id="hk-contractor" src="
