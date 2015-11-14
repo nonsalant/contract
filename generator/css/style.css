@@ -115,6 +115,20 @@ h2 {
   line-height:1.2em;
   font-family:'Open Sans',sans-serif;
 }
+.ribbon {
+  display: inline-block; 
+  margin-top: 2rem; 
+  margin-bottom: 0rem; 
+  margin-left: calc(-2rem - 2px); 
+  background-color: #53777A; 
+  border-right: .3em solid #d3b1b1; 
+  border-color: #abc9cc; 
+  padding: 0 1.5em 0 3em; 
+  color: #fff; 
+  font-family: 'Open Sans Condensed',sans-serif; 
+  font-size: .9em; 
+  line-height: 2em; box-shadow: 0 1px 2px -2px #000;
+}
 h1, h2, h3, h4, h5, h6 {
 
 }
