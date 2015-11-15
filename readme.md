@@ -20,4 +20,6 @@ Once they have signed, this PHP file will delete itself
 and leave behind an HTML version of the signed contract 
 that can be printed or downloaded as a PDF.
 
+For an overview of the files and folders see: [Wiki / What's in each file](https://github.com/nonsalant/contract/wiki/What's-in-each-file)
+
 [MIT License](http://www.opensource.org/licenses/mit-license.php)
