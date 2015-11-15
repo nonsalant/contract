@@ -11,9 +11,12 @@ You can generate a new signature @ http://cdpn.io/JYpjvE and replace the data ab
 
 4. The $CLIENT_SIGNATURE is received by this script from itself when Client signs the contract.
 */
-$CLIENT_SIGNATURE = isset($_POST['client_signature']) ? stripslashes ( $_POST['client_signature'] ) : null;
-// TODO: Can base64 data (PNG image) be sanitized? Does it need to before being used in the final HTML?
-if ($CLIENT_SIGNATURE) $CLIENT_SIGNATURE = '<img id="hk" src="' . $CLIENT_SIGNATURE . '" >';
+$CLIENT_SIGNATURE = isset($_POST['client_signature']) ? $_POST['client_signature'] : null;
+if (substr( $CLIENT_SIGNATURE, 0, 22 ) === 'data:image/png;base64,') {
+    $CLIENT_SIGNATURE = '<img id="hk" src="' . htmlspecialchars($CLIENT_SIGNATURE) . '" >';
+} else {
+  $CLIENT_SIGNATURE = null;
+}
 
 $lines = file(__FILE__);
 $clientEmail = trim($lines[1]);
