@@ -126,6 +126,7 @@ h2 {
   padding: 0 1.5em 0 3em; 
   color: #fff; 
   font-family: 'Open Sans Condensed',sans-serif; 
+  font-weight: normal;
   font-size: .9em; 
   line-height: 2em; box-shadow: 0 1px 2px -2px #000;
 }
