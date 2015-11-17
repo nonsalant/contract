@@ -5,7 +5,7 @@ A signable contract that lives in a single .php file
 - Can only be singed once
 - Comes with "Print" and "Download as PDF" buttons
 
-<a href="http://vileworks.com/contract/demo.php"><img src="https://dl.dropboxusercontent.com/u/19848482/vileworks/signed-contract.png" title="Print/PDF Contract" style="max-width:100%"/></a>
+<a href="http://vileworks.com/contract/test.php"><img src="https://dl.dropboxusercontent.com/u/19848482/vileworks/demo.gif" title="Print/PDF Contract" style="max-width:100%"/></a>
 
 **[View demo, test signature functionality](http://vileworks.com/contract/test.php)**.
 
@@ -20,6 +20,6 @@ Once they have signed, this PHP file will delete itself
 and leave behind an HTML version of the signed contract 
 that can be printed or downloaded as a PDF.
 
-For an overview of the files and folders see: [Wiki / What's in each file](https://github.com/nonsalant/contract/wiki/What's-in-each-file)
+For an overview of the files and folders in this repo see: [**Wiki** / What's in each file](https://github.com/nonsalant/contract/wiki/What's-in-each-file)
 
 [MIT License](http://www.opensource.org/licenses/mit-license.php)
