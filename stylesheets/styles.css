@@ -203,3 +203,7 @@ a:hover img  {
   display: block;
   float: right;
 }
+
+.footer {
+  text-align:center;
+}
