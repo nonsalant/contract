@@ -87,8 +87,6 @@ h1 {
     position: relative;
     text-align: center;
     text-transform: uppercase;
-    border: solid 1px;
-    border-width: 1px 0;
     padding: .5em 0;
 }
 h2 {
