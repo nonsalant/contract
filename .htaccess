@@ -1,5 +1,0 @@
-# the following prevents display of the contract.php file
-<files contract.php>
-order allow,deny
-deny from all
-</files>
