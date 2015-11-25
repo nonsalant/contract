@@ -35,24 +35,19 @@
   <hr>
   <h2 style="text-align:center;">You FTP it to your server and send your client  a link to it&#8230;</h2>
   <h2 style="text-align:center; font-family:'Open Sans Condensed', sans; font-weight:300; line-height:1.5em; letter-spacing:.05em">
-    Once
-    <a title="Test signature in new window" href="../test.php" target="_blank">
-      <strong>signed</strong><svg class="icon" viewBox="0 0 8 8">
+    Once <strong>signed</strong><svg class="icon" viewBox="0 0 8 8">
       <use xlink:href="css/sprite.svg#pencil"></use>
-      </svg>
-    </a>
+    </svg>
     by your client, this php file will delete itself from your server and leave behind an HTML version of the contract that can be
-    <a id="print-preview" title="Print demo" href="../test.html" target="_blank">
-      <strong>printed</strong><svg class="icon" viewBox="0 0 8 8">
-        <use xlink:href="css/sprite.svg#print"></use>
-      </svg>
-    </a>
+    <strong>printed</strong><svg class="icon" viewBox="0 0 8 8">
+      <use xlink:href="css/sprite.svg#print"></use>
+    </svg>
+    
     or downloaded as a
-    <a title="PDF demo" href="../test.pdf" target="_blank">
-      <strong>PDF</strong><svg class="icon" viewBox="0 0 1024 1024">
-        <use xlink:href="css/sprite.svg#pdf"></use>
-      </svg>
-    </a>
+    <strong>PDF</strong><svg class="icon" viewBox="0 0 1024 1024">
+      <use xlink:href="css/sprite.svg#pdf"></use>
+    </svg>
+    
   </h2>
   <hr>
 
