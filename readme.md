@@ -20,8 +20,6 @@
 ### readme.md
 The file containing the text you're currently reading.
 
-<img src="https://dl.dropboxusercontent.com/u/19848482/vileworks/email-contract.png" title="Send your Client a link to the contract" />
-
 ## How it works:
 
 When the **Contract Script** (`contract.php`) receives a signature from the **Second Party** (your client/the last person who signs) it deletes itself from your server and and leaves behind a **Contract Document** (`contract.html`)
@@ -33,6 +31,8 @@ Download and edit `contract.php` from this repo, follow the steps from the comme
 Alternatively, you can generate a Contract Script [online](http://vileworks.com/contract/generator.php) with custom HTML for the contract copy, a signature for the first party, and filename like `contract-1447311912.php`. 
 
 Send your Client a link to the contract, hosted under your own domain.
+
+<img src="https://dl.dropboxusercontent.com/u/19848482/vileworks/email-contract.png" title="Send your Client a link to the contract" />
 
 --
 
