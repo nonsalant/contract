@@ -3,7 +3,7 @@
 
 - Host the stand-alone file on your own domain
 - Can only be singed once
-- Final document has "Print" and "Download as PDF" buttons
+- Final document has `Print` and `Download as PDF` buttons
  
 <hr>
 
