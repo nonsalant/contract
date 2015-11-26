@@ -4,8 +4,6 @@
 - Host the stand-alone file on your own domain
 - Can only be singed once
 - Final document has `Print` and `Download as PDF` buttons
- 
-<hr>
 
 <a href="http://vileworks.com/contract/test.php" title="View & Sign Demo Contract">
 <img src="https://dl.dropboxusercontent.com/u/19848482/vileworks/signed-contract.png" alt="Signed Contract" />
