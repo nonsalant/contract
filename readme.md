@@ -20,7 +20,7 @@
 ### readme.md
 The file containing the text you're currently reading.
 
-<hr>
+<img src="https://dl.dropboxusercontent.com/u/19848482/vileworks/email-contract.png" title="Send your Client a link to the contract" />
 
 ## How it works:
 
