@@ -1,9 +1,3 @@
-<figure><a href="http://vileworks.com/contract/test.php" title="View &amp; Sign Demo Contract"><img width="360" src="https://camo.githubusercontent.com/10c94b200adbd8f2e85111382e518082b406a6de/68747470733a2f2f646c2e64726f70626f7875736572636f6e74656e742e636f6d2f752f31393834383438322f76696c65776f726b732f7369676e65642d636f6e74726163742e706e67" alt="Signed Contract" data-canonical-src="https://dl.dropboxusercontent.com/u/19848482/vileworks/signed-contract.png" style="max-width:100%;"></a>
-    <figcaption>
-        <small>Final Contract Document, signed by both parties</small>
-    </figcaption>
-</figure>
-
 # FTP Contract
 ## A signable contract that lives in a **single file**
 
@@ -35,6 +29,8 @@ Alternatively, you can generate a Contract Script [online](http://vileworks.com/
 Send your Client a link to the contract, hosted under your own domain.
 
 <img src="https://dl.dropboxusercontent.com/u/19848482/vileworks/email-contract.png" title="Send your Client a link to the contract" />
+
+<a href="http://vileworks.com/contract/test.php" title="View &amp; Sign Demo Contract"><img  src="https://camo.githubusercontent.com/10c94b200adbd8f2e85111382e518082b406a6de/68747470733a2f2f646c2e64726f70626f7875736572636f6e74656e742e636f6d2f752f31393834383438322f76696c65776f726b732f7369676e65642d636f6e74726163742e706e67" alt="Signed Contract" data-canonical-src="https://dl.dropboxusercontent.com/u/19848482/vileworks/signed-contract.png"></a>
 
 --
 
