@@ -1,25 +1,39 @@
 # contract
-A signable contract that lives in a single .php file
+## A signable contract that lives in a **single file**
 
-- Host it on your own domain
+- Host the stand-alone file on your own domain
 - Can only be singed once
-- Comes with "Print" and "Download as PDF" buttons
+- Final document has "Print" and "Download as PDF" buttons
+ 
+<hr>
 
-<a href="http://vileworks.com/contract/test.php"><img src="https://dl.dropboxusercontent.com/u/19848482/vileworks/demo.gif" title="Print/PDF Contract" style="max-width:100%"/></a>
+<a href="http://vileworks.com/contract/test.php" title="View & Sign Demo Contract">
+<img src="https://dl.dropboxusercontent.com/u/19848482/vileworks/signed-contract.png" alt="Signed Contract" />
+</a>
 
-**[View demo, test signature functionality](http://vileworks.com/contract/test.php)**.
+## What's in each file:
+
+### test.php 
+**A demo** of the contract -- at the stage where it's waiting for the second signature. This runs on a live server and can be viewed (an ran) at: [vileworks.com/contract/test.php](http://vileworks.com/contract/test.php). The only difference between this and contract.php (mentioned below) is that test.php doesn't delete itself when you sign it.
+
+### [contract.php](https://github.com/nonsalant/contract/blob/master/contract.php)
+**All code** (PHP, CSS, HTML, PNG-data, JS) required by a stand-alone contract file. Upon being signed this script deletes itself (or rather, it deletes its .php file) and leaves behind an .html file: a final version of the contract, signed by both parties.
+
+### readme.md
+The file you're currently reading.
 
 <hr>
 
-**[Generate a new contract online](http://vileworks.com/contract/generator/)** or get the concatenated code from [contract.php](https://github.com/nonsalant/contract/blob/master/contract.php) in this repo.
+## How it works:
 
-Upload the **contract.php** file to your server and send a link to your client. 
-(You should rename this file to something harder to guess.)
+When the **Contract Script** (contract.php) receives a signature from the **Second Party** (your client/the last person who signs) it deletes itself from your server and and leaves behind a **Contract Document** (contract.html)
 
-Once they have signed, this PHP file will delete itself 
-and leave behind an HTML version of the signed contract 
-that can be printed or downloaded as a PDF. (Same name, but .html instead of .php extension.)
+You can get the Contract Script in one of two ways:
 
-For an overview of the files and folders in this repo see: [**Wiki** / What's in each file](https://github.com/nonsalant/contract/wiki/What's-in-each-file)
+Download and edit contract.php from this repo, follow the steps from the comments at the top of contract.php and use [this online tool](http://cdpn.io/JYpjvE) to generate a new PNG signature. Give it a filename that is harder to guess.
+
+Alternatively, you can create a file like contract.php [online](http://vileworks.com/contract/generator.php) with custom HTML for the contract copy, a signature for the first party, and filename like contract-1447311912.php. 
+
+--
 
 [MIT License](http://www.opensource.org/licenses/mit-license.php)
