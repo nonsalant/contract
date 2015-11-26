@@ -5,10 +5,6 @@
 - Can only be singed once
 - Final document has `Print` and `Download as PDF` buttons
 
-<a href="http://vileworks.com/contract/test.php" title="View & Sign Demo Contract">
-<img src="https://dl.dropboxusercontent.com/u/19848482/vileworks/signed-contract.png" alt="Signed Contract" />
-</a>
-
 ## What's in each file:
 
 ### test.php 
@@ -19,6 +15,10 @@
 
 ### readme.md
 The file containing the text you're currently reading.
+
+<a href="http://vileworks.com/contract/test.php" title="View & Sign Demo Contract">
+<img src="https://dl.dropboxusercontent.com/u/19848482/vileworks/signed-contract.png" alt="Signed Contract" />
+</a>
 
 ## How it works:
 
