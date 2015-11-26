@@ -20,19 +20,19 @@
 **All code** (PHP, CSS, HTML, PNG-data, JS) required by a stand-alone contract file. Upon being signed this script deletes itself (or rather, it deletes its .php file) and leaves behind an .html file: a final version of the contract, signed by both parties.
 
 ### readme.md
-The file you're currently reading.
+The file containing the text you're currently reading.
 
 <hr>
 
 ## How it works:
 
-When the **Contract Script** (contract.php) receives a signature from the **Second Party** (your client/the last person who signs) it deletes itself from your server and and leaves behind a **Contract Document** (contract.html)
+When the **Contract Script** (`contract.php`) receives a signature from the **Second Party** (your client/the last person who signs) it deletes itself from your server and and leaves behind a **Contract Document** (`contract.html`)
 
 You can get the Contract Script in one of two ways:
 
-Download and edit contract.php from this repo, follow the steps from the comments at the top of contract.php and use [this online tool](http://cdpn.io/JYpjvE) to generate a new PNG signature. Give it a filename that is harder to guess.
+Download and edit `contract.php` from this repo, follow the steps from the comments at the top of contract.php and use [this online tool](http://cdpn.io/JYpjvE) to generate a new PNG signature. Give it a filename that is harder to guess.
 
-Alternatively, you can create a file like contract.php [online](http://vileworks.com/contract/generator.php) with custom HTML for the contract copy, a signature for the first party, and filename like contract-1447311912.php. 
+Alternatively, you can create a file like `contract.php` [online](http://vileworks.com/contract/generator.php) with custom HTML for the contract copy, a signature for the first party, and filename like `contract-1447311912.php`. 
 
 --
 
