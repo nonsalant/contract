@@ -22,7 +22,7 @@ The file containing the text you're currently reading.
 
 ## How it works:
 
-When the **Contract Script** (`contract.php`) receives a signature from the **Second Party** (your client/the last person who signs) it deletes itself from your server and and leaves behind a **Contract Document** (`contract.html`)
+When the **Contract Script** (`contract.php`) receives a signature from the **Second Party** (your Client/the last person who signs) it deletes itself from your server and and leaves behind a **Contract Document** (`contract.html`)
 
 You can get the Contract Script in one of two ways:
 
