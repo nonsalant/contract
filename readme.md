@@ -1,3 +1,10 @@
+<figure style="
+    float: right;
+    max-width: 40%;
+margin-right:0;"><a href="http://vileworks.com/contract/test.php" title="View &amp; Sign Demo Contract"><img src="https://camo.githubusercontent.com/10c94b200adbd8f2e85111382e518082b406a6de/68747470733a2f2f646c2e64726f70626f7875736572636f6e74656e742e636f6d2f752f31393834383438322f76696c65776f726b732f7369676e65642d636f6e74726163742e706e67" alt="Signed Contract" data-canonical-src="https://dl.dropboxusercontent.com/u/19848482/vileworks/signed-contract.png" style="max-width:100%;">
+  <figcaption>Final Contract Document, signed by both parties
+</figcaption></a></figure>
+
 # FTP Contract
 ## A signable contract that lives in a **single file**
 
@@ -15,10 +22,6 @@
 
 ### readme.md
 The file containing the text you're currently reading.
-
-<a href="http://vileworks.com/contract/test.php" title="View & Sign Demo Contract">
-<img src="https://dl.dropboxusercontent.com/u/19848482/vileworks/signed-contract.png" alt="Signed Contract" />
-</a>
 
 ## How it works:
 
