@@ -1,4 +1,4 @@
-# contract
+# FTP Contract
 ## A signable contract that lives in a **single file**
 
 - Host the stand-alone file on your own domain
