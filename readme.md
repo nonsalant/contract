@@ -32,6 +32,8 @@ Download and edit `contract.php` from this repo, follow the steps from the comme
 
 Alternatively, you can generate a Contract Script [online](http://vileworks.com/contract/generator.php) with custom HTML for the contract copy, a signature for the first party, and filename like `contract-1447311912.php`. 
 
+Send your Client a link to the contract, hosted under your own domain.
+
 --
 
 [MIT License](http://www.opensource.org/licenses/mit-license.php)
