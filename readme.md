@@ -11,7 +11,7 @@
 **A demo** of the contract -- at the stage where it's waiting for the second signature. This runs on a live server and can be viewed (and ran) at: [vileworks.com/contract/test.php](http://vileworks.com/contract/test.php). The only difference between this file and `contract.php` (mentioned below) is that `test.php` doesn't delete itself when you sign it.
 
 ### [contract.php](https://github.com/nonsalant/contract/blob/master/contract.php)
-**All code** (PHP, CSS, HTML, PNG-data, JS) required by a stand-alone contract file. Upon being signed this script deletes itself (or rather, it deletes its .php file) and leaves behind an .html file: a final version of the contract, signed by both parties.
+**All code** (PHP, CSS, HTML, PNG-data, JS) required by a stand-alone contract file. Upon being signed, this script deletes itself (or rather, it deletes its .php file), and leaves behind an .html file: a final version of the contract, signed by both parties.
 
 ### readme.md
 The file containing the text you're currently reading.
