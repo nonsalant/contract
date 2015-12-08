@@ -5,7 +5,7 @@
 - Can only be singed once
 - Final document has `Print` and `Download as PDF` buttons
 
-## What's in each file:
+## What's in each file
 
 ### test.php 
 **A demo** of the contract -- at the stage where it's waiting for the second signature. This runs on a live server and can be viewed (and ran) at: [vileworks.com/contract/test.php](http://vileworks.com/contract/test.php). The only difference between this file and `contract.php` (mentioned below) is that `test.php` doesn't delete itself when you sign it.
@@ -16,7 +16,7 @@
 ### readme.md
 The file containing the text you're currently reading.
 
-## How it works:
+## How it works
 
 When the **Contract Script** (`contract.php`) receives a signature from the **Second Party** (your Client/the last person who signs) it deletes itself from your server and and leaves behind a **Contract Document** (`contract.html`)
 
