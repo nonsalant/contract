@@ -1,37 +1,62 @@
-# FTP Contract
-## A signable contract that lives in a **single file**
+# Single File Contract
+## A contract that lives in a **single file** and becomes static HTML after it's been signed.
 
-- Host the stand-alone file on your own domain
-- Can only be singed once
-- Final document has `Print` and `Download as PDF` buttons
+1. [**Generate** a contract file →](https://stefanmatei.com/contract-generator/edit)
+1. **Upload** it to your server
+1. **Send** your client a link to it
+* **[View demo](https://stefanmatei.com/contract-generator/contract-demo.html)**
 
-## What's in each file
+![email-contract](https://user-images.githubusercontent.com/180561/209838611-9b40307e-de05-44c0-967a-54399d85ef53.png)
 
-### test.php 
-**A demo** of the contract -- at the stage where it's waiting for the second signature. This runs on a live server and can be viewed (and ran) at: [vileworks.com/contract/test.php](http://vileworks.com/contract/test.php). The only difference between this file and `contract.php` (mentioned below) is that `test.php` doesn't delete itself when you sign it.
-
-### [contract.php](https://github.com/nonsalant/contract/blob/master/contract.php)
-**All code** (PHP, CSS, HTML, PNG-data, JS) required by a stand-alone contract file. Upon being signed, this script deletes itself (or rather, it deletes its .php file), and leaves behind an .html file: a final version of the contract, signed by both parties.
-
-### readme.md
-The file containing the text you're currently reading.
+---
 
 ## How it works
 
-When the **Contract Script** (`contract.php`) receives a signature from the **Second Party** (your Client/the last person who signs) it deletes itself from your server and and leaves behind a **Contract Document** (`contract.html`)
+* **[Contract Generator →](https://stefanmatei.com/contract-generator/edit)**
 
-You can get the Contract Script in one of two ways:
+1. Click the link above to create a contract file with custom content or HTML, a signature for the first party, and filename like `contract-1234567890.php`.
+2. Upload the generated file to your own server or domain. You can also rename this file and put it in a folder with a unique name, eg: `contract-1234567890/index.php`.
+3. Once signed by both parties, **the PHP file will delete itself from your server and leave behind a static HTML file.**
 
-Download and edit `contract.php` from this repo, follow the steps from the comments at the top of the file, and use [this online tool](http://cdpn.io/JYpjvE) to generate a new PNG signature. Give it a filename that is harder to guess.
+---
 
-Alternatively, you can generate a Contract Script [online](http://vileworks.com/contract/generator.php) with custom HTML for the contract copy, a signature for the first party, and filename like `contract-1447311912.php`. 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/dc7d73d9-c327-4bcd-a33a-657603bc64ab/deploy-status)](https://app.netlify.com/sites/stefanmatei/deploys)
 
-Send your Client a link to the contract, hosted under your own domain.
+---
 
-<img width="900" src="https://dl.dropboxusercontent.com/u/19848482/vileworks/email-contract.png" title="Send your Client a link to the contract" />
+## What's in each file
 
-<a href="http://vileworks.com/contract/test.php" title="View &amp; Sign Demo Contract"><img  src="https://camo.githubusercontent.com/10c94b200adbd8f2e85111382e518082b406a6de/68747470733a2f2f646c2e64726f70626f7875736572636f6e74656e742e636f6d2f752f31393834383438322f76696c65776f726b732f7369676e65642d636f6e74726163742e706e67" alt="Signed Contract" data-canonical-src="https://dl.dropboxusercontent.com/u/19848482/vileworks/signed-contract.png"></a>
+### [contract.php](https://github.com/nonsalant/contract/blob/master/contract.php)
 
---
+An example of a contract script: contains **all code** (PHP, CSS, HTML, PNG-data, JS) required by a stand-alone contract file. Upon being signed, this script deletes itself (or rather, it deletes its .php file), and leaves behind an .html file with the same name: a final version of the contract, signed by both parties.
+
+The first 10 or so lines of the file are used to store contract metadata (one per line), ie:
+
+```php
+<?php /* ##########################
+[client_email]
+[dev_email]
+[dev_signature]
+[dev_ip]
+[dev_timestamp]
+[dev_timestamp_offset]
+[dev_name]
+[client_name]
+###################################
+```
+---
+
+### test.php 
+A copy of `contract.php` -- the only difference is when the filename is `test.php` or `demo.php` the PHP file doesn't delete itself when signed.
+
+---
+
+### [📁/generator/](https://github.com/nonsalant/contract/tree/master/generator)
+Folder containing all the code behind the [online generator](https://stefanmatei.com/contract-generator/).
+
+[![contract-generator](https://user-images.githubusercontent.com/180561/209838852-20825cf1-ab25-4f09-8ec7-c26eb80c0a14.jpg)](https://stefanmatei.com/contract-generator/)
+
+
+---
 
 [MIT License](http://www.opensource.org/licenses/mit-license.php)
