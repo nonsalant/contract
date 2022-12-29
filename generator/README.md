@@ -8,6 +8,7 @@ You can run the generator online:
 * **[Generate Contract →](https://stefanmatei.com/contract-generator/edit)**
 
 ## Downloading and running the generator folder on your own server (3 options)
+* **[Download generator.zip](https://github.com/nonsalant/contract/releases/)** (archived generator folder)
 
 Alternatively, you can download the contents of this folder and transfer them to your own server.
 
