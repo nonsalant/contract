@@ -1,0 +1,59 @@
+:where(*:focus-visible) {
+  outline: 3px solid #000000;
+  outline-offset: 3px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  /* added line */
+  border: 0;
+}
+
+.skip-to-content {
+  position: fixed;
+  z-index: 9999;
+  border-radius: 8px;
+  background-color: hsl(var(--clr-darker-hsl));
+  color: hsl(var(--clr-light-hsl));
+  padding: 0.5em 1em;
+  margin-inline: auto;
+  text-decoration: none;
+  transform: translateY(calc(-100% - 5rem - 1px));
+  transition: transform 0.25s ease-in;
+  top: 1.5rem;
+  left: 0;
+  right: 0;
+  margin: 0 auto !important; /* override .button styles */
+  max-width: max-content;
+  display: block;
+  opacity: 0;
+  outline-offset: 1px;
+}
+.skip-to-content:hover {
+  background-color: hsl(var(--clr-light-hsl));
+  color: hsl(var(--clr-darker-hsl));
+}
+
+.skip-to-content:focus {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: auto !important;
+    scroll-behavior: auto !important;
+  }
+  .animate {
+    animation: none !important;
+  }
+}

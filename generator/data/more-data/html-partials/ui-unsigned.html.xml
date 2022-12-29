@@ -1,0 +1,62 @@
+<form method="post" class="noprint" id="signature_form">
+    <div id="signature-container">
+        <div id="canvas-container">
+            <canvas id="signature-pad" class="signature-pad" width="188" height="58.66"></canvas>
+        </div>
+    </div>
+
+    <div class="animate slide">
+        <div class="no-print margin-top invert-colors flexi | to-go | animate slide">
+            <button id="reset" title="Clear Signature" type="button" class="icon-button button warning">
+                <span class="hide-medium">Clear</span>
+                <span class="icon">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em"
+                        width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20.454,19.028h-7.01l6.62-6.63a2.935,2.935,0,0,0,.87-2.09,2.844,2.844,0,0,0-.87-2.05l-3.42-3.44a2.93,2.93,0,0,0-4.13.01L3.934,13.4a2.946,2.946,0,0,0,0,4.14l1.48,1.49H3.554a.5.5,0,0,0,0,1h16.9A.5.5,0,0,0,20.454,19.028Zm-7.24-13.5a1.956,1.956,0,0,1,2.73,0l3.42,3.44a1.868,1.868,0,0,1,.57,1.35,1.93,1.93,0,0,1-.57,1.37l-5.64,5.64-6.15-6.16Zm-1.19,13.5h-5.2l-2.18-2.2a1.931,1.931,0,0,1,0-2.72l2.23-2.23,6.15,6.15Z"></path>
+                    </svg>
+                </span>
+            </button>
+
+            <button id="show-modal-qr" type="button" class="open-button | icon-button button">
+                <span class="hide-small">Sign on mobile</span>
+                <span class="icon">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" version="1.1" viewBox="0 0 16 16" height="1em"
+                        width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 1h-4v4h4v-4zM6 0v0 6h-6v-6h6zM2 2h2v2h-2zM15 1h-4v4h4v-4zM16 0v0 6h-6v-6h6zM12 2h2v2h-2zM5 11h-4v4h4v-4zM6 10v0 6h-6v-6h6zM2 12h2v2h-2zM7 0h1v1h-1zM8 1h1v1h-1zM7 2h1v1h-1zM8 3h1v1h-1zM7 4h1v1h-1zM8 5h1v1h-1zM7 6h1v1h-1zM7 8h1v1h-1zM8 9h1v1h-1zM7 10h1v1h-1zM8 11h1v1h-1zM7 12h1v1h-1zM8 13h1v1h-1zM7 14h1v1h-1zM8 15h1v1h-1zM15 8h1v1h-1zM1 8h1v1h-1zM2 7h1v1h-1zM0 7h1v1h-1zM4 7h1v1h-1zM5 8h1v1h-1zM6 7h1v1h-1zM9 8h1v1h-1zM10 7h1v1h-1zM11 8h1v1h-1zM12 7h1v1h-1zM13 8h1v1h-1zM14 7h1v1h-1zM15 10h1v1h-1zM9 10h1v1h-1zM10 9h1v1h-1zM11 10h1v1h-1zM13 10h1v1h-1zM14 9h1v1h-1zM15 12h1v1h-1zM9 12h1v1h-1zM10 11h1v1h-1zM12 11h1v1h-1zM13 12h1v1h-1zM14 11h1v1h-1zM15 14h1v1h-1zM10 13h1v1h-1zM11 14h1v1h-1zM12 13h1v1h-1zM13 14h1v1h-1zM10 15h1v1h-1zM12 15h1v1h-1zM14 15h1v1h-1z">
+                        </path>
+                    </svg>
+                </span>
+            </button>
+
+            <button id="submit-btn" disabled 
+                style="margin-inline-start: auto;"
+                type="submit" class="icon-button button success">
+                <span>Sign</span>
+                <span class="icon">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em"
+                        width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="none" stroke-width="2" d="M2,12 L22,12 M13,3 L22,12 L13,21"></path>
+                    </svg>
+                </span>
+            </button>
+        </div>
+    </div>
+
+    <div class="flow" style="max-width: 330px; margin-inline-start: auto;">
+        <h2 class="margin-top loading-signed hidden | animate slide" style="color: var(--clr-green-500); font-weight: 700;">Saving contract…</h2>
+        <small class="loading-signed hidden | animate slide delay-16"
+            style="font-family: 'Open Sans'; font-weight: 600; color: var(--clr-blue-700);">
+            This shouldn't take more than a minute.
+        </small>
+    </div>
+
+    <input type="hidden" id="client_signature" name="client_signature" />
+</form>
+
+
+<dialog class="modal flow" id="modal-qr">
+    <div class="qr-code-container">
+        <button id="close-modal-qr" class="close-button button" aria-label="close" type="button"></button>
+        <canvas id="qr-code"></canvas>
+    </div>
+</dialog>

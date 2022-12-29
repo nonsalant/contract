@@ -1,0 +1,52 @@
+:root {
+
+  /***/
+
+  --clr-light-hsl:     20 80% 98%;
+  --clr-dark-hsl:     200 20% 25%;
+  --clr-darker-hsl:   200 59% 22%;
+
+  /***/
+  
+  --clr-primary-hsl: 200  75% 30%;
+  --clr-danger-hsl:   20 100% 30%;
+  --clr-success-hsl: 165  75% 30%;
+  --clr-warning-hsl:  36 100% 30%;
+
+  /***/
+
+  --clr-blue-500: hsl(200, 75%, 30%);
+  --clr-blue-600: hsl(200, 75%, 25%);
+  --clr-blue-700: hsl(200, 75%, 20%);
+
+  --clr-red-500: hsl(20, 75%, 30%);
+  --clr-red-600: hsl(20, 75%, 25%);
+  --clr-red-700: hsl(20, 75%, 20%);
+
+  --clr-green-500: hsl(165, 75%, 30%);
+  --clr-green-600: hsl(165, 75%, 25%);
+  --clr-green-700: hsl(165, 75%, 20%);
+
+  --clr-brown-500: hsl(36, 75%, 30%);
+  --clr-brown-600: hsl(36, 75%, 25%);
+  --clr-brown-700: hsl(36, 75%, 20%);
+
+  /* desaturated */
+  
+  --clr-blue-desaturated-500: hsl(200, 25%, 30%);
+  --clr-blue-desaturated-600: hsl(200, 25%, 20%);
+  --clr-blue-desaturated-700: hsl(200, 25%, 10%);
+
+  --clr-red-desaturated-500: hsl(20, 25%, 30%);
+  --clr-red-desaturated-600: hsl(20, 25%, 20%);
+  --clr-red-desaturated-700: hsl(20, 25%, 10%);
+
+  --clr-green-desaturated-500: hsl(165, 25%, 30%);
+  --clr-green-desaturated-600: hsl(165, 25%, 20%);
+  --clr-green-desaturated-700: hsl(165, 25%, 10%);
+
+  --clr-brown-desaturated-500: hsl(36, 25%, 30%);
+  --clr-brown-desaturated-600: hsl(36, 25%, 20%);
+  --clr-brown-desaturated-700: hsl(36, 25%, 10%);
+
+}

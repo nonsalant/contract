@@ -1,0 +1,22 @@
+*,*:before,*:after {
+    box-sizing: border-box;
+}
+
+/* :where(svg) { 
+    max-width: 1rem; 
+} */
+
+a {
+    /* Places underlines below the descenders */
+    text-underline-position: under;
+    /* Sets the thickness as a percentage of the font size */
+    text-decoration-thickness: 8;
+
+    color: var(--clr-blue-500);
+}
+a:hover {
+    color: var(--clr-blue-700);
+}
+a:focus {
+    color: var(--clr-red-700);
+}

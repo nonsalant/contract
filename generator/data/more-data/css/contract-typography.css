@@ -1,0 +1,83 @@
+/* @link https://utopia.fyi/type/calculator?c=320,16,1.2,735,16,1.333,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
+
+:root {
+  --step--2: clamp(0.56rem, calc(0.80rem + -0.51vw), 0.69rem);
+  --step--1: clamp(0.75rem, calc(0.90rem + -0.32vw), 0.83rem);
+  --step-0: clamp(1.00rem, calc(1.00rem + 0.00vw), 1.00rem);
+  --step-1: clamp(1.20rem, calc(1.10rem + 0.51vw), 1.33rem);
+  --step-2: clamp(1.44rem, calc(1.18rem + 1.30vw), 1.78rem);
+  --step-3: clamp(1.73rem, calc(1.23rem + 2.47vw), 2.37rem);
+  --step-4: clamp(2.07rem, calc(1.24rem + 4.18vw), 3.16rem);
+  --step-5: clamp(2.49rem, calc(1.16rem + 6.63vw), 4.21rem);
+}
+
+
+/**/
+#content {
+  background: #fff;
+  margin-bottom: 3em;
+  margin: 2rem 2rem 6rem 2rem;
+  /* max-width: calc(210mm - 2rem); */
+  margin-inline: 0;
+  padding: 0 2em;
+  /* padding-inline: clamp(20px,5vw,35px); */
+  width: 210mm;
+  max-width: calc(100% - 2rem);
+
+  max-width: 100%;
+  margin-inline: auto;
+  padding-inline: 2rem;
+  width: clamp(10rem, 60rem, 80rem);
+
+  width: 52em;
+  width: 210mm;
+} 
+/**/
+
+#main,
+#content {
+    /* line-height: 1.5em; */
+    font-family: "Libre Baskerville", serif;
+    font-size: var(--step-0);
+    line-height: 1.5;
+    /* line-height: 1.3; */
+    line-height: 1.75;
+}
+
+h2,h3,h4,h5,h6 { 
+  margin-block-start: 1.75em; 
+}
+
+h1 {
+    border-width: 3px 0 1px 0;
+    border-style: solid;
+    font-family: "Arapey", serif;
+    /* font-size: 2em; */
+    font-size: var(--step-2);
+    font-weight: normal;
+    letter-spacing: 0.15em;
+    line-height: 1.2em;
+    margin-block-start: 1rem;
+    margin-block-end: 2.5rem;
+    padding: 0.5em 0;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-family: "Open Sans Condensed", sans-serif;
+    font-family: "Open Sans", sans-serif;
+    font-variation-settings: "wdth" 75;
+    font-size: var(--step-1);
+    font-weight: 600;
+    letter-spacing: 0.025em;
+    line-height: 1.2em;
+
+    text-transform: uppercase;
+    /* letter-spacing: 0.025em; */
+}
+
+h3, h4, h5, h6 {
+  font-weight: 700;
+}
