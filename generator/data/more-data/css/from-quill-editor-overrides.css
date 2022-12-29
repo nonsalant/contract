@@ -1,0 +1,39 @@
+/* :where(.ql-editor, .ql-editor ul, .ql-editor ol)
+ > *:where(:not(:first-child)) {
+    margin-block-start: 1.5rem;
+} */
+
+.ql-editor {
+    padding-block: 1.5rem;
+    padding-inline: 2rem;
+    padding-inline: clamp(.5rem, 2.5vw, 3rem);
+    padding-inline: clamp(20px, 5vw, 35px);
+
+    & > *:where(:not(:first-child)) {
+        margin-block-start: var(--flow-space, 1.5rem)
+    }
+
+    /* list items */
+    /* & *:where(ul, ol) > *:where(:not(:first-child)) {
+        margin-block-start: .25rem;
+    } */
+
+        & *:where(ul, ol) > *:where(:not(:first-child)) {
+        margin-block-start: .25rem;
+    }
+
+    & *:is(ol, ul) { 
+        padding: 0;
+    }
+
+    & > p + :is(ul, ol) {
+        margin-block-start: .25rem;
+    }
+
+    /* empty paragraphs have a smaller margin, unless they follow other empty paragraphs */
+    /* :not(p:has(br:first-child:last-child)) + p:has(br:first-child:last-child) {
+        background-color: red;
+        margin-top:-.5rem;
+    } */
+
+}

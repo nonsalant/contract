@@ -1,0 +1,41 @@
+#modal-preview {
+    border-radius: 0px;
+}
+
+#modal-preview::backdrop  {
+    background: linear-gradient(132deg, hsl(190deg 14% 14% / 98%), hsl(210deg 15% 16% / 98%)) !important;
+    background: linear-gradient(132deg, hsl(190deg 14% 14% / 90%), hsl(210deg 15% 16% / 90%)) !important;
+    background: linear-gradient(132deg, hsl(155deg 75% 10% / 50%), hsl(175deg 75% 10% / 50%)) !important;
+}
+
+.modal-header {
+    /* width: 210mm; */
+    max-width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    height: 0;
+    /* padding-inline-end: 1rem; */
+    bottom: 4rem;
+    right: 1rem;
+    position: absolute;
+}
+
+#close-modal-preview {
+    mix-blend-mode: multiply;
+}
+
+#iframe {
+    width: 100%;
+    width: calc(650px + 2.5em);
+    width: calc(210mm + -8px);
+    width: 210mm;
+    max-width: 100%;
+    height: 90vh;
+    height: 90lvh;
+    background: #fff;
+    z-index: 1;
+    overscroll-behavior-y: contain;
+    resize: both;
+
+    margin-block-end: -4px;
+}

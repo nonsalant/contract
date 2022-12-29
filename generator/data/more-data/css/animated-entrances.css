@@ -1,0 +1,318 @@
+@charset "UTF-8";
+/* from: https://codepen.io/nonsalant/pen/poKdGKN/8cd36d806e3bcae07060ebb80533f88d */
+/* ---------------------------------------- */
+/* Quick SCSS System for Animated Entrances */
+/* ---------------------------------------- */
+/*  Converted to SCSS by Ștefan Matei from: 
+    ---------------------------------------------------------------------------
+    "System for Animated Entrances" by Neale Van Fleet
+    https://css-tricks.com/a-handy-little-system-for-animated-entrances-in-css/ 
+    ---------------------------------------------------------------------------
+*/
+@media (prefers-reduced-motion: reduce) {
+  .animate {
+    animation: none !important;
+  }
+}
+
+/* Animation delay classes. Eg: .delay-1 */
+.delay-1 {
+  animation-delay: calc(0.5s + 1*0.1s);
+}
+
+.delay-2 {
+  animation-delay: calc(0.5s + 2*0.1s);
+}
+
+.delay-3 {
+  animation-delay: calc(0.5s + 3*0.1s);
+}
+
+.delay-4 {
+  animation-delay: calc(0.5s + 4*0.1s);
+}
+
+.delay-5 {
+  animation-delay: calc(0.5s + 5*0.1s);
+}
+
+.delay-6 {
+  animation-delay: calc(0.5s + 6*0.1s);
+}
+
+.delay-7 {
+  animation-delay: calc(0.5s + 7*0.1s);
+}
+
+.delay-8 {
+  animation-delay: calc(0.5s + 8*0.1s);
+}
+
+.delay-9 {
+  animation-delay: calc(0.5s + 9*0.1s);
+}
+
+.delay-10 {
+  animation-delay: calc(0.5s + 10*0.1s);
+}
+
+.delay-11 {
+  animation-delay: calc(0.5s + 11*0.1s);
+}
+
+.delay-12 {
+  animation-delay: calc(0.5s + 12*0.1s);
+}
+
+.delay-13 {
+  animation-delay: calc(0.5s + 13*0.1s);
+}
+
+.delay-14 {
+  animation-delay: calc(0.5s + 14*0.1s);
+}
+
+.delay-15 {
+  animation-delay: calc(0.5s + 15*0.1s);
+}
+
+.delay-16 {
+  animation-delay: calc(0.5s + 16*0.1s);
+}
+
+:where(.animate) {
+  animation-duration: 0.75s;
+  animation-delay: 0.5s;
+  animation-name: animate-fade;
+  animation-timing-function: cubic-bezier(0.26, 0.53, 0.74, 1.48);
+  animation-fill-mode: backwards;
+  /* Fade In */
+  /* Pop In */
+  /* Blur In */
+  /* Glow In */
+  /* Grow In */
+  /* Splat In */
+  /* Roll In */
+  /* Flip In */
+  /* Spin In */
+  /* Slide In */
+  /* Drop In */
+  /* Drop Up */
+}
+:where(.animate).fade {
+  animation-name: animate-fade;
+  animation-timing-function: ease;
+}
+:where(.animate).pop {
+  animation-name: animate-pop;
+}
+:where(.animate).blur {
+  animation-name: animate-blur;
+  animation-timing-function: ease;
+}
+:where(.animate).glow {
+  animation-name: animate-glow;
+  animation-timing-function: ease;
+}
+:where(.animate).grow {
+  animation-name: animate-grow;
+}
+:where(.animate).splat {
+  animation-name: animate-splat;
+}
+:where(.animate).roll {
+  animation-name: animate-roll;
+}
+:where(.animate).flip {
+  animation-name: animate-flip;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+:where(.animate).spin {
+  animation-name: animate-spin;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+:where(.animate).slide {
+  animation-name: animate-slide;
+}
+:where(.animate).drop {
+  animation-name: animate-drop;
+  animation-timing-function: cubic-bezier(0.77, 0.14, 0.91, 1.25);
+}
+:where(.animate).drop-up {
+  animation-name: animate-drop-up;
+  animation-timing-function: cubic-bezier(0.77, 0.14, 0.91, 1.25);
+}
+
+@media screen {
+  @keyframes animate-fade {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes animate-pop {
+    0% {
+      opacity: 0;
+      transform: scale(0.5, 0.5);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1, 1);
+    }
+  }
+  @keyframes animate-blur {
+    0% {
+      opacity: 0;
+      filter: blur(15px);
+    }
+    100% {
+      opacity: 1;
+      filter: blur(0px);
+    }
+  }
+  @keyframes animate-glow {
+    0% {
+      opacity: 0;
+      filter: brightness(3) saturate(3);
+      transform: scale(0.8, 0.8);
+    }
+    100% {
+      opacity: 1;
+      filter: brightness(1) saturate(1);
+      transform: scale(1, 1);
+    }
+  }
+  @keyframes animate-grow {
+    0% {
+      opacity: 0;
+      transform: scale(1, 0);
+      visibility: hidden;
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1, 1);
+    }
+  }
+  @keyframes animate-splat {
+    0% {
+      opacity: 0;
+      transform: scale(0, 0) rotate(20deg) translate(0, -30px);
+    }
+    70% {
+      opacity: 1;
+      transform: scale(1.1, 1.1) rotate(15deg);
+    }
+    85% {
+      opacity: 1;
+      transform: scale(1.1, 1.1) rotate(15deg) translate(0, -10px);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1, 1) rotate(0) translate(0, 0);
+    }
+  }
+  @keyframes animate-roll {
+    0% {
+      opacity: 0;
+      transform: scale(0, 0) rotate(360deg);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1, 1) rotate(0deg);
+    }
+  }
+  @keyframes animate-flip {
+    0% {
+      opacity: 0;
+      transform: rotateX(-120deg) scale(0.9, 0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: rotateX(0deg) scale(1, 1);
+    }
+  }
+  @keyframes animate-spin {
+    0% {
+      opacity: 0;
+      transform: rotateY(-120deg) scale(0.9, 0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: rotateY(0deg) scale(1, 1);
+    }
+  }
+  @keyframes animate-slide {
+    0% {
+      opacity: 0;
+      transform: translate(0, 20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+  }
+  @keyframes animate-drop {
+    0% {
+      opacity: 0;
+      transform: translate(0, -300px) scale(0.9, 1.1);
+    }
+    95% {
+      opacity: 1;
+      transform: translate(0, 0) scale(0.9, 1.1);
+    }
+    96% {
+      opacity: 1;
+      transform: translate(10px, 0) scale(1.2, 0.9);
+    }
+    97% {
+      opacity: 1;
+      transform: translate(-10px, 0) scale(1.2, 0.9);
+    }
+    98% {
+      opacity: 1;
+      transform: translate(5px, 0) scale(1.1, 0.9);
+    }
+    99% {
+      opacity: 1;
+      transform: translate(-5px, 0) scale(1.1, 0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0, 0) scale(1, 1);
+    }
+  }
+  @keyframes animate-drop-up {
+    0% {
+      opacity: 0;
+      transform: translate(0, 300px) scale(0.9, 1.1);
+    }
+    95% {
+      opacity: 1;
+      transform: translate(0, 0) scale(0.9, 1.1);
+    }
+    96% {
+      opacity: 1;
+      transform: translate(-10px, 0) scale(1.2, 0.9);
+    }
+    97% {
+      opacity: 1;
+      transform: translate(10px, 0) scale(1.2, 0.9);
+    }
+    98% {
+      opacity: 1;
+      transform: translate(-5px, 0) scale(1.1, 0.9);
+    }
+    99% {
+      opacity: 1;
+      transform: translate(5px, 0) scale(1.1, 0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0, 0) scale(1, 1);
+    }
+  }
+}

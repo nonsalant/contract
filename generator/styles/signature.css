@@ -1,0 +1,9 @@
+#signature-pad,
+#generator-signature-pad {
+    box-shadow: none !important;
+}
+
+#signature-container {
+    padding: 0!important;
+    gap: 2rem !important;
+}

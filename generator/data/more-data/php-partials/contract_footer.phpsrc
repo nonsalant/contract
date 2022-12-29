@@ -1,0 +1,143 @@
+<?php die(); /* no direct access */
+
+$DEV_SIGNATURE = '<img id="dev_signature" src="' . $DEV_SIGNATURE . '" >';
+
+$CLIENT_SIGNATURE = isset($_POST['client_signature']) ? $_POST['client_signature'] : null;
+if (substr( $CLIENT_SIGNATURE, 0, 22 ) === 'data:image/png;base64,') {
+    $CLIENT_SIGNATURE = '<img id="hk" src="' . htmlspecialchars($CLIENT_SIGNATURE) . '" >';
+} else {
+  $CLIENT_SIGNATURE = null;
+}
+
+/**
+The HTML code (and some PHP) is kept in PHP variables like $CONTRACT_HTML, $FOOTER, $CONTRACT_SIGNED_PHP, and $CLIENT_DATE_IP_COMPILED.
+**/
+
+function headerWithTitle($title) {
+  return '<!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="UTF-8">
+    <title>' . $title . '</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <meta name="robots" content="noindex">
+    <link rel="preconnect" href="https://cdn.skypack.dev">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <style></style>
+  </head>
+  <body>
+  <div id="content" class="ql-editor">
+  ';
+}
+
+if($CLIENT_SIGNATURE==null) {
+  /** 
+  ⌛ Waiting for Client to sign: include signature elements and javascript 
+  **/
+
+  $HEADER = headerWithTitle('Unsigned Contract');
+
+  $FOOTER = '
+  <div id="ui-unsigned"></div>
+  </div> <!-- #content -->
+  <script id="contract_script_unsigned" type="module"></script>
+  <script id="qr_code_script" type="module"></script>
+  </body>
+  </html>';
+  
+  if ( $selfDelete && file_exists($htmlName) ) {
+    header('Location: '.$htmlName.'#hk');
+    die();
+  }
+
+  echo $HEADER;
+  echo $CONTRACT_HTML;
+  echo $DEV_SIGNATURE;
+  eval (' ?>'. $FOOTER .'<?php '); // php variables can be used inside
+}
+else {
+  /** 
+  ✅ Contract was just signed: put $CLIENT_SIGNATURE and the other parts in the .html file 
+  **/
+
+  $HEADER = headerWithTitle('Signed Contract');
+
+  $DEV_DATE_IP = '
+    <div class="date-ip">
+      <strong>Signed on:</strong> ' . $devTimestamp . '
+      <br><strong>IP address:</strong> '  . $devIP . ' <br>
+    </div>';
+  $DEV_SIGNATURE .= $DEV_DATE_IP;
+
+  /**
+  $CLIENT_DATE_IP_PHP is a string of php code,
+  that gets compiled below, in $CLIENT_DATE_IP_COMPILED
+  **/
+ 
+  $CLIENT_DATE_IP_PHP = $CONTRACT_SIGNED_PHP. '
+    <div id="date-ip" class="date-ip">
+      <strong>Signed on:</strong> <?php echo get_client_date($devTimeOffset); ?>
+      <br><strong>IP address:</strong> <?php echo get_client_ip_env(); ?><br>
+    </div>
+  ';
+
+  /** 
+  $CLIENT_DATE_IP_COMPILED executes the php code above
+  **/
+  ob_start(); // https://cgd.io/2008/how-to-execute-php-code-in-a-php-string/
+  eval($CLIENT_DATE_IP_PHP);
+  $CLIENT_DATE_IP_COMPILED = ob_get_contents();
+  ob_end_clean();
+
+  $CLIENT_SIGNATURE .= $CLIENT_DATE_IP_COMPILED;
+
+  // Add names above signatures
+  $DEV_SIGNATURE = '<strong>'.$devName.'</strong>' . $DEV_SIGNATURE;
+  $CLIENT_SIGNATURE = '<strong>'.$clientName.'</strong>' . $CLIENT_SIGNATURE;
+
+  $FOOTER = '
+    <div class="compiled-signatures">
+      <div class="compiled-signature">'.$DEV_SIGNATURE. '</div><!--.compiled-signature-->
+      <div class="compiled-signature">'.$CLIENT_SIGNATURE.'</div><!--.compiled-signature-->
+    </div><!--.compiled-signatures-->
+    <div id="ui-signed"></div>
+  </div> <!--#content-->
+  <script id="contract_script_signed"></script>
+  </body>
+  </html>';
+
+  $output = $HEADER . $CONTRACT_HTML . $FOOTER;
+  file_put_contents($htmlName, $output);
+
+  /** 
+  ✉ Email client & dev
+  **/
+  sendEmails($clientEmail, $devEmail);
+
+
+  /** 
+  ➡ Delete php, redirect to html
+  **/
+  if ($selfDelete) unlink(__FILE__);
+  header('Location: '.$htmlName.'#hk');
+  die();
+}
+
+
+// Function to email notifications; gets called when Client signs
+function sendEmails($clientEmail, $devEmail)
+{
+  if ($clientEmail) {
+    $headers = "From: " . $devEmail . "\r\nMIME-Version: 1.0\r\nContent-Type: text/html; charset=ISO-8859-1\r\n";
+    $msg = 'The contract was signed. You can <a href="' . getHtmlUrl() . '">view or download this contract from here</a>.';
+    mail($clientEmail, 'Contract signed', $msg, $headers);
+  }
+  if ($devEmail) {
+    $headers = "From: " . $clientEmail . "\r\nMIME-Version: 1.0\r\nContent-Type: text/html; charset=ISO-8859-1\r\n";
+    $msg = '<p>A new contract was signed. You can <a href="' . getHtmlUrl() . '">view or download this contract from here</a>.</p>';
+    $msg .= 'The contract was signed by: ' . $clientEmail;
+    mail($devEmail, 'Contract signed!', $msg, $headers);
+  }
+}
+?>

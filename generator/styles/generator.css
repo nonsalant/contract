@@ -1,0 +1,121 @@
+/* general  */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    background: hsl(36deg 10% 95%);
+    font-family:'Open Sans', sans-serif;
+    margin:0;
+    padding:1.2em 0;
+    padding-top:0;
+    padding-bottom:0;
+    padding-bottom:0;
+    font-size:16px;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.below-contract {
+    background: inherit;
+    position: relative;
+    z-index: 3;
+}
+
+.signature-area {
+    /* width: 52em; */
+    /* width: 210mm; */
+    max-width: 100%;
+    padding: 2.5rem 1.75rem 2.5rem 1.75rem;
+    box-sizing: border-box;
+    margin: auto;
+    margin-bottom: 1.5em;
+    margin-top: -1px;
+    background: hsl(36deg 10% 90%);
+    background-color: hsl(165.32deg 15% 90%);
+    background-color: hsl(200deg 15% 90%);
+
+    border: solid 1px hsl(200deg 10% 50% / 25%);
+    border-top: solid 2px hsl(200deg 10% 40%);
+    box-shadow: 0 2px 1px -1px hsl(200deg 3% 5% / 35%);
+
+    border: 0;
+    border-inline: solid 1px hsl(200deg 10% 50% / 25%);
+    border-block-start: solid 2px hsl(200deg 10% 40%);
+    box-shadow: 0 2px 1px -1px hsl(200deg 10% 75%);
+    background-image: var(--grain-pattern);
+
+    border-radius: max(0px, min(1em, calc((100vw - 4px - 100%) * 9999)));
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    position: relative;
+}
+@media (min-width:800px) {
+    .signature-area::before, .signature-area::after {
+        position: absolute;
+        z-index: -1;
+        content: "";
+        width: 40%;
+        height: 10px;
+        bottom: 10px;
+        background: transparent;
+        box-shadow: 0 8px 12px rgb(0 0 0 / 15%);
+    }
+    .signature-area::before {
+        left: 20px;
+        transform: skew(-3deg) rotate(-3deg);
+    }
+    .signature-area::after {
+        right: 20px;
+        transform: skew(3deg) rotate(3deg);
+    }
+}
+
+.generator-options {
+    margin-bottom: 3em;
+    background: inherit;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    gap: 3rem;
+    gap: 2rem;
+
+    /* margin-block-start: 0;
+    padding-block-start: var(--flow-space, 1em); */
+}
+
+.generator-main-options {
+    width: clamp(20rem, 28rem, 100%);
+    width: clamp(20rem, 29rem, calc(100% + 2rem));
+    margin-inline: -.75rem;
+    margin-block-start: 1rem;
+}
+
+.sticky-1 {
+    position: sticky;
+    top: 1rem;
+    align-self: start;
+}
+
+/* .generator-download-options {
+    display: grid; 
+    height: min-content;
+} */
+
+.flexi:has(#download) {
+    margin-inline-start: -0.05rem;
+}
+
+
+
+.footer {
+    --flow-space: .5rem;
+
+    width: 100%;
+    text-align: center;
+    font-size: .9rem;
+}

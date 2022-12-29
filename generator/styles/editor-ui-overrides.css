@@ -1,0 +1,143 @@
+/* editor */
+
+.editor-container {
+    height: auto;
+    min-height: 100%;
+    /* padding: 50px; */
+    /* padding-top: calc(50px + 2rem); */
+    /* padding-top: 3rem; */
+    padding-block-start: 2.75rem;
+}
+
+.editor-container .ql-editor {
+    /* font-size: 18px; */
+    overflow-y: visible; 
+    min-height: 10rem;
+}
+
+#wysiwyg-wrap {
+    height: 100%;
+    min-height: 100%;
+    overflow-y: auto;
+    padding-inline: 0;
+    overflow: hidden;
+}
+
+#toolbar-wrap {
+    position: sticky;
+    position: fixed;
+    inset: 0;
+    margin-inline: auto;
+    max-width: 100%;
+    width: inherit;
+    z-index: 1;
+    height: min-content;
+    animation-delay: 0s;
+}
+
+#toolbar {
+    min-height: 2rem;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+}
+
+/* to keep it visible on iOS when the keyboard is open (js) */
+#toolbar.down {
+  transition-property: all;
+  transition-timing-function: 
+    cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+}
+
+/* .ql-toolbar.ql-snow { */
+#toolbar {
+    background-color: hsl(200deg 15% 90%);
+    background-image: var(--grain-pattern);
+    border: 1px solid hsl(36deg 20% 50% / 25%);
+    box-sizing: border-box;
+    padding: 8px;
+    /* position: fixed; */
+
+    /* color: #fff; */
+    /* z-index: 1; */
+    width: inherit;
+    max-width: 100%;
+    box-shadow: 0 2px 2px -2px hsl(200deg 3% 10% / 25%);
+
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    column-gap: 1rem;
+    padding-inline: 1rem;
+    padding-inline: clamp(20px,5vw,35px);
+    padding-inline: 2rem;
+}
+
+.ql-snow.ql-toolbar::after, 
+.ql-snow .ql-toolbar::after,
+.ql-snow .ql-formats::after {
+    display: none;
+}
+
+.ql-toolbar.ql-snow .ql-formats {
+    margin: 0;
+    /* display: flex; */
+    /* gap: .25rem; */
+}
+.ql-toolbar.ql-snow .ql-formats:nth-child(4) {
+    margin-inline-end: auto;
+}
+
+
+.ql-toolbar.ql-snow .ql-picker-label {
+    border: solid 1px;
+    border-radius: 3px;
+    border-color: #88888888;
+    /* margin-inline-start: 8px; */
+}
+
+.ql-container {
+    /* font-family: inherit;
+    font-size: inherit; */
+    /* font-family: "Libre Baskerville", serif; */
+    /* font-size:16px; */
+    /* line-height:1.5em; */
+    color:#000;
+    margin:0;
+    background:#fff;
+}
+
+.ql-editor.ql-blank::before {
+    color: rgba(0,0,0,0.6);
+    color: hsl(var(--clr-dark-hsl)/.6);
+    content: attr(data-placeholder);
+    font-style: italic;
+    margin-inline-start: 2rem;
+}
+
+
+
+
+
+/*  */
+
+
+#toolbar button,
+#toolbar select {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    float: left;
+    height: 24px;
+    padding: 3px 5px;
+    width: 28px;
+}
+
+.editor-container {
+    border: 1px solid rgb(204, 204, 204);
+    min-height: 10rem;
+    background: #fff;
+}

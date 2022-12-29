@@ -1,0 +1,26 @@
+@layer reset, accessibility, animated-entrances, utility, forms;
+@layer contract, editor-ui, editor-ui-overrides, generator;
+@layer signature;
+@layer from-quill-editor, from-quill-editor-overrides, quill-html-button;
+@layer signatures, buttons;
+@layer modal, preview-modal;
+@layer contract-typography;
+
+@import url(abstracts.css);
+
+@import url(reset.css) layer(reset);
+@import url(utility.css) layer(utility);
+
+@import url(editor-ui.css) layer(editor-ui);
+@import url(editor-ui-overrides.css) layer(editor-ui-overrides);
+@import url(quill-html-button.css) layer(quill-html-button);
+
+@import url(preview-modal.css) layer(preview-modal);
+
+@import url(generator.css) layer(generator);
+@import url(signature.css) layer(signature);
+
+/* styles from the downloadable file */
+/* @import url(/../data/more-data/css/main.css); */
+@import url(../data/style.min.css);
+

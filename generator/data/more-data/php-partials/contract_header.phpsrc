@@ -1,0 +1,103 @@
+<?php /* ##########################
+[client_email]
+[dev_email]
+[dev_signature]
+[dev_ip]
+[dev_timestamp]
+[dev_timestamp_offset]
+[dev_name]
+[client_name]
+###################################
+
+1. The 2nd and 3rd lines above are the emails read by this PHP script from itself (used below as $lines[1] and $lines[2] respectively). 
+
+2. The 4th line ($lines[3] below) is the data for $DEV_SIGNATURE.
+
+3. The $CLIENT_SIGNATURE is received by this script from itself when second person signs the contract.
+*/
+
+$phpName  = basename($_SERVER['PHP_SELF']) ? basename($_SERVER['PHP_SELF']) : 'index.php';
+$fileName = substr($phpName , 0, -4);
+$htmlName = $fileName.'.html';
+
+// If the filename is (or starts with) "test" or "demo" the PHP file won't delete itself, nor will it redirect to the HTML contract (when one exists)
+if ( substr($fileName,0,4) == 'test' || substr($fileName,0,4) == 'demo' ) { 
+  $selfDelete = 0; 
+}
+else { 
+  $selfDelete = 1; 
+}
+
+$lines = file(__FILE__);
+
+$clientEmail   = format($lines[1]);
+$devEmail      = format($lines[2]);
+$DEV_SIGNATURE = format($lines[3]);
+$devIP         = format($lines[4]);
+$devTimestamp  = format($lines[5]);
+$devTimeOffset = format($lines[6]);
+$devName       = format($lines[7]);
+$clientName    = format($lines[8]);
+
+// Trim and ignore [placeholders]
+function format($text) {
+  $text = trim($text);
+  $firstChar = substr($text, 0, 1);
+  $lastChar = substr($text, -1, 1);
+  if ($firstChar == '[' && $lastChar == ']')
+    return '';
+  else
+    return $text;
+}
+
+// Gets the current file URL and replaces the .php extension with .html
+function getHtmlUrl() {
+  $url  = @( $_SERVER["HTTPS"] != 'on' ) ? 'http://'.$_SERVER["SERVER_NAME"] :  'https://'.$_SERVER["SERVER_NAME"];
+  $url .= ( $_SERVER["SERVER_PORT"] !== 80 ) ? ":".$_SERVER["SERVER_PORT"] : "";
+  $url .= $_SERVER["REQUEST_URI"];
+  $url = substr($url,0,-4) . '.html';
+  return $url;
+}
+
+/**
+The HTML code (and some PHP) is kept in PHP variables like $CONTRACT_HTML, $FOOTER, $CONTRACT_SIGNED_PHP, and $CLIENT_DATE_IP_COMPILED.
+**/
+
+// This gets executed when Client signs; 
+// the functions are used in $CLIENT_DATE_IP_PHP
+$CONTRACT_SIGNED_PHP = '
+  $phpName  = basename($_SERVER["PHP_SELF"]) ? basename($_SERVER["PHP_SELF"]) : "index.php";
+  $fileName = substr($phpName , 0, -4);
+  $htmlName = $fileName.".html";
+  $pdfName = $fileName.".pdf";
+
+  // Function to get the client IP address
+  function get_client_ip_env() {
+    $ipaddress = "";
+    if (getenv("HTTP_CLIENT_IP"))
+      $ipaddress = getenv("HTTP_CLIENT_IP");
+    else if(getenv("HTTP_X_FORWARDED_FOR"))
+      $ipaddress = getenv("HTTP_X_FORWARDED_FOR");
+    else if(getenv("HTTP_X_FORWARDED"))
+      $ipaddress = getenv("HTTP_X_FORWARDED");
+    else if(getenv("HTTP_FORWARDED_FOR"))
+      $ipaddress = getenv("HTTP_FORWARDED_FOR");
+    else if(getenv("HTTP_FORWARDED"))
+      $ipaddress = getenv("HTTP_FORWARDED");
+    else if(getenv("REMOTE_ADDR"))
+      $ipaddress = getenv("REMOTE_ADDR");
+    else
+      $ipaddress = "UNKNOWN";
+    return $ipaddress;
+  } 
+  // Function to get the client date converted to the same GMT as the dev date
+  function get_client_date($receivedOffset) {
+      //$receivedOffset comes negative and in minutes, eg: -120 for GMT+2
+      $offset = -1 * $receivedOffset / 60; // GMT offset
+      $is_DST = FALSE; // observing daylight savings?
+      $timezone_name = timezone_name_from_abbr("", $offset * 3600, $is_DST);
+      date_default_timezone_set($timezone_name);
+
+      return date("F j, Y") ." at ". date("g:i:s A") ." GMT" . sprintf("%+d", $offset);
+  }
+  ?>';

@@ -1,0 +1,28 @@
+{
+  "name": "signablephp",
+  "version": "1.0.0",
+  "description": "Contract generator.",
+  "main": "index.js",
+  "scripts": {
+    "postcss:watch": "postcss data/more-data/css/main.css -o data/style.min.css -w",
+    "postcss:build": "postcss data/more-data/css/main.css -o data/style.min.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nonsalant/signablephp.git"
+  },
+  "keywords": [],
+  "author": "Stefan Matei",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nonsalant/signablephp/issues"
+  },
+  "homepage": "https://github.com/nonsalant/signablephp#readme",
+  "devDependencies": {
+    "cssnano": "^5.1.14",
+    "postcss-cli": "^10.0.0",
+    "postcss-import": "^15.0.0",
+    "postcss-nested": "^6.0.0",
+    "postcss-preset-env": "^7.8.2"
+  }
+}

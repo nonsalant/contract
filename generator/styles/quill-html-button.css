@@ -1,0 +1,132 @@
+
+/*  */
+/* quill-html-button */
+/*  */
+
+.ql-html-overlayContainer {
+    backdrop-filter: blur(4px);
+    /* background: none !important; */
+    background-image: linear-gradient(132deg,rgba(31,39,41,.6),rgba(35,41,47,.6));
+}
+
+.ql-html-popupContainer {
+    --shadow-color: 200 3% 15%;
+    --shadow-strength: 5%;
+    --shadow-6: 0 -1px 2px 0 hsl(var(--shadow-color)/calc(var(--shadow-strength) + 2%)),0 3px 2px -2px hsl(var(--shadow-color)/calc(var(--shadow-strength) + 3%)),0 7px 5px -2px hsl(var(--shadow-color)/calc(var(--shadow-strength) + 3%)),0 12px 10px -2px hsl(var(--shadow-color)/calc(var(--shadow-strength) + 4%)),0 22px 18px -2px hsl(var(--shadow-color)/calc(var(--shadow-strength) + 5%)),0 41px 33px -2px hsl(var(--shadow-color)/calc(var(--shadow-strength) + 6%)),0 100px 80px -2px hsl(var(--shadow-color)/calc(var(--shadow-strength) + 7%));
+    border: 3px solid hsl(var(--shadow-color));
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow-6);
+
+    border-radius: 1.5rem !important;
+    background-color: hsl(200deg 15% 90%) !important;
+    background-image: var(--grain-pattern) !important;
+
+    margin-inline: auto;
+    max-width: 50rem;
+    /* max-width: 60rem; */
+}
+
+
+.ql-html-popupTitle {
+    font-style: unset !important;
+    /* padding-bottom: 1rem; */
+    color: var(--clr-blue-desaturated-600);
+    display: grid !important;
+    align-content: center;
+}
+
+.ql-html-textArea {
+    overflow: auto;
+    /* height: calc(100% - 5rem) !important; */
+    border: dotted 1px var(--clr-blue-desaturated-700);
+    border-radius: 0.5rem;
+
+    position: relative !important; 
+    /* height: calc(100% - 0) !important; */
+    height: 100% !important;
+    width: 100% !important;
+    inset: unset;
+    inset: 0 !important;
+    order: 2; 
+    grid-column-start: 1; 
+    grid-column-end: 3;
+
+    padding: 0.75rem;
+    padding-block-start: .25rem;
+
+    box-shadow: inset 0 0 5px 1px hsl(200deg 40% 20% / 15%);
+
+    min-height: 75vh;
+}
+
+
+.ql-html-textArea .ql-editor {
+    /* padding: .25rem 1rem 1rem 1rem !important; */
+    padding: 0 !important;
+}
+
+
+
+.ql-html-textContainer {
+    height: 100% !important;
+    /* padding: 0 !important; */
+    padding: 1.5rem !important;
+    padding-top: 1rem !important;
+    padding-bottom: 2rem !important;
+    gap: 1rem;
+    width: 100% !important;
+
+    position: relative; 
+    display: grid; 
+    grid-template-columns: auto auto; 
+    grid-template-rows: auto auto; 
+}
+
+
+
+.ql-html-buttonGroup { 
+    /* bottom: -3rem !important; */
+    /* transform: none !important; */
+    /* left: unset !important; */
+    
+    /* width: calc(100% - 2.5rem); */
+    /* text-align: center; */
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content: end;
+    gap: 1.5rem;
+    gap: clamp(20px, 5vw, 35px);
+
+    position: relative !important;
+    inset: 0 !important;
+    width: 100%;
+
+    transform: scale(.75) !important;
+    transform-origin: right center;
+    align-content: center;
+}
+
+@media (max-width:800px) {
+    .ql-html-buttonGroup {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    .ql-html-popupTitle {
+        display: none !important;
+}
+}
+
+.ql-html-buttonOk, .ql-html-buttonCancel {
+    font-weight: 600 !important;
+    height: min-content;
+}
+
+.ql-html-buttonCancel {
+    margin-right: unset !important;
+}
+
+.ql-syntax {
+    margin: 0;
+}

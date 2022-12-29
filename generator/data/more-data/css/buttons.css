@@ -1,0 +1,165 @@
+/* https://codepen.io/nonsalant/pen/mdKJyzJ/f70c96b7e3ec615a0b2fbe4f320855f9?editors=1100 */
+/* design system for action buttons (postcss👆) */
+
+.button,
+.ql-html-buttonCancel, .ql-html-buttonOk {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: var(--clr-500);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 26px;
+    cursor: pointer;
+    margin: 0;
+    padding: 10px 35px;
+    padding-inline: clamp(20px, 5vw, 35px);
+    padding-inline: clamp(20px,2vw,35px);
+    max-width: max-content;
+    user-select: none;
+    transition: outline .4s cubic-bezier(0.22, 1, 0.36, 1);
+
+    font-family: "Open Sans",sans-serif;
+    /* font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; */
+    letter-spacing: .025em;
+    font-weight: 400;
+    /* text-transform: uppercase; */
+
+    &:hover:not([disabled]) {
+        background: var(--clr-600);
+    }
+    &:active:not([disabled]) {
+        background: var(--clr-700);
+        transform: translate(2px 3px);
+        transform: scale(.975);
+        transition: transform .3s cubic-bezier(0.22, 1, 0.36, 1),
+                    outline .4s cubic-bezier(0.22, 1, 0.36, 1),
+                    background-color .2s linear;
+    }
+
+    &[disabled] {
+      filter: grayscale(0.75) contrast(0.75) brightness(0.96);
+      cursor: default;
+      transition: all .4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+}
+
+
+/* buttons with icons */
+
+.button.icon-button {
+  padding: 0;
+  gap: 0;
+  place-self: center;
+  
+  & > * {
+    display: inline-flex;
+    display: flex;
+    align-items: center;
+    align-items: space-evenly;
+    /*align-self: stretch;*/
+    justify-content: center;
+    gap: 0.5ex;
+    padding: 10px 35px;
+    padding-inline: clamp(20px, 2.5vw, 35px);
+    /* * fix or simplify to max() */
+    padding-inline: clamp(20px, min(2.5vw, 1.5em), 35px);
+    height: 100%;
+    /* background-color: rgba(0, 0, 0, 0.16); */
+  }
+  
+  & .icon {
+    font-size: 1.5em;
+    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.16);
+    /* * fix or simplify to max() */
+    padding-inline: clamp(20px, min(2.5vw, 1.5em), 24px);
+    /* padding-inline: clamp(20px, min(2.5vw, 1.5em), 35px); */
+
+    &.small-padding {
+      padding-inline: 10px;
+    }
+  }
+
+}
+
+/* button colors */
+
+.button,
+.ql-html-buttonCancel, .ql-html-buttonOk {
+  --clr-500: var(--clr-blue-desaturated-500);
+  --clr-600: var(--clr-blue-desaturated-600);
+  --clr-700: var(--clr-blue-desaturated-700);
+}
+
+.button.primary,
+.ql-html-buttonOk {
+  --clr-500: var(--clr-blue-500);
+  --clr-600: var(--clr-blue-600);
+  --clr-700: var(--clr-blue-700);
+}
+
+.button.danger {
+  --clr-500: var(--clr-red-500);
+  --clr-600:var(--clr-red-600);
+  --clr-700:var(--clr-red-700);
+}
+
+.button.success {
+  /* success (green) */
+  --clr-500: var(--clr-green-desaturated-500);
+  --clr-600: var(--clr-green-desaturated-600);
+  --clr-700: var(--clr-green-desaturated-700);
+}
+
+.button.warning,
+.ql-html-buttonCancel {
+  /* warning (brown/yellow) */
+  --clr-500: var(--clr-red-desaturated-500);
+  --clr-600:var(--clr-red-desaturated-600);
+  --clr-700:var(--clr-red-desaturated-700);
+}
+/* https://paletton.com/#uid=7380u0kllllaFw0g0qFqFg0w0aF */
+/* https://www.peko-step.com/en/tool/hslrgb_en.html */
+
+
+.invert-colors .button {
+  /* filter: invert(1) hue-rotate(180deg); */
+  /* border: solid 1px hsl(0deg 0% 100% / 10%); */
+
+  & {
+    filter: invert(1) hue-rotate(180deg);
+    background: var(--clr-600);
+    border: solid 1px hsl(0deg 0% 100% / 10%);
+    outline-color: #fff;
+  }
+  &:hover:not([disabled]) {
+    background: var(--clr-700);
+  }
+  &:active:not([disabled]) {
+    background: var(--clr-500);
+  }
+  &[disabled] {
+    filter: grayscale(.75) contrast(.75) brightness(.96) invert(1) hue-rotate(180deg);
+    cursor: default;
+  }
+
+  & > * {
+    background-color: rgba(0, 0, 0, 0.16);
+  }
+  & .icon {
+    background-color: transparent; 
+    /* background-color: rgba(0, 0, 0, 0.16); */
+    border-inline-start: solid 1px hsl(0deg 0% 100% / 5%);
+  }
+
+}

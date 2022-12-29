@@ -1,0 +1,3 @@
+function printContract() {
+    window.print();
+}

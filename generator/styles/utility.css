@@ -1,0 +1,33 @@
+.w-medium {
+    max-width: 100%;
+    margin-inline: auto;
+    padding-inline: 1rem;
+    width: clamp(10rem, 60rem, 80rem);
+
+    width: 52em;
+    width: 210mm;
+}
+
+.center {
+    display: grid;
+    place-content: center;
+}
+
+.padding-clamp {
+    padding: clamp(.25rem, 1.5rem, 2rem); 
+}
+    
+.flex-1 {
+    flex: 1;
+}
+
+.icon {
+    display: inline-flex;
+}
+
+.grid {
+    display: grid; 
+    gap: .5rem;
+    /* align-items: center;  */
+    justify-items: start;
+}
