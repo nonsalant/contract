@@ -6,7 +6,7 @@
 1. **Send** your client a link to it
 * **[View demo](https://stefanmatei.com/contract-generator/contract-demo.html)**
 
-![email-contract](https://user-images.githubusercontent.com/180561/209838611-9b40307e-de05-44c0-967a-54399d85ef53.png)
+[![email-contract](https://user-images.githubusercontent.com/180561/209838611-9b40307e-de05-44c0-967a-54399d85ef53.png)](https://stefanmatei.com/contract-generator/contract-demo.html)
 
 ---
 
