@@ -12,6 +12,8 @@ You can run the generator online:
 
 Alternatively, you can download the contents of this folder and transfer them to your own server.
 
+If running the generator locally, a local server will nedd to be started (eg: using the <em>Five Server</em> extension in VS Code) in order for the generator to work (browsers block ES6 imports from being used locally).
+
 Based on the level of control you need over your styles, you can go with one of the following 3 options:
 <br /><br />
 
@@ -19,8 +21,6 @@ Based on the level of control you need over your styles, you can go with one of 
 ### Option 1: No build setp
 
 The generator can be used without any build step, with the existing contract styles (in regular/vanilla css) already compiled in `📁data/style.min.css`. 
-
-If running the generator locally, a local server will nedd to be started (eg: using the <em>Five Server</em> extension in VS Code) in order for the generator to work (browsers block ES6 imports from being used locally).
 
 ---
 
