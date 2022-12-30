@@ -52,7 +52,10 @@ A copy of `contract.php` -- the only difference is when the filename is `test.ph
 ---
 
 ### [📁/generator/](https://github.com/nonsalant/contract/tree/master/generator)
+
 Folder containing all the code behind the [online generator](https://stefanmatei.com/contract-generator/).
+
+The Contract Generator be downloaded by getting the generator.zip archive from the [Releases section](https://github.com/nonsalant/contract/releases/).
 
 [![contract-generator](https://user-images.githubusercontent.com/180561/209838852-20825cf1-ab25-4f09-8ec7-c26eb80c0a14.jpg)](https://stefanmatei.com/contract-generator/)
 
