@@ -34,7 +34,7 @@ The generator can be used without any build step, with the existing contract sty
 (in `📁data/more-data/css`)
 
 The styles for the contract use postcss for:
-* importing multiple css files into a single minified file
+* importing multiple CSS files into a single minified file
 * enabling use of selector nesting
 
 To edit the uncompilled postcss, a build step is needed with the following commands to “build” or “watch” (re-build on every change) the contract styles:
@@ -46,13 +46,19 @@ npm run postcss:build
 npm run postcss:watch
 ```
 
+#### FYI
+
 All the CSS for the contract styles (all files in the `📁data/more-data/css` folder, coming in through the `main.css` entrypoint) will be compilled from postcss to regular CSS (in `data/style.min.css`).
+
+All CSS for the generator styles (all files in the `📁styles` folder, coming in through the `main.css` entrypoint) are currently written in regular CSS and loaded using CSS `@import`s. 
+
+The contract's `data/style.min.css` is also imported in the generator's main.css entry point using a regular CSS `@import`.
 
 Postcss configuration can be found in `postcss.config.js`
 
 ---
 
-### Option 3: Enabling PostCSS for the generator styles
+### Option 3: Enabling postcss for the generator styles
 (in `📁styles`)
 
 If you intend to write postcss in the generator's styles too (in addition to the contract styles mentioned above, where postcss is enabled by default), you will need a separate watch command to process the postcss:
@@ -93,6 +99,10 @@ with:
     <link rel="stylesheet" href="/style.min.css">
 ```
 
-All the generator styles (all files in the `📁styles` folder, coming in through the `main.css` entrypoint) will be compiled from postcss to regular CSS (in `styles/style.min.css`).
+#### FYI
 
-Configuration for postcss can be found in `postcss.config.js`
+All the generator styles (all files in the `📁styles` folder, coming in through the `main.css` entrypoint) will now be compiled from postcss to regular CSS (in `styles/style.min.css`).
+
+The styles for the contract itself (`data/style.min.css` mentioned above) are imported in the generator styles using a regular CSS `@import`.
+
+Postcss configuration can be found in `postcss.config.js`
