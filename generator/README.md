@@ -26,7 +26,7 @@ Based on the level of control you need over the styles for the generator and the
 
 ### Option 1: No build setp
 
-The generator can be used without any build step, with the existing contract styles (in regular/vanilla css) already compiled in `📁data/style.min.css`. 
+The generator can be used without any build step, with the existing contract styles (in regular/vanilla css) already compiled in `data/style.min.css`. 
 
 ---
 
@@ -46,6 +46,8 @@ npm run postcss:build
 npm run postcss:watch
 ```
 
+All the CSS for the contract styles (all files in the `📁data/more-data/css` folder, coming in through the `main.css` entrypoint) will be compilled from postcss to regular CSS (in `data/style.min.css`).
+
 Postcss configuration can be found in `postcss.config.js`
 
 ---
@@ -53,7 +55,7 @@ Postcss configuration can be found in `postcss.config.js`
 ### Option 3: Enabling PostCSS for the generator styles
 (in `📁styles`)
 
-If using postcss in the generator's `📁styles` folder too (in addition to the contract styles in `📁data/more-data/css`), you will need a separate watch command for the generator styles:
+If you intend to write postcss in the generator's styles too (in addition to the contract styles mentioned above, where postcss is enabled by default), you will need a separate watch command to process the postcss:
 
 ```bash
 postcss:watch-generator
@@ -90,4 +92,7 @@ with:
     <!-- <link rel="stylesheet" href="/styles/main.css"> -->
     <link rel="stylesheet" href="/style.min.css">
 ```
+
+All the generator styles (all files in the `📁styles` folder, coming in through the `main.css` entrypoint) will be compiled from postcss to regular CSS (in `styles/style.min.css`).
+
 Configuration for postcss can be found in `postcss.config.js`
