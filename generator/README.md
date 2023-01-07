@@ -1,20 +1,26 @@
-# Contract Generator 
+# Generator Readme
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/dc7d73d9-c327-4bcd-a33a-657603bc64ab/deploy-status)](https://app.netlify.com/sites/stefanmatei/deploys)
 
 ## Running it online
 
 You can run the generator online:
-* **[Generate Contract →](https://stefanmatei.com/contract-generator/edit)**
+* [**Generate a contract** online →](https://stefanmatei.com/contract-generator/edit)
 
-## Downloading and running the generator folder on your own server (3 options)
+## Downloading and running the generator on your own server (3 options)
+
+Alternatively, you can download the generator as a small app written in vanilla Javascript:
+
 * [Download **generator.zip**](https://github.com/nonsalant/contract/releases/)
 
-Alternatively, you can download the contents of this folder and transfer them to your own server.
+…and transfer it to your own server.
 
-If running the generator locally, a local server will nedd to be started (eg: using the <em>Five Server</em> extension in VS Code) in order for the generator to work (browsers block ES6 imports from being used locally).
+If running the generator locally, a local server will nedd to be started (eg: using the <a href="https://marketplace.visualstudio.com/items?itemName=yandeu.five-server" target="_blank">Five Server</a> extension in VS Code) in order for the generator to work (browsers block ES Javascript imports from being used locally).
 
-Based on the level of control you need over your styles, you can go with one of the following 3 options:
+### Optional build step
+(for bundling styles and using postcss)
+
+Based on the level of control you need over the styles for the generator and the contract itself, you can go with one of the following 3 options:
 <br /><br />
 
 
@@ -24,7 +30,7 @@ The generator can be used without any build step, with the existing contract sty
 
 ---
 
-### Ooption 2: Build step for the contract styles
+### Option 2: Build step for the contract styles
 (in `📁data/more-data/css`)
 
 The styles for the contract use postcss for:
@@ -55,8 +61,16 @@ postcss:watch-generator
 
 ...and the following files will need to be edited accordingly:
 
-* package.json:
+#### Inside the `package.json` file
 
+replace:
+```json
+  "scripts": {
+    "postcss:watch": "postcss data/more-data/css/main.css -o data/style.min.css -w",
+    "postcss:build": "postcss data/more-data/css/main.css -o data/style.min.css"
+  },
+```
+with:
 ```json
   "scripts": {
     "postcss:watch": "postcss data/more-data/css/main.css -o data/style.min.css -w",
@@ -64,8 +78,16 @@ postcss:watch-generator
     "postcss:build": "postcss data/more-data/css/main.css -o data/style.min.css & postcss styles/main.css -o style.min.css"
   },
 ```
-* index.html:
+#### Inside the `edit.html` file:
+
+replace:
+```html
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- <link rel="stylesheet" href="styles/style.min.css"> -->
+```
+with:
 ```html
     <!-- <link rel="stylesheet" href="/styles/main.css"> -->
     <link rel="stylesheet" href="/style.min.css">
 ```
+Configuration for postcss can be found in `postcss.config.js`
