@@ -1,3 +1,10 @@
+- [What’s in each file/folder](#what-s-in-each-file-folder)
+  * [contract-settings.js](#contract-settingsjs)
+  * [📁 /css/](#----css-)
+  * [📁 /html-partials/](#----html-partials-)
+  * [📁 /php-partials/](#----php-partials-)
+  * [📁 /scripts/](#----scripts-)
+
 ## What’s in each file/folder
 ### contract-settings.js
 
