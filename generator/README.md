@@ -15,7 +15,7 @@ Alternatively, you can download the generator as a small app written in vanilla 
 
 …and transfer it to your own server.
 
-If running the generator locally, a local server will nedd to be started (eg: using the <a href="https://marketplace.visualstudio.com/items?itemName=yandeu.five-server" target="_blank">Five Server</a> extension in VS Code) in order for the generator to work (browsers block ES Javascript imports from being used locally).
+If running the generator locally, a local server will need to be started (eg: using the <a href="https://marketplace.visualstudio.com/items?itemName=yandeu.five-server" target="_blank">Five Server</a> extension in VS Code) in order for the generator to work (browsers block ES Javascript imports from being used locally).
 
 ### Optional build step
 (for bundling styles and using postcss)
