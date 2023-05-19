@@ -1,9 +1,9 @@
-- [What’s in each file/folder](#what-s-in-each-file-folder)
+- **What’s in each file/folder**
   * [contract-settings.js](#contract-settingsjs)
-  * [css (folder)](#css--folder-)
-  * [html-partials (folder)](#html-partials--folder-)
-  * [php-partials (folder)](#php-partials--folder-)
-  * [scripts (folder)](#scripts--folder-)
+  * [css (folder)](#css-folder)
+  * [html-partials (folder)](#html-partials-folder)
+  * [php-partials (folder)](#php-partials-folder)
+  * [scripts (folder)](#scripts-folder)
 
 ## What’s in each file/folder
 
