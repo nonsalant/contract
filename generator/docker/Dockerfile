@@ -2,7 +2,7 @@
 FROM php:8-apache
 
 # Copy project files to the /var/www/html directory
-COPY generator/ /var/www/html/
+COPY ../ /var/www/html/
 
 # Expose port 80
 EXPOSE 80
