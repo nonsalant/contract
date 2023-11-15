@@ -1,0 +1,6 @@
+version: '3.8'
+services:
+  web:
+    image: sarangcr03/nonsalant-contract:latest
+    ports:
+      - "9090:80"

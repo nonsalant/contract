@@ -7,7 +7,7 @@
 You can run the generator online:
 * [**Generate a contract** online →](https://stefanmatei.com/contract-generator/edit)
 
-## Downloading and running the generator on your own server (3 options)
+## Downloading and running the generator on your own server (4 options)
 
 Alternatively, you can download the generator as a small app written in vanilla Javascript:
 
@@ -29,8 +29,71 @@ Based on the level of control you need over the styles for the generator and the
 The generator can be used without any build step, with the existing contract styles (in regular/vanilla css) already compiled in `data/style.min.css`. 
 
 ---
+### Option 2: Docker
 
-### Option 2: Build step for the contract styles
+Build your own docker image or use the latest [image](https://hub.docker.com/r/sarangcr03/nonsalant-contract) from Docker hub
+
+### Deploy with the latest [image](https://hub.docker.com/r/sarangcr03/nonsalant-contract) 
+
+To run the image as a standalone container, use the following commands:
+```bash
+docker pull sarangcr03/nonsalant-contract:latest
+```
+```bash
+docker run -p 9090:80 sarangcr03/nonsalant-contract:latest
+```
+For those who prefer Docker Compose, below is a simple docker-compose.yml example that sets up the service:
+```yaml
+version: '3.8'
+services:
+  web:
+    image: sarangcr03/nonsalant-contract:latest
+    ports:
+      - "9090:80"
+```
+Start the service using:
+```bash
+docker-compose up
+```
+
+### Deploy with nginx proxy manager for reverse proxy and SSL
+
+*With this method you are not mapping an internal port to a host port in docker, so you must add a proxy host pointing to `"http://contract-app:80"` in the nginx proxy manager admin panel which will be located at `http://localhost:81/` (replace `localhost` with the ip address or hostname of the docker host)*
+
+docker-compose.yml example:
+```yaml
+version: '3.8'
+
+services:
+  nginx-proxy-manager:
+    image: jc21/nginx-proxy-manager:latest
+    restart: unless-stopped
+    ports:
+      - '80:80'   # HTTP
+      - '81:81'   # Admin interface
+      - '443:443' # HTTPS
+    volumes:
+      - ./data:/data
+      - ./letsencrypt:/etc/letsencrypt
+    networks:
+      - contract-net
+
+  contract-app:
+    image: sarangcr03/nonsalant-contract:latest
+    restart: unless-stopped
+    networks:
+      - contract-net
+
+networks:
+  contract-net:
+    driver: bridge
+```
+Start the service using:
+```bash
+docker-compose up
+```
+---
+### Option 3: Build step for the contract styles
 (in `📁data/more-data/css`)
 
 The styles for the contract use postcss for:
@@ -58,7 +121,7 @@ Postcss configuration can be found in `postcss.config.js`
 
 ---
 
-### Option 3: Enabling postcss for the generator styles
+### Option 4: Enabling postcss for the generator styles
 (in `📁styles`)
 
 If you intend to write postcss in the generator's styles too (in addition to the contract styles mentioned above, where postcss is enabled by default), you will need a separate watch command to process the postcss:
