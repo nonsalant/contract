@@ -38,8 +38,9 @@
             <div id="toolbar">
                 <button title="Scroll down" type="button"
                     onclick="document.querySelector('#below-contract').scrollIntoView()">
-                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                            <use href="#down-circle"></use>
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em"
+                        width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <use href="#down-circle"></use>
                     </svg>
                 </button>
                 <span class="ql-formats">
@@ -93,7 +94,8 @@
         </div>
         <!-- Editor -->
         <div id="main" class="editor-container | animate slide">
-            <div style="padding-inline: clamp(20px,5vw,35px); padding-block-start: 2.5rem; color: var(--clr-green-desaturated-500);">
+            <div
+                style="padding-inline: clamp(20px,5vw,35px); padding-block-start: 2.5rem; color: var(--clr-green-desaturated-500);">
                 Loading contract…
             </div>
         </div>
@@ -105,7 +107,8 @@
 
                 <!-- Signature -->
                 <div id="canvas-container">
-                    <canvas aria-label="Input signature" id="generator-signature-pad" class="signature-pad" width="188" height="58.66"></canvas>
+                    <canvas aria-label="Input signature" id="generator-signature-pad" class="signature-pad" width="188"
+                        height="58.66"></canvas>
                 </div>
 
                 <!-- Action Buttons -->
@@ -196,6 +199,88 @@
                     </form>
                 </details>
 
+                <!-- Shortcodes -->
+                <details class="---animate ---slide ---delay-0" open>
+                    <summary>
+                        Shortcodes (optional)
+                    </summary>
+                    <form class="repeater-form | panel flexi">
+                        <p>
+                            Concise snippets enclosed in square brackets, such as <b>[price]</b>.
+                            They get automatically replaced with the actual value, e.g: <b>$1000</b>.
+                        </p>
+
+                        <template class="repeater-item-template">
+                            <article class="repeater-item">
+                                <div class="repeater-item-field">
+                                    <label class="grid">
+                                        <span>Replace this: </span>
+                                        <input class="repeater-item-name" type="text" placeholder="[shortcode-name]">
+                                    </label>
+                                </div>
+                                <div class="repeater-item-field | ---animate ---fade">
+                                    <label class="grid">
+                                        <span>With this: </span>
+                                        <input class="repeater-item-value" type="text" placeholder="shortcode value…">
+                                    </label>
+                                </div>
+                                <button class="remove-btn close-button secondary danger animate ---delay-1 roll"
+                                    type="button" aria-label="remove item" title="remove">
+                                    <span>❌</span>
+                                </button>
+                                <footer class="repeater-info">
+                                    <small class="animate blur slide">
+                                        Complete both of the fields above to <strong>add a new item</strong>
+                                    </small>
+                                </footer>
+                            </article><!--.repeater-item-->
+                        </template>
+
+                        <output>
+                            <!-- --
+                			<article class="repeater-item">
+                				<div class="repeater-item-field">
+                					<label class="grid">
+                						<span>Replace this: </span>
+                						<input class="repeater-item-name" value="aaa" type="text" placeholder=" ">
+                					</label>
+                				</div>
+                				<div class="repeater-item-field">
+                					<label class="grid">
+                						<span>With this: </span>
+                						<input class="repeater-item-value" value="aaa" type="text" placeholder=" ">
+                					</label>
+                				</div>
+                				<button class="remove-btn close-button secondary animate delay-1 roll" type="button" aria-label="remove item" title="remove">
+                				❌</button>
+                			</article>
+                			<article class="repeater-item">
+                				<div class="repeater-item-field">
+                					<label class="grid">
+                						<span>Replace this: </span>
+                						<input class="repeater-item-name" value="bbb" type="text" placeholder=" ">
+                					</label>
+                				</div>
+                				<div class="repeater-item-field">
+                					<label class="grid">
+                						<span>With this: </span>
+                						<input class="repeater-item-value" value="bbb" type="text" placeholder=" ">
+                					</label>
+                				</div>
+                				<button class="remove-btn close-button secondary animate delay-1 roll" type="button" aria-label="remove item" title="remove">
+                				❌</button>
+                			</article>
+                			<!-- -->
+                        </output>
+
+                        <footer>
+                            <button class="add-btn secondary" type="submit">+ Add another one</button>
+                            <button class="save-btn | animate fade" type="button">💾 save</button>
+                        </footer>
+
+                    </form>
+                </details>
+
                 <!-- Reset data -->
                 <details class="danger | animate slide delay-2">
                     <summary>
@@ -227,8 +312,7 @@
 
             </div>
 
-            <form class="generator-download-options sticky-1 flow | animate slide delay-0" id="download-form"
-                name="download-form">
+            <form class="generator-download-options sticky-1 flow | animate slide delay-0" id="download-form" name="download-form">
 
                 <!-- Filename field -->
                 <div class="flexi">
@@ -268,8 +352,10 @@
             -->
 
             <footer class="footer flow border-top">
-                <p style="font-size: 1rem; font-weight: 600;">This template contains general information and should not be considered legal advice.</p>
-                <p>View on <a href="https://github.com/nonsalant/contract/">GitHub</a>. Built by <a href="https://twitter.com/nonsalant">Stefan Matei</a>.</p>
+                <p style="font-size: 1rem; font-weight: 600;">This template contains general information and should not
+                    be considered legal advice.</p>
+                <p>View on <a href="https://github.com/nonsalant/contract/">GitHub</a>. Built by <a
+                        href="https://twitter.com/nonsalant">Stefan Matei</a>.</p>
             </footer>
 
         </div>
