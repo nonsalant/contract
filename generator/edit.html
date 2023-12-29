@@ -158,7 +158,7 @@
                 <!-- Name fields -->
                 <details class="animate slide delay-1">
                     <summary>
-                        Names (optional)
+                        Names
                     </summary>
                     <form class="panel flexi">
                         <p class="grid">
@@ -170,16 +170,16 @@
                             <input type="text" name="client_name" id="client_name" placeholder="">
                         </p>
 
-                        <p>
+                        <small>
                             Names appear above signatures when&nbsp;set.
-                        </p>
+                        </small>
                     </form>
                 </details>
 
                 <!-- Email fields -->
                 <details class="animate slide delay-0">
                     <summary>
-                        Emails (optional)
+                        Email addresses
                     </summary>
                     <form class="panel flexi">
                         <p class="grid">
@@ -191,92 +191,65 @@
                             <input type="email" name="client_email" id="client_email" placeholder="client@example.com">
                         </p>
 
-                        <p>
-                            No emails will be sent now. The contract (PHP file) will send a confirmation email to both
+                        <small>
+                            Optional. The contract (PHP file) will send a confirmation email to both
                             addresses when the second
                             party signs the contract.
-                        </p>
+                        </small>
                     </form>
                 </details>
 
                 <!-- Shortcodes -->
-                <details class="---animate ---slide ---delay-0" open>
+                <details class="animate slide delay-0">
                     <summary>
-                        Shortcodes (optional)
+                        Shortcodes
                     </summary>
                     <form class="repeater-form | panel flexi">
-                        <p>
-                            Concise snippets enclosed in square brackets, such as <b>[price]</b>.
-                            They get automatically replaced with the actual value, e.g: <b>$1000</b>.
-                        </p>
 
                         <template class="repeater-item-template">
                             <article class="repeater-item">
                                 <div class="repeater-item-field">
                                     <label class="grid">
                                         <span>Replace this: </span>
-                                        <input class="repeater-item-name" type="text" placeholder="[shortcode-name]">
+                                        <input class="repeater-item-name" type="text" placeholder="[shortcode]">
                                     </label>
                                 </div>
-                                <div class="repeater-item-field | ---animate ---fade">
+                                <div class="repeater-item-field">
                                     <label class="grid">
                                         <span>With this: </span>
-                                        <input class="repeater-item-value" type="text" placeholder="shortcode value…">
+                                        <input class="repeater-item-value" type="text" placeholder="value">
                                     </label>
                                 </div>
-                                <button class="remove-btn close-button secondary danger animate ---delay-1 roll"
+                                <button class="remove-btn close-button secondary danger animate delay-1 roll"
                                     type="button" aria-label="remove item" title="remove">
                                     <span>❌</span>
                                 </button>
                                 <footer class="repeater-info">
-                                    <small class="animate blur slide">
-                                        Complete both of the fields above to <strong>add a new item</strong>
+                                    <small class="">
+                                        Complete both fields above to 
+                                        <strong style="white-space: nowrap;">add a new item.</strong>
                                     </small>
                                 </footer>
-                            </article><!--.repeater-item-->
+                            </article>
                         </template>
 
                         <output>
-                            <!-- --
-                			<article class="repeater-item">
-                				<div class="repeater-item-field">
-                					<label class="grid">
-                						<span>Replace this: </span>
-                						<input class="repeater-item-name" value="aaa" type="text" placeholder=" ">
-                					</label>
-                				</div>
-                				<div class="repeater-item-field">
-                					<label class="grid">
-                						<span>With this: </span>
-                						<input class="repeater-item-value" value="aaa" type="text" placeholder=" ">
-                					</label>
-                				</div>
-                				<button class="remove-btn close-button secondary animate delay-1 roll" type="button" aria-label="remove item" title="remove">
-                				❌</button>
-                			</article>
-                			<article class="repeater-item">
-                				<div class="repeater-item-field">
-                					<label class="grid">
-                						<span>Replace this: </span>
-                						<input class="repeater-item-name" value="bbb" type="text" placeholder=" ">
-                					</label>
-                				</div>
-                				<div class="repeater-item-field">
-                					<label class="grid">
-                						<span>With this: </span>
-                						<input class="repeater-item-value" value="bbb" type="text" placeholder=" ">
-                					</label>
-                				</div>
-                				<button class="remove-btn close-button secondary animate delay-1 roll" type="button" aria-label="remove item" title="remove">
-                				❌</button>
-                			</article>
-                			<!-- -->
                         </output>
 
                         <footer>
-                            <button class="add-btn secondary" type="submit">+ Add another one</button>
-                            <button class="save-btn | animate fade" type="button">💾 save</button>
+                            <button class="add-btn | button size-300" type="submit">
+                                <span>
+                                    + Add a shortcode
+                                </span>
+                            </button>
+                            <button class="save-btn | button size-300 | animate fade" type="button">💾 save</button>
                         </footer>
+
+                        <hr style="width: 100%; opacity: .5; margin: 0;">
+                        <small>
+                            <strong>Shortcodes</strong> are concise snippets, conventionally enclosed in square brackets, such as <i>[price]</i>.
+                            They get automatically replaced with the actual value, e.g: <i>$1000</i>.
+                        </small>
 
                     </form>
                 </details>
@@ -284,7 +257,7 @@
                 <!-- Reset data -->
                 <details class="danger | animate slide delay-2">
                     <summary>
-                        Reset data…
+                        Reset data
                     </summary>
                     <div class="panel">
                         <div class="flow">
@@ -352,7 +325,7 @@
             -->
 
             <footer class="footer flow border-top">
-                <p style="font-size: 1rem; font-weight: 600;">This template contains general information and should not
+                <p style="font-size: 1rem; font-weight: 600; text-wrap: balance;">This template contains general information and should not
                     be considered legal advice.</p>
                 <p>View on <a href="https://github.com/nonsalant/contract/">GitHub</a>. Built by <a
                         href="https://twitter.com/nonsalant">Stefan Matei</a>.</p>

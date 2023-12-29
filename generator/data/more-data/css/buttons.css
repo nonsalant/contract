@@ -163,3 +163,10 @@
   }
 
 }
+
+/* Button sizes */
+
+.button.size-300 {
+    padding: 5px 18px;
+    border-radius: 4px;
+}

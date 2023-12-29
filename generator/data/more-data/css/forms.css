@@ -60,3 +60,14 @@ label:has(svg) {
       color: var(--clr-blue-700);
     }
 }
+
+
+
+/**/
+
+.panel > small {
+    display: block;
+    opacity: 75%;
+    text-wrap: balance;
+    line-height: 1.75;
+}
