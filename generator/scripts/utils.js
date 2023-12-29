@@ -1,6 +1,8 @@
-// addEvent() usage: addEvent(element, handler, eventType)
 // wrapper around addEventListener with optional event type at the end
-export const addEvent = (element, handler, eventType = "click") => element.addEventListener(eventType, handler);
+// addEvent() usage: addEvent(element, handler, eventType)
+export const addEvent = (element, handler, eventType = "click") => {
+    element.addEventListener(eventType, handler);
+};
 
 // debounce() usage: const debouncedMyFunc = debounce(myFunc, 200);
 // or function debouncedMyFunc() { return debounce(myFunc, 200); }
