@@ -56,10 +56,10 @@
 }
 @media (width >= 535px) {
     .close-button {
-        right: 0;
+        /* right: 0;
         right: 3.2rem;
         top: -8px;
-        top: 0;
+        top: 0; */
     }
     details .close-button { align-self: flex-end; justify-self: center; top: auto; bottom: auto; left: auto; right: auto; }
 }
@@ -292,4 +292,16 @@ body .repeater-form .close-button {
         /* color: var(--secondary-hover); */
         background: var(--secondary-hover);
     }
+}
+
+
+
+/***/
+
+
+
+article:has(.close-button:is(:hover,:focus)) .repeater-item-field input {
+  background-color: var(--danger);
+  /* opacity: .5; */
+  filter: contrast(3);
 }
