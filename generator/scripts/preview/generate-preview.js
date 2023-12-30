@@ -1,4 +1,6 @@
-export default async function generatePreview(signed=false) {
+import { doShortcodesFromLocalstorage } from "../utils.js";
+
+export default async function generatePreview(signed = false) {
 
     let previewOverrides = `
         <script type="module">
@@ -33,8 +35,9 @@ export default async function generatePreview(signed=false) {
 
     // get main from editor (don't escape single quotes)
     let main = document.querySelector(".editor-container .ql-editor").innerHTML
+    
+    // replace each shortcode w/ its value
     main = doShortcodesFromLocalstorage(main)
-    // //
 
     // js for unsigned contract
     let contract_script_unsigned = `
@@ -150,32 +153,3 @@ const toDataURL = url => fetch(url)
 // from https://stackoverflow.com/a/20285053
 
 
-
-///
-
-function doShortcodes(shortcodes, contentString) {
-    // Replace names with values in the provided string
-    shortcodes.forEach(item => {
-        const namePattern = new RegExp(escapeRegExp(item.name), 'g');
-        contentString = contentString.replace(namePattern, item.value);
-    });
-
-    return contentString;
-}
-function doShortcodesFromLocalstorage(main) {
-    // localStorage.setItem('repeaterData', jsonString);
-    // localStorage.removeItem('repeaterData');
-    const shortcodesJsonString = localStorage.getItem('repeaterData');
-
-    if (shortcodesJsonString) {
-        const shortcodes = JSON.parse(shortcodesJsonString);
-        if (shortcodes[0]) { // console.log(shortcodes[0].name);
-            return doShortcodes(shortcodes, main)
-        }
-    }
-    return main;
-}
-// Function to escape special characters in a string for regex
-function escapeRegExp(string) {
-    return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-}

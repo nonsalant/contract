@@ -1,3 +1,5 @@
+import { doShortcodesFromLocalstorage } from "../utils.js";
+
 export default async function generate() {
 
     // get timestamp
@@ -35,7 +37,9 @@ export default async function generate() {
     let main = "\n\n\n\$CONTRACT_HTML='\n  "
         + addSlashes(document.querySelector(".editor-container .ql-editor").innerHTML)
         + "\n';\n\n"
-    // ! replace each shortcode w/ its value
+    
+    // replace each shortcode w/ its value
+    main = doShortcodesFromLocalstorage(main)
 
 
     // generate footer 
