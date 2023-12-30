@@ -56,7 +56,7 @@
 
 /* buttons with icons */
 
-.button.icon-button {
+.button:has(.icon) {
   padding: 0;
   gap: 0;
   place-self: center;
@@ -166,7 +166,43 @@
 
 /* Button sizes */
 
-.button.size-300 {
+.size-300.button {
     padding: 5px 18px;
     border-radius: 4px;
+}
+
+.size-300.button:has(.icon) {
+  padding: 0;
+
+  & > * {
+    padding: 5px 175px;
+    padding-inline: clamp(10px, min(1.25vw, 0.75em), 17.5px);
+  }
+  
+  & .icon {
+    padding-inline: clamp(10px, min(1.25vw, 0.75em), 12px);
+    font-size: 1rem;
+    padding-block: 10px;
+  }
+}
+
+@media (width<535px) {
+  .button {
+    padding: 5px 18px;
+    border-radius: 4px;
+  }
+  .button:has(.icon) {
+    padding: 0;
+
+    & > * {
+      padding: 5px 175px;
+      padding-inline: clamp(10px, min(1.25vw, 0.75em), 17.5px);
+    }
+    
+    & .icon {
+      padding-inline: clamp(10px, min(1.25vw, 0.75em), 12px);
+      font-size: 1rem;
+      padding-block: 10px;
+    }
+  }
 }

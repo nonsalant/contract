@@ -114,7 +114,7 @@
                 <!-- Action Buttons -->
                 <div id="signature-controls">
                     <div class="flexi">
-                        <button id="clear-signature" type="button" class="icon-button button warning">
+                        <button id="clear-signature" type="button" class="button warning">
                             <span>Clear <span class="hide-small">signature</span></span>
                             <span class="icon">
                                 <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24"
@@ -124,7 +124,7 @@
                             </span>
                         </button>
 
-                        <button id="show-modal-preview" type="button" class="icon-button button success preview">
+                        <button id="show-modal-preview" type="button" class="button success preview">
                             <span>Preview <span class="hide-small">as Client</span></span>
                             <span class="icon">
                                 <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024"
@@ -134,7 +134,7 @@
                             </span>
                         </button>
 
-                        <button id="show-modal-qr" type="button" class="open-button | icon-button button"
+                        <button id="show-modal-qr" type="button" class="open-button | button"
                             title="Show QR: scan this code to open the page on another device">
                             <span class="icon small-padding">
                                 <svg stroke="currentColor" fill="currentColor" stroke-width="0" version="1.1"
@@ -192,7 +192,7 @@
                         </p>
 
                         <small>
-                            Optional. The contract (PHP file) will send a confirmation email to both
+                            Optional. If set, the contract will send a confirmation email to both
                             addresses when the second
                             party signs the contract.
                         </small>
@@ -227,7 +227,7 @@
                                 <footer class="repeater-info">
                                     <small class="">
                                         Complete both fields above to 
-                                        <strong style="white-space: nowrap;">add a new item.</strong>
+                                        <strong style="white-space: nowrap;">add a new item</strong>
                                     </small>
                                 </footer>
                             </article>
@@ -239,37 +239,50 @@
                         <footer>
                             <button class="add-btn | button size-300" type="submit">
                                 <span>
-                                    + Add a shortcode
+                                    + Add another one
                                 </span>
                             </button>
                             <button class="save-btn | button size-300 | animate fade" type="button">💾 save</button>
                         </footer>
 
                         <hr style="width: 100%; opacity: .5; margin: 0;">
-                        <small>
-                            <strong>Shortcodes</strong> are concise snippets, conventionally enclosed in square brackets, such as <i>[price]</i>.
-                            They get automatically replaced with the actual value, e.g: <i>$1000</i>.
+                        <small style="columns: 2;">
+                            <strong>
+                                Shortcodes
+                            </strong> 
+                            are concise snippets, 
+                            conventionally enclosed in square brackets, such as <i>[price]</i>.
+                            <br>
+                            <strong>
+                                They get 
+                                automatically replaced 
+                            </strong>
+                            with the actual value, e.g: <i>$1000</i>.
                         </small>
 
                     </form>
                 </details>
 
                 <!-- Reset data -->
-                <details class="danger | animate slide delay-2">
+                <details class="danger | animate slide delay-0">
                     <summary>
                         Reset data
                     </summary>
                     <div class="panel">
                         <div class="flow">
-                            <div>
-                                <p>⚠️ <b style="font-weight: 600;">Local browser data will be deleted</b> and replaced
-                                    with
-                                    default content.
+                            <small>
+                                <p>
+                                    Local browser 
+                                    <b style="font-weight: 600;">
+                                        data will be deleted
+                                    </b> 
+                                    and replaced with default content.
                                 </p>
-                            </div>
+                            </small>
                             <div>
-                                <button id="clear-local-storage" type="button" class="icon-button button danger">
-                                    <span>Reset</span>
+                                <button id="clear-local-storage" type="button" 
+                                class="button danger size-300">
+                                    <span>Reset data</span>
                                     <span class="icon">
                                         <svg stroke="currentColor" fill="currentColor" stroke-width="0"
                                             viewBox="0 0 24 24" height="1em" width="1em"
@@ -305,7 +318,7 @@
                 </div>
                 <!-- Download Button -->
                 <div class="flexi">
-                    <button id="download" type="submit" class="icon-button button primary | animate slide delay-4">
+                    <button id="download" type="submit" class="button primary size-300 | animate slide delay-4">
                         <span>Download</span>
                         <span class="icon">
                             <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
