@@ -301,7 +301,9 @@ body .repeater-form .close-button {
 
 
 article:has(.close-button:is(:hover,:focus)) .repeater-item-field input {
+  --primary: red;
   background-color: var(--danger);
-  /* opacity: .5; */
-  filter: contrast(3);
+  opacity: .65;
+  /* filter: contrast(3); */
+  filter: blur(1px) contrast(3);
 }
