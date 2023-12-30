@@ -25,6 +25,6 @@ preview("#show-modal-preview")
 import clearData from "./init/clear-data.js"
 clearData("#clear-local-storage")
 
-import qrCode from "../data/more-data/scripts/qr-code.js"
-// qrCode("#qr-code") // is already called inside the file
-qrCode("#generator-qr-code")
+// import qrCode from "../data/more-data/scripts/qr-code.js"
+// // qrCode("#qr-code") // is already called inside the file
+// qrCode("#generator-qr-code")
