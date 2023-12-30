@@ -61,7 +61,15 @@
         top: -8px;
         top: 0; */
     }
-    details .close-button { align-self: flex-end; justify-self: center; top: auto; bottom: auto; left: auto; right: auto; }
+    details .close-button { 
+      scale: .85;
+      right: 6px;
+      bottom: 1px;
+
+      align-self: flex-end;
+      justify-self: center;
+      top: auto; bottom: auto; left: auto; right: auto; 
+    }
 }
 .close-button:focus-visible {
   outline-style: solid;
