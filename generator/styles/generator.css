@@ -80,12 +80,13 @@ body {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-
     gap: 3rem;
     gap: 2rem;
-
+    gap: 5rem;
     /* margin-block-start: 0;
     padding-block-start: var(--flow-space, 1em); */
+
+    width: 52rem;
 }
 
 .generator-main-options {
