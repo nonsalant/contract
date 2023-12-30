@@ -181,8 +181,10 @@
   
   & .icon {
     padding-inline: clamp(10px, min(1.25vw, 0.75em), 12px);
-    font-size: 1rem;
-    padding-block: 10px;
+    /* font-size: 1rem;
+    padding-block: 10px; */
+    font-size: 1.25rem;
+    padding-block: 8px;
   }
 }
 
@@ -201,8 +203,10 @@
     
     & .icon {
       padding-inline: clamp(10px, min(1.25vw, 0.75em), 12px);
-      font-size: 1rem;
-      padding-block: 10px;
+      /* font-size: 1rem;
+      padding-block: 10px; */
+      font-size: 1.25rem;
+      padding-block: 8px;
     }
   }
 }
