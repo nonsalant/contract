@@ -121,3 +121,14 @@ details {
         }
     }
 }
+
+.panel > small {
+    display: block;
+    opacity: 75%;
+    text-wrap: balance;
+    line-height: 1.75;
+    font-weight: 600;
+    display: grid;
+    gap: 1em;
+    /* outline: solid 1px red; */
+}

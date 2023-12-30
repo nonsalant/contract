@@ -65,9 +65,10 @@ label:has(svg) {
 
 /**/
 
-.panel > small {
+/* .panel > small {
     display: block;
     opacity: 75%;
     text-wrap: balance;
     line-height: 1.75;
-}
+    font-weight: 600;
+} */

@@ -116,6 +116,7 @@ article:first-child .close-button {
   font-style: italic;
   text-align: center;
   /* text-align: right; */
+  font-weight: 600;
 }
 
 .repeater-form > footer {
