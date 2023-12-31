@@ -118,6 +118,13 @@ body {
     margin-inline-start: -0.05rem;
 }
 
+.grid:has(#contract_filename) label {
+        margin-inline-start: -1rem;
+
+    @media (width >= 836px) {
+        margin-inline-start: -1.7rem;
+    }
+}
 
 
 .footer {
