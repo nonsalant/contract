@@ -88,12 +88,14 @@ body {
     padding-block-start: var(--flow-space, 1em); */
 
     width: 52rem;
+    padding-inline: 1.5rem;
+    width: 53rem;
 }
 
 .generator-main-options {
     width: clamp(20rem, 28rem, 100%);
     width: clamp(20rem, 29rem, calc(100% + 2rem));
-    margin-inline: -.75rem;
+    /* margin-inline: -.75rem; */
     margin-block-start: 1rem;
 }
 

@@ -10,13 +10,23 @@ details {
     overflow: hidden;
     transition: all .4s ease-in-out;
 
+    margin-inline-start: -0.75rem;
+    margin-inline-start: -0.81rem;
+    & > *:not(summary) {
+        margin-inline-start: 0.75rem;
+        margin-inline-start: 0.81rem;
+    }
+    & details {
+        margin-inline-start: 0;
+    }
+
     &[open] {
         max-height: 90vh;
         /* max-height: 300vh; */
         /* overflow: auto; */
         summary { padding-block-end: .5em; }
     }
-    // if the repeater items don't fit the width
+    /* if the repeater items don't fit the width */
     @media (width > 360px) {
         &:has(.repeater-item:nth-child(4)) {
             max-height: unset;
