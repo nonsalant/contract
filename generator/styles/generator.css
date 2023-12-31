@@ -80,9 +80,10 @@ body {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 3rem;
-    gap: 2rem;
     gap: 5rem;
+    row-gap: 0rem;
+    width: 50rem;
+    padding-inline: 1rem;
     /* margin-block-start: 0;
     padding-block-start: var(--flow-space, 1em); */
 
