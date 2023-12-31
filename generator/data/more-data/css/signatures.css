@@ -17,7 +17,7 @@
     max-width: min(50%, 330px);
     min-width: 300px;
 
-    max-width: clamp(calc(50% - 2rem), 348px, 100%);
+    max-width: clamp(50% - 2rem, 348px, 100%);
     min-width: 200px;
 }
 
