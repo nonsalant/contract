@@ -5,7 +5,7 @@
 @layer signatures, buttons;
 @layer modal, preview-modal;
 @layer contract-typography;
-
+@layer button-animations;
 @layer repeater;
 
 @import url(abstracts.css);
@@ -25,5 +25,7 @@
 /* styles from the downloadable file */
 /* @import url(/../data/more-data/css/main.css); */
 @import url(../data/style.min.css);
+
+@import url(button-animations.css) layer(button-animations);
 
 @import url(repeater.css) layer(repeater);

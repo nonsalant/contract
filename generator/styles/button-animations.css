@@ -1,0 +1,67 @@
+/* Animation System */
+
+/* ! bug w/ grid or flex buttons */
+/* .button:where(.primary):hover:not(:active) {
+    animation: rubberband 4s ease-in-out 1;
+} */
+
+/* .button:where(.warning,.danger):hover:not(:active) {
+    animation: headshake 2.5s cubic-bezier(.445,.05,.55,.95) 50;
+} */
+
+
+@keyframes rubberband {
+    0% {
+        transform: scaleX(1)
+    }
+
+    9.9% {
+        transform: scale3d(1.125,.875,1)
+    }
+
+    13.2% {
+        transform: scale3d(.875,1.125,1)
+    }
+
+    16.5% {
+        transform: scale3d(1.075,.925,1)
+    }
+
+    21.45% {
+        transform: scale3d(.975,1.025,1)
+    }
+
+    24.75% {
+        transform: scale3d(1.025,.975,1)
+    }
+
+    33% {
+        transform: scaleX(1)
+    }
+}
+
+@keyframes headshake {
+    0% {
+        transform: translateX(0)
+    }
+
+    3.25% {
+        transform: translateX(-6px) rotateY(-9deg)
+    }
+
+    9.25% {
+        transform: translateX(5px) rotateY(7deg)
+    }
+
+    15.75% {
+        transform: translateX(-3px) rotateY(-5deg)
+    }
+
+    21.75% {
+        transform: translateX(2px) rotateY(3deg)
+    }
+
+    25% {
+        transform: translateX(0)
+    }
+}

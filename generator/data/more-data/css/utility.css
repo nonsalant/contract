@@ -55,7 +55,9 @@
 .border-top {
     /* border-top: solid 1px --clr-blue-desaturated-500; */
     border-top: solid 1px hsl(var(--clr-primary-hsl)/.25);
-    padding-block-start: 2.5rem; margin-block-start: 2rem;
+    padding-block-start: 2.5rem; 
+    margin-block-start: 2rem;
+    margin-block-start: 6rem;
 }
 
 .margin-top {
