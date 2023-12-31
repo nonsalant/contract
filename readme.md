@@ -1,6 +1,6 @@
 ### Updates
 
-🆕 31/12/23: Added functionality for shortcodes:
+🆕 12/31/23: Added functionality for shortcodes:
 
 <p>
   <a target="_blank" href="https://stefanmatei.com/contract-generator/edit#below-contract">
