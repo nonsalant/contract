@@ -90,6 +90,10 @@ body {
     width: 52rem;
     padding-inline: 1.5rem;
     width: 53rem;
+
+    h1, h2, h3, h4, h5, h6 {
+        color: var(--clr-blue-desaturated-600);
+    }
 }
 
 .generator-main-options {
