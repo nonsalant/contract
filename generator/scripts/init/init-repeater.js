@@ -142,6 +142,7 @@ detailsElements.forEach(item => {
             element.style.overflow = "visible";
             // element.style.maxHeight = "300vh";
         } else {
+            // if (!element.querySelector("&:is(summary)"))
             element.style.overflow = "hidden";
             // element.style.maxHeight = "90vh";
             // element.querySelector("& > *:not(summary)").style.height = "0";

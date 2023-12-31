@@ -12,9 +12,20 @@ details {
 
     &[open] {
         max-height: 90vh;
-        max-height: 300vh;
+        /* max-height: 300vh; */
         /* overflow: auto; */
         summary { padding-block-end: .5em; }
+    }
+    // if the repeater items don't fit the width
+    @media (width > 360px) {
+        &:has(.repeater-item:nth-child(4)) {
+            max-height: unset;
+        }
+    }
+    @media (width <= 360px) {
+        &:has(.repeater-item:nth-child(2)) {
+            max-height: unset;
+        }
     }
 
     /* color variations */
