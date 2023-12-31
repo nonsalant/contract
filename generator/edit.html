@@ -38,8 +38,9 @@
             <div id="toolbar">
                 <button title="Scroll down" type="button"
                     onclick="document.querySelector('#below-contract').scrollIntoView()">
-                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                            <use href="#down-circle"></use>
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em"
+                        width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <use href="#down-circle"></use>
                     </svg>
                 </button>
                 <span class="ql-formats">
@@ -93,7 +94,8 @@
         </div>
         <!-- Editor -->
         <div id="main" class="editor-container | animate slide">
-            <div style="padding-inline: clamp(20px,5vw,35px); padding-block-start: 2.5rem; color: var(--clr-green-desaturated-500);">
+            <div
+                style="padding-inline: clamp(20px,5vw,35px); padding-block-start: 2.5rem; color: var(--clr-green-desaturated-500);">
                 Loading contract…
             </div>
         </div>
@@ -105,13 +107,14 @@
 
                 <!-- Signature -->
                 <div id="canvas-container">
-                    <canvas aria-label="Input signature" id="generator-signature-pad" class="signature-pad" width="188" height="58.66"></canvas>
+                    <canvas aria-label="Input signature" id="generator-signature-pad" class="signature-pad" width="188"
+                        height="58.66"></canvas>
                 </div>
 
                 <!-- Action Buttons -->
                 <div id="signature-controls">
                     <div class="flexi">
-                        <button id="clear-signature" type="button" class="icon-button button warning">
+                        <button id="clear-signature" type="button" class="button warning">
                             <span>Clear <span class="hide-small">signature</span></span>
                             <span class="icon">
                                 <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24"
@@ -121,7 +124,7 @@
                             </span>
                         </button>
 
-                        <button id="show-modal-preview" type="button" class="icon-button button success preview">
+                        <button id="show-modal-preview" type="button" class="button success preview">
                             <span>Preview <span class="hide-small">as Client</span></span>
                             <span class="icon">
                                 <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024"
@@ -131,7 +134,7 @@
                             </span>
                         </button>
 
-                        <button id="show-modal-qr" type="button" class="open-button | icon-button button"
+                        <!-- <button id="show-modal-qr" type="button" class="open-button | button"
                             title="Show QR: scan this code to open the page on another device">
                             <span class="icon small-padding">
                                 <svg stroke="currentColor" fill="currentColor" stroke-width="0" version="1.1"
@@ -139,7 +142,7 @@
                                     <use href="#icon-qr"></use>
                                 </svg>
                             </span>
-                        </button>
+                        </button> -->
 
                     </div>
 
@@ -152,10 +155,12 @@
 
             <div class="generator-main-options flow">
 
+                <h3>Optional Contract Settings</h3>
+
                 <!-- Name fields -->
                 <details class="animate slide delay-1">
                     <summary>
-                        Names (optional)
+                        Names
                     </summary>
                     <form class="panel flexi">
                         <p class="grid">
@@ -167,16 +172,16 @@
                             <input type="text" name="client_name" id="client_name" placeholder="">
                         </p>
 
-                        <p>
+                        <small>
                             Names appear above signatures when&nbsp;set.
-                        </p>
+                        </small>
                     </form>
                 </details>
 
                 <!-- Email fields -->
                 <details class="animate slide delay-0">
                     <summary>
-                        Emails (optional)
+                        Email addresses
                     </summary>
                     <form class="panel flexi">
                         <p class="grid">
@@ -188,47 +193,119 @@
                             <input type="email" name="client_email" id="client_email" placeholder="client@example.com">
                         </p>
 
-                        <p>
-                            No emails will be sent now. The contract (PHP file) will send a confirmation email to both
+                        <small>
+                            Optional. If set, the contract will send a confirmation email to both
                             addresses when the second
                             party signs the contract.
-                        </p>
+                        </small>
+                    </form>
+                </details>
+
+                <!-- Shortcodes -->
+                <details class="animate slide delay-0">
+                    <summary>
+                        Shortcodes
+                    </summary>
+                    <form class="repeater-form | panel flexi">
+
+                        <template class="repeater-item-template">
+                            <article class="repeater-item">
+                                <div class="repeater-item-field">
+                                    <label class="grid">
+                                        <span>Replace this: </span>
+                                        <input class="repeater-item-name" type="text" placeholder="[shortcode]">
+                                    </label>
+                                </div>
+                                <div class="repeater-item-field">
+                                    <label class="grid">
+                                        <span>With this: </span>
+                                        <input class="repeater-item-value" type="text" placeholder="value">
+                                    </label>
+                                </div>
+                                <button class="remove-btn close-button secondary danger animate delay-1 roll"
+                                    type="button" aria-label="remove item" title="remove">
+                                    <span>❌</span>
+                                </button>
+                                <footer class="repeater-info">
+                                    <small class="">
+                                        Complete both fields above to 
+                                        <strong style="white-space: nowrap;">add a new shortcode</strong>
+                                    </small>
+                                </footer>
+                            </article>
+                        </template>
+
+                        <output>
+                        </output>
+
+                        <footer>
+                            <button class="add-btn | button size-300" type="submit">
+                                <span>
+                                    + Add another one
+                                </span>
+                            </button>
+                            <button class="save-btn | button size-300 | animate fade" type="button">💾 save</button>
+                        </footer>
+
+                        <hr style="width: 100%; opacity: .5; margin: 0;">
+                        <details class="flow panel">
+                            <summary style="color: inherit; padding: 0; opacity: .6;">
+                                <small>
+                                    What is a shortcode?
+                                </small>
+                            </summary>
+                            <div class="flow">
+                                <p>
+                                    Shortcodes are concise snippets,
+                                    conventionally enclosed in square brackets, such as <i>[price]</i>.
+                                </p>
+                                <p>
+                                    They get automatically replaced
+                                    with the actual value, e.g: <i>$1000</i>
+                                    when a contract is generated.
+                                </p>
+                            </div>
+                        </details>
+
                     </form>
                 </details>
 
                 <!-- Reset data -->
-                <details class="danger | animate slide delay-2">
+                <details class="danger | animate slide delay-0">
                     <summary>
-                        Reset data…
+                        Reset data
                     </summary>
-                    <div class="panel">
-                        <div class="flow">
-                            <div>
-                                <p>⚠️ <b style="font-weight: 600;">Local browser data will be deleted</b> and replaced
-                                    with
-                                    default content.
-                                </p>
-                            </div>
-                            <div>
-                                <button id="clear-local-storage" type="button" class="icon-button button danger">
-                                    <span>Reset</span>
-                                    <span class="icon">
-                                        <svg stroke="currentColor" fill="currentColor" stroke-width="0"
-                                            viewBox="0 0 24 24" height="1em" width="1em"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <use href="#icon-delete"></use>
-                                        </svg>
-                                    </span>
-                                </button>
-                            </div>
+                    <div class="panel" style="display: flex;align-items: center;gap: 1rem;">
+                    
+                        <div>
+                            <button id="clear-local-storage" type="button" class="button danger size-300" style="white-space: nowrap;">
+                                <span>Reset data</span>
+                                <span class="icon">
+                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em"
+                                        width="1em" xmlns="http://www.w3.org/2000/svg">
+                                        <use href="#icon-delete"></use>
+                                    </svg>
+                                </span>
+                            </button>
                         </div>
+                        <small>
+                            <span>
+                                <b>
+                                    Local browser
+                                    data will be deleted
+                                </b>
+                                and replaced with default&nbsp;content.
+                            </span>
+                        </small>
+                    
                     </div>
                 </details>
 
             </div>
 
-            <form class="generator-download-options sticky-1 flow | animate slide delay-0" id="download-form"
-                name="download-form">
+            <form class="generator-download-options sticky-1 flow | animate slide delay-0" id="download-form" name="download-form">
+
+                <h3>Download File</h3>
 
                 <!-- Filename field -->
                 <div class="flexi">
@@ -248,7 +325,9 @@
                 </div>
                 <!-- Download Button -->
                 <div class="flexi">
-                    <button id="download" type="submit" class="icon-button button primary | animate slide delay-4">
+                    <button id="download" type="submit" 
+                    style="margin-inline-start: 2px;"
+                    class="button primary size-300 | animate slide delay-4">
                         <span>Download</span>
                         <span class="icon">
                             <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
@@ -268,8 +347,10 @@
             -->
 
             <footer class="footer flow border-top">
-                <p style="font-size: 1rem; font-weight: 600;">This template contains general information and should not be considered legal advice.</p>
-                <p>View on <a href="https://github.com/nonsalant/contract/">GitHub</a>. Built by <a href="https://twitter.com/nonsalant">Stefan Matei</a>.</p>
+                <p style="font-size: 1rem; font-weight: 600; text-wrap: balance;">This template contains general information and should not
+                    be considered legal advice.</p>
+                <p>View on <a href="https://github.com/nonsalant/contract/">GitHub</a>. Built by <a
+                        href="https://twitter.com/nonsalant">Stefan Matei</a>.</p>
             </footer>
 
         </div>
@@ -309,11 +390,11 @@
                 d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zm2.46-7.12l1.41-1.41L12 12.59l2.12-2.12 1.41 1.41L13.41 14l2.12 2.12-1.41 1.41L12 15.41l-2.12 2.12-1.41-1.41L10.59 14l-2.13-2.12zM15.5 4l-1-1h-5l-1 1H5v2h14V4z">
             </path>
         </symbol>
-        <symbol id="icon-qr">
+        <!-- <symbol id="icon-qr">
             <path
                 d="M5 1h-4v4h4v-4zM6 0v0 6h-6v-6h6zM2 2h2v2h-2zM15 1h-4v4h4v-4zM16 0v0 6h-6v-6h6zM12 2h2v2h-2zM5 11h-4v4h4v-4zM6 10v0 6h-6v-6h6zM2 12h2v2h-2zM7 0h1v1h-1zM8 1h1v1h-1zM7 2h1v1h-1zM8 3h1v1h-1zM7 4h1v1h-1zM8 5h1v1h-1zM7 6h1v1h-1zM7 8h1v1h-1zM8 9h1v1h-1zM7 10h1v1h-1zM8 11h1v1h-1zM7 12h1v1h-1zM8 13h1v1h-1zM7 14h1v1h-1zM8 15h1v1h-1zM15 8h1v1h-1zM1 8h1v1h-1zM2 7h1v1h-1zM0 7h1v1h-1zM4 7h1v1h-1zM5 8h1v1h-1zM6 7h1v1h-1zM9 8h1v1h-1zM10 7h1v1h-1zM11 8h1v1h-1zM12 7h1v1h-1zM13 8h1v1h-1zM14 7h1v1h-1zM15 10h1v1h-1zM9 10h1v1h-1zM10 9h1v1h-1zM11 10h1v1h-1zM13 10h1v1h-1zM14 9h1v1h-1zM15 12h1v1h-1zM9 12h1v1h-1zM10 11h1v1h-1zM12 11h1v1h-1zM13 12h1v1h-1zM14 11h1v1h-1zM15 14h1v1h-1zM10 13h1v1h-1zM11 14h1v1h-1zM12 13h1v1h-1zM13 14h1v1h-1zM10 15h1v1h-1zM12 15h1v1h-1zM14 15h1v1h-1z">
             </path>
-        </symbol>
+        </symbol> -->
         <symbol id="icon-preview">
             <path
                 d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 0 0 0 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z">
@@ -335,12 +416,12 @@
     </dialog>
 
     <!-- QR modal -->
-    <dialog class="modal flow" id="modal-qr">
+    <!-- <dialog class="modal flow" id="modal-qr">
         <div class="qr-code-container">
             <button id="close-modal-qr" class="close-button button" aria-label="close" type="button"></button>
             <canvas id="generator-qr-code"></canvas>
         </div>
-    </dialog>
+    </dialog> -->
 
 </body>
 

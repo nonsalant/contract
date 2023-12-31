@@ -4,6 +4,7 @@
 :where(input:is([type="text"], [type="email"], [type="password"]), textarea) {
     transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
     font-size: 1rem;
+    font-weight: 400;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 
                 0 1px 2px 0 rgba(0, 0, 0, 0.06);
     padding-block: 0.35rem;
@@ -15,6 +16,8 @@
     outline-width: 1.5px;
     color: hsl(var(--clr-dark-hsl) / 1);
     background-color: hsl(var(--clr-light-hsl) / 0.6);
+    background-color: hsl(var(--clr-light-hsl) / 1);
+    /* background-color: red; */
     border: solid 1.5px hsl(var(--clr-dark-hsl) / 0.5);
     mix-blend-mode: luminosity;
 
@@ -60,3 +63,15 @@ label:has(svg) {
       color: var(--clr-blue-700);
     }
 }
+
+
+
+/**/
+
+/* .panel > small {
+    display: block;
+    opacity: 75%;
+    text-wrap: balance;
+    line-height: 1.75;
+    font-weight: 600;
+} */

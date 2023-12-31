@@ -1,4 +1,6 @@
-export default async function generatePreview(signed=false) {
+import { doShortcodesFromLocalstorage } from "../utils.js";
+
+export default async function generatePreview(signed = false) {
 
     let previewOverrides = `
         <script type="module">
@@ -33,7 +35,9 @@ export default async function generatePreview(signed=false) {
 
     // get main from editor (don't escape single quotes)
     let main = document.querySelector(".editor-container .ql-editor").innerHTML
-    // //
+    
+    // replace each shortcode w/ its value
+    main = doShortcodesFromLocalstorage(main)
 
     // js for unsigned contract
     let contract_script_unsigned = `
@@ -147,3 +151,5 @@ const toDataURL = url => fetch(url)
         reader.readAsDataURL(blob)
     }))
 // from https://stackoverflow.com/a/20285053
+
+

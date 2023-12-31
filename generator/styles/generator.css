@@ -80,18 +80,26 @@ body {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-
-    gap: 3rem;
-    gap: 2rem;
-
+    gap: 5rem;
+    row-gap: 0rem;
+    width: 50rem;
+    padding-inline: 1rem;
     /* margin-block-start: 0;
     padding-block-start: var(--flow-space, 1em); */
+
+    width: 52rem;
+    padding-inline: 1.5rem;
+    width: 53rem;
+
+    h1, h2, h3, h4, h5, h6 {
+        color: var(--clr-blue-desaturated-600);
+    }
 }
 
 .generator-main-options {
     width: clamp(20rem, 28rem, 100%);
     width: clamp(20rem, 29rem, calc(100% + 2rem));
-    margin-inline: -.75rem;
+    /* margin-inline: -.75rem; */
     margin-block-start: 1rem;
 }
 
@@ -110,6 +118,13 @@ body {
     margin-inline-start: -0.05rem;
 }
 
+.grid:has(#contract_filename) label {
+        margin-inline-start: -1rem;
+
+    @media (width >= 836px) {
+        margin-inline-start: -1.7rem;
+    }
+}
 
 
 .footer {
