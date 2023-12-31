@@ -77,6 +77,7 @@ details {
             padding .2s ease-in;
 
         color: var(--clr-500);
+        color: var(--clr-600);
         font-family: inherit;
         font-weight: bold;
         letter-spacing: -.025em;
