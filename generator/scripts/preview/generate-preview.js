@@ -1,9 +1,7 @@
 import { doShortcodesFromLocalstorage } from "../utils.js";
 import previewOnly from "./preview-only.js";
 
-export default async function generatePreview(signed = false) {
-
-    let previewOverrides = previewOnly()
+export default async function generatePreview(signed=false, forDownload=false, filename="contract-signed.html") {
 
     const signatureFileEmpty = "data/more-data/signature-empty.png"
 
@@ -34,20 +32,15 @@ export default async function generatePreview(signed = false) {
 
         <script id="qr_code_script" type="module">
             ${localStorage.getItem("qr_code_script")}
-        </script>
-
-        <!-- ! PREVIEW ONLY -->
-        ${previewOverrides}
-    `
+        </script>`
 
     // js for signed contract
     let contract_script_signed = `
         <script id="contract_script_signed">
             ${localStorage.getItem("contract_script_signed")}
-        </script>
-    `
+        </script>`
 
-    let contract_script, clientSignature_html, ui_html, compiled_signatures
+    let contract_script, clientSignature_html, ui_html, compiled_signatures, previewOverrides
 
 
     if (signed) {
@@ -90,6 +83,8 @@ export default async function generatePreview(signed = false) {
         compiled_signatures = `<img id="dev_signature" src="${localStorage.getItem("dev_signature")}" />`
     }
 
+    previewOverrides = previewOnly(signed, forDownload, filename)
+
 
     // to do: move to external file; make function w/ props
     const output = `<!DOCTYPE html>
@@ -105,7 +100,7 @@ export default async function generatePreview(signed = false) {
         <div id="content" class="ql-editor">
 
             ${main}
-            
+
             ${compiled_signatures}
 
             ${ui_html}
@@ -113,6 +108,8 @@ export default async function generatePreview(signed = false) {
         </div> <!-- #content -->
 
         ${contract_script}
+        <!-- ! PREVIEW ONLY -->
+        ${previewOverrides}
     </body>
     </html>
 `
@@ -138,5 +135,3 @@ const toDataURL = url => fetch(url)
         reader.readAsDataURL(blob)
     }))
 // from https://stackoverflow.com/a/20285053
-
-

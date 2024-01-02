@@ -1,11 +1,13 @@
 import downloadPreview from "./download-preview.js"
 
 export default () => {
+    
+    const selector = "#download-form > *:last-child"
+
     const html = `
-        <h3>Generate Preview files</h3>
-        <button id="download-preview" type="button"
-            style="margin-inline-start: 2px; justify-self: start;"
-            class="button size-300 | animate slide delay-4">
+    <h3>Generate Preview files</h3>
+    <p>
+        <button id="download-preview" type="button" class="button size-300">
             <span>contract-demo.html</span>
             <span class="icon">
                 <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
@@ -14,8 +16,9 @@ export default () => {
                 </svg>
             </span>
         </button>
-        <button id="download-preview-signed" type="button" style="margin-inline-start: 2px; justify-self: start;"
-            class="button size-300 | animate slide delay-4">
+    </p>
+    <p>
+        <button id="download-preview-signed" type="button" class="button size-300">
             <span>contract-signed.html</span>
             <span class="icon">
                 <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
@@ -24,9 +27,9 @@ export default () => {
                 </svg>
             </span>
         </button>
-    `;
-    
-    document.querySelector("#download-form > *:last-child").innerHTML += html
+    </p>`;
+
+    document.querySelector(selector).innerHTML += html
 
     downloadPreview("#download-preview")
     downloadPreview("#download-preview-signed", true)

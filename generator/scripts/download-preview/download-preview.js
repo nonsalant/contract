@@ -1,5 +1,5 @@
-import generateDownloadPreview from "./generate-download-preview.js"
-
+// import generateDownloadPreview from "./generate-download-preview.js"
+import generatePreview from "../preview/generate-preview.js"
 
 // download a signable (html) demo
 
@@ -8,13 +8,13 @@ export default function downloadPreview(selector, signed = false) {
     selector?.addEventListener("click", async function (e) {
 
         e.preventDefault()
-
-        const contractPreview = await generateDownloadPreview(signed, true)
-
+        
         //localStorage.removeItem("client_signature")
-        let filename
-        if (signed) filename = "contract-signed.html"
-        else filename = "contract-demo.html"
+        let signedFilename = "contract-signed.html"
+        let unsignedFilename = "contract-demo.html"
+        let filename = signed ? signedFilename : unsignedFilename
+        
+        const contractPreview = await generatePreview(signed, true, signedFilename)
 
         selector.disabled = true
         
