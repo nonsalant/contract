@@ -4,7 +4,7 @@
 
 <p>
   <a target="_blank" href="https://stefanmatei.com/contract-generator/edit#below-contract">
-    <img alt="A simple interface with pairs of fields for “replace this” and “with this”. Each pair of inputs has a red button with an X inside it to remove the item. Screenshot from Safari iOS in landscape mode." src="https://github.com/nonsalant/contract/assets/180561/33b27fc8-a5c1-40c7-ba77-63d22eb55c28)" width="500"/>
+    <img alt="A simple interface with pairs of fields for “replace this” and “with this”. Each pair of inputs has a red button with an X inside it to remove the item. Screenshot from Safari iOS in landscape mode." src="https://github.com/nonsalant/contract/assets/180561/33b27fc8-a5c1-40c7-ba77-63d22eb55c28" width="500"/>
   </a>
 </p>
 
