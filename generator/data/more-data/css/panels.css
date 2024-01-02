@@ -12,9 +12,12 @@ details {
 
     margin-inline-start: -0.75rem;
     margin-inline-start: -0.81rem;
-    & > *:not(summary) {
-        margin-inline-start: 0.75rem;
-        margin-inline-start: 0.81rem;
+    
+    @media (width < 535px) {
+        & > *:not(summary) {
+            margin-inline-start: 0.75rem;
+            /* margin-inline-start: 0.81rem; */
+        }
     }
     & details {
         margin-inline-start: 0;
