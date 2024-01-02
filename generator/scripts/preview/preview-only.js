@@ -1,6 +1,8 @@
 export default (signed = false, forDownload = false, filename="contract-signed.html") => {    
     if (!forDownload) {
+
         if (signed) return ''
+        
         if (!signed) return `
             <script type="module">
                 // ! PREVIEW ONLY
@@ -15,7 +17,9 @@ export default (signed = false, forDownload = false, filename="contract-signed.h
                     e.preventDefault()
                 })
             </script>`
+        
     } else {
+
         if (signed) return `
         <script type="module">
             // ! PREVIEW ONLY
@@ -25,6 +29,7 @@ export default (signed = false, forDownload = false, filename="contract-signed.h
             // update timestamp and IP here
             // for both dev and client
         </script>`
+
         if (!signed) return `
         <script type="module">
             // ! PREVIEW ONLY
@@ -37,5 +42,6 @@ export default (signed = false, forDownload = false, filename="contract-signed.h
                 e.preventDefault()
             })
         </script>`
+
     }
 }
