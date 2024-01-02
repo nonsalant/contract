@@ -22,10 +22,10 @@ import preview from "./preview/preview.js"
 preview("#show-modal-preview")
 // preview("#preview-signed", true)
 
-// static preview generation
-// for demo and demo-signed external html files
-import staticPreviewGeneration from "./download-preview/activate.js"
-staticPreviewGeneration()
+// // static preview generation
+// // for demo and demo-signed external html files
+// import staticPreviewGeneration from "./download-preview/activate.js"
+// staticPreviewGeneration()
 
 import clearData from "./init/clear-data.js"
 clearData("#clear-local-storage")
