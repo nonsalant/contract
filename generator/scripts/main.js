@@ -18,12 +18,14 @@ signature("#generator-signature-pad")
 import download from "./download/download.js"
 download("#download-form")
 
-// moved downloadPreview("#download-preview-signed", true)
-// to edit.html
-
 import preview from "./preview/preview.js"
 preview("#show-modal-preview")
 // preview("#preview-signed", true)
+
+// // insert buttons and activate static preview generation
+// // (for demo and demo - signed html files)
+// import activateStaticPreviewGeneration from "./download-preview/activate-static-preview-generation.js"
+// activateStaticPreviewGeneration()
 
 import clearData from "./init/clear-data.js"
 clearData("#clear-local-storage")
