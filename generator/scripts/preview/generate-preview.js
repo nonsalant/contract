@@ -1,22 +1,9 @@
 import { doShortcodesFromLocalstorage } from "../utils.js";
+import previewOnly from "./preview-only.js";
 
 export default async function generatePreview(signed = false) {
 
-    let previewOverrides = `
-        <script type="module">
-            // ! PREVIEW ONLY
-            // Handle submit button in preview
-            //document.querySelector("#submit-btn")?.addEventListener("click", (e) => {
-            document.querySelector("#signature_form").addEventListener("submit", (e) => {
-                setTimeout(function() { 
-                    // 📡 Send message to notify the parent window (received in preview.js)
-                    window.top.postMessage('previewAfterClientSigned', '*')
-                 }, 1500)
-                
-                e.preventDefault()
-            })
-        </script>
-    `
+    let previewOverrides = previewOnly()
 
     const signatureFileEmpty = "data/more-data/signature-empty.png"
 

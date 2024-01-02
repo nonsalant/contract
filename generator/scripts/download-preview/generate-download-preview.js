@@ -120,24 +120,21 @@ export default async function generateDownloadPreview(signed = false, forDownloa
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Signed Contract</title>
         <style>${contract_css}</style>
-        </head>
-        <body>
+    </head>
+    <body>
         <div id="content" class="ql-editor">
         
-        ${main}
-        
-        ${compiled_signatures}
-        
-        ${ui_html}
-        
+            ${main}
+            
+            ${compiled_signatures}
+            
+            ${ui_html}
+            
         </div> <!-- #content -->
-        
 
         ${contract_script}
-
         <!-- ! PREVIEW ONLY -->
         ${previewOverrides}
-
     </body>
     </html>
 `
