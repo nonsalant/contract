@@ -324,10 +324,10 @@
                     </p>
                 </div>
                 <!-- Download Button -->
-                <div class="flexi">
+                <div class="grid">
                     <button id="download" type="submit" 
-                    style="margin-inline-start: 2px;"
-                    class="button primary size-300 | animate slide delay-4">
+                        style="margin-inline-start: 2px; justify-self: start;"
+                        class="button primary size-300 | animate slide delay-4">
                         <span>Download</span>
                         <span class="icon">
                             <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
@@ -337,6 +337,33 @@
                             </svg>
                         </span>
                     </button>
+                    <!-- <h3>Generate Preview files</h3>
+                    <button id="download-preview" type="button" 
+                        style="margin-inline-start: 2px; justify-self: start;"
+                        class="button size-300 | animate slide delay-4">
+                        <span>contract-demo.html</span>
+                        <span class="icon">
+                            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
+                                stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                <use href="#icon-download"></use>
+                            </svg>
+                        </span>
+                    </button>
+                    <button id="download-preview-signed" type="button" style="margin-inline-start: 2px; justify-self: start;"
+                        class="button size-300 | animate slide delay-4">
+                        <span>contract-signed.html</span>
+                        <span class="icon">
+                            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
+                                stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                <use href="#icon-download"></use>
+                            </svg>
+                        </span>
+                    </button>
+                    <script type="module">
+                        import downloadPreview from "./scripts/download-preview/download-preview.js"
+                        downloadPreview("#download-preview")
+                        downloadPreview("#download-preview-signed", true)
+                    </script> -->
                 </div>
 
             </form>

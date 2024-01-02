@@ -18,6 +18,9 @@ signature("#generator-signature-pad")
 import download from "./download/download.js"
 download("#download-form")
 
+// moved downloadPreview("#download-preview-signed", true)
+// to edit.html
+
 import preview from "./preview/preview.js"
 preview("#show-modal-preview")
 // preview("#preview-signed", true)
