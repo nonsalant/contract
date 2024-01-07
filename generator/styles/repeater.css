@@ -138,6 +138,7 @@ article:first-child .close-button {
 @media (width < 535px) {
   .repeater-form output {
     margin-inline: auto;
+    margin-block-start: 1rem;
   }
 
   .repeater-item {
