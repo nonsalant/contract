@@ -31,8 +31,7 @@
 
     <a class="skip-to-content button" href="#main">Skip to contract content</a>
     <a class="skip-to-content button" href="#below-contract">Skip to signature</a>
-
-    <div id="wysiwyg-wrap" class="w-medium flex-1">
+    <main id="wysiwyg-wrap" class="w-medium flex-1">
         <!-- Toolbar -->
         <div title="Toolbar" id="toolbar-wrap" class="animate fade">
             <div id="toolbar">
@@ -43,34 +42,34 @@
                         <use href="#down-circle"></use>
                     </svg>
                 </button>
+                <!-- Bold, italic, and underline buttons -->
                 <span class="ql-formats">
-                    <!-- Bold, italic, and underline buttons -->
                     <button aria-label="Bold" type="button" class="ql-bold"></button>
                     <button aria-label="Italic" type="button" class="ql-italic"></button>
                     <button aria-label="Underline" type="button" class="ql-underline"></button>
                 </span>
+                <!-- Headings dropdown -->
                 <span class="ql-formats">
-                    <!-- Headings dropdown -->
                     <select aria-label="Heading" class="ql-header" style="margin-inline-end: .5rem;">
-                        <option selected></option>
-                        <option value="1"></option>
-                        <option value="2"></option>
-                        <option value="3"></option>
+                        <option aria-label="Normal" selected></option>
+                        <option aria-label="Heading 1" value="1"></option>
+                        <option aria-label="Heading 2" value="2"></option>
+                        <option aria-label="Heading 3" value="3"></option>
                     </select>
                     <select aria-label="Align" class="ql-align">
-                        <option selected></option>
-                        <option value="center"></option>
-                        <option value="right"></option>
-                        <option value="justify"></option>
+                        <option aria-label="Left" selected></option>
+                        <option aria-label="Center" value="center"></option>
+                        <option aria-label="Right" value="right"></option>
+                        <option aria-label="Justify" value="justify"></option>
                     </select>
                 </span>
+                <!-- Subscript and superscript buttons -->
                 <span class="ql-formats" style="display: none;">
-                    <!-- Subscript and superscript buttons -->
                     <button type="button" class="ql-script" value="sub"></button>
                     <button type="button" class="ql-script" value="super"></button>
                 </span>
+                <!-- Clean button -->
                 <span class="ql-formats">
-                    <!-- Clean button -->
                     <button aria-label="Clean formatting" type="button" class="ql-clean"></button>
                 </span>
 
@@ -99,9 +98,9 @@
                 Loading contract…
             </div>
         </div>
-    </div>
+    </main>
 
-    <div class="below-contract flow | animate fade delay-3">
+    <footer class="below-contract flow | animate fade delay-3">
         <div id="below-contract" class="signature-area w-medium padding-clamp">
             <div id="signature-container">
 
@@ -311,7 +310,7 @@
                 <div class="flexi">
                     <p class="grid">
                         <label class="animate slide" for="contract_filename">
-                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" role="img"
+                            <svg aria-label="PHP extension" stroke="currentColor" fill="currentColor" stroke-width="0" role="img"
                                 viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                                 <use href="#icon-php"></use>
                             </svg>
@@ -346,16 +345,16 @@
                 How it works > You upload this file on your own server or domain. You send your client a link to it. They sign. Optionally, you both get an email notification.
             -->
 
-            <footer class="footer flow border-top">
+            <div class="footer flow border-top">
                 <p style="font-size: 1rem; font-weight: 600; text-wrap: balance;">This template contains general information and should not
                     be considered legal advice.</p>
                 <p>View on <a href="https://github.com/nonsalant/contract/">GitHub</a>. Built by <a
                         href="https://twitter.com/nonsalant">Stefan Matei</a>.</p>
-            </footer>
+            </div>
 
         </div>
 
-    </div>
+    </foot>
 
 
     <!-- svg icon data -->

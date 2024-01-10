@@ -19,7 +19,7 @@ const editorSettings = {
             cancelText: "Discard<span class='hide-small'>&nbsp;changes</span>", // Text to display in the cancel button, default: Cancel
             // buttonHTML: "<b style='font-size:.65rem; display: block;'>&lt;&nbsp;/&nbsp;&gt;</b>",
             // buttonHTML: "<span style='font-size:.55rem; display: block;'><b>&lt;</b><span style='font-size:.5rem;'>HTML</span><b>&gt;</b></span>",
-            buttonHTML: "<span aria-label='Edit HTML' style='font-size:.75rem; display: block; font-weight:600;'>&lt;<span style='font-size:.65rem;'>/</span>&gt;</span>",
+            buttonHTML: "<span aria-label='Edit HTML' role='button' style='font-size:.75rem; display: block; font-weight:600;'>&lt;<span style='font-size:.65rem;'>/</span>&gt;</span>",
             closeOnClickOverlay: false,
             debug: false,
         },
