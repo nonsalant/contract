@@ -96,7 +96,7 @@ export default async function generatePreview(signed=false, forDownload=false, f
         <title>Signed Contract</title>
         <style>${contract_css}</style>
     </head>
-    <body>
+    <body style="overscroll-behavior: contain;">
         <div id="content" class="ql-editor">
 
             ${main}
