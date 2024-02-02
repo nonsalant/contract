@@ -3,10 +3,8 @@
 $DEV_SIGNATURE = '<img id="dev_signature" src="' . $DEV_SIGNATURE . '" >';
 
 $CLIENT_SIGNATURE = isset($_POST['client_signature']) ? $_POST['client_signature'] : null;
-if (substr( $CLIENT_SIGNATURE, 0, 22 ) === 'data:image/png;base64,') {
-    $CLIENT_SIGNATURE = '<img id="hk" src="' . htmlspecialchars($CLIENT_SIGNATURE) . '" >';
-} else {
-  $CLIENT_SIGNATURE = null;
+if ($CLIENT_SIGNATURE && substr($CLIENT_SIGNATURE, 0, 22) === 'data:image/png;base64,') {
+  $CLIENT_SIGNATURE = '<img id="hk" src="' . htmlspecialchars($CLIENT_SIGNATURE) . '" >';
 }
 
 /**
